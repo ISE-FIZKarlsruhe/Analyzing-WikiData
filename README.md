@@ -8,6 +8,10 @@ To execute it type
 $ awk -f program-file input-file
 ```
 
+Files that were created with the provided scripts can be found on:
+https://drive.google.com/drive/folders/0B1VsD7AFoAMVb01BaGhMWXpscVU 
+
+
 ## Explanations
 
 **--compressing.awk**
