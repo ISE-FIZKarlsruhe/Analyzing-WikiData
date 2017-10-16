@@ -27,6 +27,7 @@ wd:Q457 ps:P1376 wd:Q1726747
 
 
 **--cutprefixes.awk**
+
 This script cuts the prefixes and only leaves the actual numeric values for entites and properties.
 As input file, the output of the first compressing script is used.
 THe information wheather a property was a direct statement or a qualifier is lost at this stage.
@@ -39,4 +40,4 @@ wd:Q457 ps:P1376 wd:Q1726747
 
 
 --------------------------------------
-> Further explanation of the other files will be provided soon.
+> Further explanation of the other files will be provided soon...
