@@ -1,9 +1,9 @@
 # Analyzing-WikiData
 
 This repository hosts various scripts for compression and analyzing WikiData.
-Currently all scripts are AWK.Scripts. The output location must be added manually for the moment.
+Currently all scripts are .awk-scripts. The output location must be added manually for the moment.
 
-To execute it type
+To execute a script type
 ```sh
 $ awk -f program-file input-file
 ```
@@ -11,8 +11,9 @@ $ awk -f program-file input-file
 Files that were created with the provided scripts can be found on:
 https://drive.google.com/drive/folders/0B1VsD7AFoAMVb01BaGhMWXpscVU 
 
+The folder statistics contains some preliminary analysis results.
 
-## Explanations
+## AWK-script Explanations
 
 **--compressing.awk**
 
@@ -21,14 +22,18 @@ https://dumps.wikimedia.org/wikidatawiki/entities/   (i.e. latest-all.ttl)
 
 | Input |
 wds:Q457-9EEE3BB9-E8C4-495F-A4F8-9C338DABE5F8 a wikibase:Statement,
-                wikibase:BestRank ;
-        wikibase:rank wikibase:NormalRank ;
-        ps:P1376 wd:Q1726747 ;
-        prov:wasDerivedFrom wdref:cb1bf156a6906c27e02d4e4e7585aabcddd0e094 .
+wikibase:BestRank ;
+wikibase:rank wikibase:NormalRank ;
+ps:P1376 wd:Q1726747 ;
+prov:wasDerivedFrom wdref:cb1bf156a6906c27e02d4e4e7585aabcddd0e094 .
 
 | Output |
 wd:Q457 ps:P1376 wd:Q1726747
 
+**--compressing_wdt.awk**
+
+Works similar to the previous script but only considers statement of rdf:type wikibase:BestRank.
+It also ignores qualifiers.
 
 **--cutprefixes.awk**
 
@@ -38,10 +43,13 @@ THe information wheather a property was a direct statement or a qualifier is los
 
 | Input |
 wd:Q457 ps:P1376 wd:Q1726747
+or
+wd:Q457 wdt:P1376 wd:Q1726747
 
 | Output |
 457 1376 1726747
 
 
+
 --------------------------------------
-> Further explanation of the other files will be provided soon...
+> Further explanations of the other files will be provided soon...
