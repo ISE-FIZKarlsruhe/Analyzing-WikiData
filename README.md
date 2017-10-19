@@ -20,20 +20,20 @@ The folder "statistics" contains some preliminary analysis results.
 The main compressing script uses the full (unzipped) turtle dump file as found on:
 https://dumps.wikimedia.org/wikidatawiki/entities/   (i.e. latest-all.ttl)  
 
--Input- 
-wds:Q457-9EEE3BB9-E8C4-495F-A4F8-9C338DABE5F8 a wikibase:Statement,
-wikibase:BestRank ;
-wikibase:rank wikibase:NormalRank ;
-ps:P1376 wd:Q1726747 ;
+-Input-  
+wds:Q457-9EEE3BB9-E8C4-495F-A4F8-9C338DABE5F8 a wikibase:Statement, 
+wikibase:BestRank ; 
+wikibase:rank wikibase:NormalRank ; 
+ps:P1376 wd:Q1726747 ; 
 prov:wasDerivedFrom wdref:cb1bf156a6906c27e02d4e4e7585aabcddd0e094 .  
 
--Output- 
-wd:Q457 ps:P1376 wd:Q1726747
+-Output-   
+wd:Q457 ps:P1376 wd:Q1726747  
 
 **--compressing_wdt.awk** 
 
 Works similar to the previous script but only considers statement of rdf:type wikibase:BestRank.
-It also ignores qualifiers.
+It also ignores qualifiers.  
 
 **--cutprefixes.awk** 
 
@@ -42,19 +42,17 @@ As input file, the output of the first compressing script is used.
 THe information wheather a property was a direct statement or a qualifier is lost at this stage.
 
 -Input- 
-wd:Q457 ps:P1376 wd:Q1726747
-or
-wd:Q457 wdt:P1376 wd:Q1726747  
+wd:Q457 ps:P1376 wd:Q1726747 
+or 
+wd:Q457 wdt:P1376 wd:Q1726747   
 
 -Output- 
-457 1376 1726747
+457 1376 1726747  
 
 **--getobjects.awk** 
 
 This script asks the User for the number of a specific entity and prints all of its predicates and objects. 
 It is intendet to be used on the maximally compressed wikidata file (the one containing only numbers).  
-
-
 
 **--getlabels.awk** 
 
@@ -68,8 +66,7 @@ $ grep "@en" input-file
 Note that the output includes many duplicates and name variations for the same entity. 
 The file labels_english has been stripped down to the maximum. 
 
-Name variations within the english labels of an entity can be found with the getduplicatelabels.awk script.
-
+Name variations within the english labels of an entity can be found with the getduplicatelabels.awk script.  
 
 **--getobjectcount.awk, getobjectcount2.awk** 
 
@@ -79,12 +76,12 @@ The second script uses the results of the first one to aggregate the results in 
 
 I.e. the lines
 
->1 7944479
->2 8342598
->3 5060407
+>1 7944479 
+>2 8342598 
+>3 5060407 
 
-indicate that there are 7944479 entities which are connected to exactly one other entity, 8342598 entities that link to exactly 2 other entities and so on.
+indicate that there are 7944479 entities which are connected to exactly one other entity, 8342598 entities that link to exactly 2 other entities and so on.  
 
 
 ---
-_Further explanations of the other files will be provided soon..._
+_Informations and further explanations will be updated accordingly._
