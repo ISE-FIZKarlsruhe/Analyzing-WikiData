@@ -76,9 +76,9 @@ The second script uses the results of the first one to aggregate the results in 
 
 I.e. the lines
 
->1 7944479 
->2 8342598 
->3 5060407 
+>1 7944479  
+>2 8342598  
+>3 5060407  
 
 indicate that there are 7944479 entities which are connected to exactly one other entity, 8342598 entities that link to exactly 2 other entities and so on.  
 
