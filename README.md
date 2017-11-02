@@ -26,8 +26,9 @@ The input file is created as follows:
 1. Get the "latest-all.ttl" file from https://dumps.wikimedia.org/wikidatawiki/entities/ and unzip
 2. Run "compressing.awk"
 3. Run "cutprefixes.awk"
-4. Run "awk {print $1";",$3}' inputfile"
+4. Run "awk '{print $1";",$3}' inputfile"  
 
+The Script is currently in testing and development!
 
 ### AWK-script Explanations
 
