@@ -13,6 +13,22 @@ https://drive.google.com/drive/folders/0B1VsD7AFoAMVb01BaGhMWXpscVU
 
 The folder "statistics" contains some preliminary analysis results.
 
+
+### python-script Explanations
+
+**--pathfinding.py**
+
+This script has various pathfinding capabilities. 
+Details regarding its parameters can be found in comments next to the code itself.  
+
+The scrips uses a further reduced "numbers-only"-file, that only contains the entity and its objects (no predicates).
+The input file is created as follows:
+1. Get the "latest-all.ttl" file from https://dumps.wikimedia.org/wikidatawiki/entities/ and unzip
+2. Run "compressing.awk"
+3. Run "cutprefixes.awk"
+4. Run "awk {print $1";",$3}' inputfile"
+
+
 ### AWK-script Explanations
 
 **--compressing.awk**
