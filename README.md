@@ -26,13 +26,17 @@ The input file is created as follows:
 1. Get the "latest-all.ttl" file from https://dumps.wikimedia.org/wikidatawiki/entities/ and unzip
 2. Run "compressing.awk"
 3. Run "cutprefixes.awk"
-4. Run "awk '{print $1";",$3}' inputfile"  
+4. Run "awk '{print $1";",$3}' inputfile" > outputfilename.csv   
 
-The Script is currently in testing and development!
+(The last commands removes the predicates from the "wikidata_numbers-only"-file, as they are not processed by the python script. To retrieve the predicates for a given path, follow the instructions on insertprefixestopath.awk)  
+
+The Script privides multiple options that are explained with comments within the code.  
+
+In the current version it requires approximately 8GB of free RAM and robustly finds the shortest paths from a given entity to all other entities for a pathlength of 100.   
 
 ### AWK-script Explanations
 
-**--compressing.awk**
+#####**--compressing.awk**
 
 The main compressing script uses the full (unzipped) turtle dump file as found on:
 https://dumps.wikimedia.org/wikidatawiki/entities/   (i.e. latest-all.ttl)  
@@ -47,12 +51,12 @@ prov:wasDerivedFrom wdref:cb1bf156a6906c27e02d4e4e7585aabcddd0e094 .
 -Output-   
 wd:Q457 ps:P1376 wd:Q1726747  
 
-**--compressing_wdt.awk** 
+#####**--compressing_wdt.awk** 
 
 Works similar to the previous script but only considers statement of rdf:type wikibase:BestRank.
 It also ignores qualifiers.  
 
-**--cutprefixes.awk** 
+#####**--cutprefixes.awk** 
 
 This script cuts the prefixes and only leaves the actual numeric values for entites and properties.
 As input file, the output of the first compressing script is used.
@@ -66,12 +70,12 @@ wd:Q457 wdt:P1376 wd:Q1726747
 -Output- 
 457 1376 1726747  
 
-**--getobjects.awk** 
+#####**--getobjects.awk** 
 
 This script asks the User for the number of a specific entity and prints all of its predicates and objects. 
 It is intendet to be used on the maximally compressed wikidata file (the one containing only numbers).  
 
-**--getlabels.awk** 
+#####**--getlabels.awk** 
 
 This Script uses the unzipped main file [latest-all.ttl] to extract all available labels for every entity.
 In oder to only get the english labels use
@@ -85,7 +89,7 @@ The file labels_english has been stripped down to the maximum.
 
 Name variations within the english labels of an entity can be found with the getduplicatelabels.awk script.  
 
-**--getobjectcount.awk, getobjectcount2.awk** 
+#####**--getobjectcount.awk, getobjectcount2.awk** 
 
 These have been used to get some idea about the number of objects an entity links to. 
 The first script counts the links each individual entity has.
@@ -98,6 +102,37 @@ I.e. the lines
 >3 5060407  
 
 indicate that there are 7944479 entities which are connected to exactly one other entity, 8342598 entities that link to exactly 2 other entities and so on.  
+
+
+#####**--insertprefixestopath.awk** 
+
+The script takes a path between two entites as generated as output from the python pathfinding script as inputfile1, and the compressed wikidata including prefixes as iputfile2. The output will be the full path containing also the possible predicates for each step.
+
+-Example inputfile1-
+78 39
+39 183
+183 567
+567 413
+
+-Example inputfile2-
+wd:Q1 ps:P2959 wd:Q22924128
+wd:Q2 pq:P17 wd:Q736
+wd:Q2 pq:P17 wd:Q837
+wd:Q2 pq:P248 wd:Q23859820
+wd:Q2 pq:P248 wd:Q24206672
+...
+
+```sh
+$ awk -f insertprefixestopath.awk inputfile1 inputfile2 | sort -V
+```
+
+-Example output-
+Step 0: wd:Q78 ps:P17 wd:Q39
+Step 1: wd:Q39 ps:P47 wd:Q183
+Step 1: wd:Q39 ps:P530 wd:Q183
+Step 2: wd:Q183 ps:P6 wd:Q567
+Step 3: wd:Q567 pq:P812 wd:Q413
+
 
 
 ---
