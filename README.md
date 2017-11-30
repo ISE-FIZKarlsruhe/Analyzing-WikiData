@@ -105,6 +105,8 @@ indicate that there are 7944479 entities which are connected to exactly one othe
 
 #####**--getlabelforpath.awk** 
 
+The script takes a path between two entites as generated as output from the python pathfinding script as inputfile1, and the wikidata label file as iputfile2. The output will be the path (without predicates) with labels for each entity.
+
 -Example inputfile1-  
 78 39  
 39 183  
