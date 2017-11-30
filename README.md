@@ -28,7 +28,7 @@ The input file is created as follows:
 3. Run "cutprefixes.awk"
 4. Run "awk '{print $1";",$3}' inputfile" > outputfilename.csv"   
 
-(The last commands removes the predicates from the "wikidata_numbers-only"-file, as they are not processed by the python script. To retrieve the predicates for a given path, follow the instructions on insertprefixestopath.awk)  
+(The last commands removes the predicates from the "wikidata_numbers-only"-file, as they are not processed by the python script. To retrieve the predicates for a given path, follow the instructions on insertpredicatestopath.awk)  
 
 The Script privides multiple options that are explained with comments within the code.  
 
@@ -103,35 +103,64 @@ I.e. the lines
 
 indicate that there are 7944479 entities which are connected to exactly one other entity, 8342598 entities that link to exactly 2 other entities and so on.  
 
+#####**--getlabelforpath.awk** 
 
-#####**--insertprefixestopath.awk** 
+-Example inputfile1-  
+78 39  
+39 183  
+183 567  
+567 413  
 
-The script takes a path between two entites as generated as output from the python pathfinding script as inputfile1, and the compressed wikidata including prefixes as iputfile2. The output will be the full path containing also the possible predicates for each step.
+-Example inputfile2-  
+1 Universe  
+2 Earth  
+3 Life  
+4 Death  
+...  
 
--Example inputfile1-
-78 39
-39 183
-183 567
-567 413
-
--Example inputfile2-
-wd:Q1 ps:P2959 wd:Q22924128
-wd:Q2 pq:P17 wd:Q736
-wd:Q2 pq:P17 wd:Q837
-wd:Q2 pq:P248 wd:Q23859820
-wd:Q2 pq:P248 wd:Q24206672
-...
+To properly execute the script, the output needs to be sorted afterwards. To do it in one step type the following:
 
 ```sh
 $ awk -f insertprefixestopath.awk inputfile1 inputfile2 | sort -V
 ```
 
--Example output-
-Step 0: wd:Q78 ps:P17 wd:Q39
-Step 1: wd:Q39 ps:P47 wd:Q183
-Step 1: wd:Q39 ps:P530 wd:Q183
-Step 2: wd:Q183 ps:P6 wd:Q567
-Step 3: wd:Q567 pq:P812 wd:Q413
+
+-Example output-  
+Step 0: Q78 Basel  
+Step 1: Q39 Switzerland
+Step 2: Q183 Germany
+Step 3: Q567 Angela Merkel
+
+#####**--insertpredicatestopath.awk** 
+
+The script takes a path between two entites as generated as output from the python pathfinding script as inputfile1, and the compressed wikidata including prefixes as iputfile2. The output will be the full path containing also the possible predicates for each step.
+
+-Example inputfile1-  
+78 39  
+39 183  
+183 567  
+567 413  
+
+-Example inputfile2-  
+wd:Q1 ps:P2959 wd:Q22924128  
+wd:Q2 pq:P17 wd:Q736  
+wd:Q2 pq:P17 wd:Q837  
+wd:Q2 pq:P248 wd:Q23859820  
+wd:Q2 pq:P248 wd:Q24206672  
+...  
+
+To properly execute the script, the output needs to be sorted afterwards. To do it in one step type the following:
+
+```sh
+$ awk -f insertprefixestopath.awk inputfile1 inputfile2 | sort -V
+```
+
+-Example output-  
+Step 0: wd:Q78 ps:P17 wd:Q39  
+Step 1: wd:Q39 ps:P47 wd:Q183  
+Step 1: wd:Q39 ps:P530 wd:Q183  
+Step 2: wd:Q183 ps:P6 wd:Q567  
+Step 3: wd:Q567 pq:P812 wd:Q413  
 
 
 
