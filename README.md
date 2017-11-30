@@ -32,7 +32,7 @@ The input file is created as follows:
 
 The Script privides multiple options that are explained with comments within the code.  
 
-In the current version it requires approximately 8GB of free RAM and robustly finds the shortest paths from a given entity to all other entities for a pathlength of 100.   
+In the current version it requires approximately 8GB of free RAM and robustly finds all shortest paths from a given entity to all other entities for an unlimited (testing in progress) pathlength.   
 
 ### AWK-script Explanations
 
