@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
-#v3.0 -current
+#v3.1 -current
 import csv
 from collections import defaultdict
 from sys import stdout
 import numpy as np
 import time
 import random
+import sys
 
 #Information need parameter
 start = 1              #define the start node
-goal = 1329                #define the goal node
+goal = 42                #define the goal node
 maxPathlength = 10      #define the maximal pathlength
 
 #Action parameter
@@ -20,8 +21,8 @@ verbose = False         #set to False to disable to progress percentage and to s
 tofile = False           #if True, any output is printed to a generated file, following certain name specifications
 
 #file parameter
-#inputfile = "wikidata_objects_noduplicates.csv"
-inputfile = "../igraph/smallgraph4.csv"
+inputfile = "wikidata_objects_noduplicates.csv"
+#inputfile = "../igraph/smallgraph4.csv"
 outputFolderPath = "output_testing/"
 
 #methods:
@@ -72,11 +73,14 @@ def main():
 ##    for sp in p[2]:
 ##        pathToFile(sp)              
 
-    for k,o in dictionary.items():
-        print(k,getClosenessCentrality(k))
-    print()
-    for k,o in dictionary.items():
-        print(k,getHarmonicCentrality(k))
+    # for k,o in dictionary.items():
+    #     print(k,getClosenessCentrality(k))
+    # print()
+    # for k,o in dictionary.items():
+    #     print(k,getHarmonicCentrality(k))
+
+    print(getPath(start, goal))
+
 
 #returns the path between two random entities from a sample of the frist 'r' wikidata entitites
 def randomPath(r):        
@@ -160,7 +164,7 @@ def buildDirected(inputfile):
     i = 0;              
     with open(inputfile, newline ='') as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
-        print("Buildung up the main dictionary", end=" ")  
+        print("Building up the main dictionary", end=" ")
         for key, value in reader:
             dictionary[int(key)].append(int(value))
             i = i+1;
