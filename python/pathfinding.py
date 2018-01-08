@@ -21,9 +21,9 @@ verbose = False         #set to False to disable to progress percentage and to s
 tofile = False           #if True, any output is printed to a generated file, following certain name specifications
 
 #file parameter
-inputfile = "wikidata_objects_noduplicates.csv"
+inputfile = "../results/wikidata_objects.csv"
 #inputfile = "../igraph/smallgraph4.csv"
-outputFolderPath = "output_testing/"
+outputFolderPath = "/output/output_testing/"
 
 #methods:
 #printAggregatePathLengths(dictionary)
