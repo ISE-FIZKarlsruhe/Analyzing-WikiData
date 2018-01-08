@@ -1,0 +1,4000 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix wikibase: <http://wikiba.se/ontology-beta#> .
+@prefix wds: <http://www.wikidata.org/entity/statement/> .
+@prefix wdata: <https://www.wikidata.org/wiki/Special:EntityData/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix wdv: <http://www.wikidata.org/value/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/> .
+@prefix p: <http://www.wikidata.org/prop/> .
+@prefix ps: <http://www.wikidata.org/prop/statement/> .
+@prefix psv: <http://www.wikidata.org/prop/statement/value/> .
+@prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> .
+@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
+@prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> .
+@prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> .
+@prefix pr: <http://www.wikidata.org/prop/reference/> .
+@prefix prv: <http://www.wikidata.org/prop/reference/value/> .
+@prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
+@prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+
+wikibase:Dump a schema:Dataset,
+		owl:Ontology ;
+	cc:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+	schema:softwareVersion "0.1.0" ;
+	schema:dateModified "2017-12-25T23:00:02Z"^^xsd:dateTime ;
+	owl:imports <http://wikiba.se/ontology-1.0.owl> .
+
+wdata:Q26 a schema:Dataset ;
+	schema:about wd:Q26 ;
+	schema:version "610751200"^^xsd:integer ;
+	schema:dateModified "2017-12-18T21:58:08Z"^^xsd:dateTime ;
+	wikibase:sitelinks "178"^^xsd:integer ;
+	wikibase:statements "99"^^xsd:integer ;
+	wikibase:identifiers "30"^^xsd:integer .
+
+wd:Q26 a wikibase:Item ;
+	rdfs:label "Northern Ireland"@en-gb ;
+	skos:prefLabel "Northern Ireland"@en-gb ;
+	schema:name "Northern Ireland"@en-gb ;
+	rdfs:label "Northern Ireland"@en ;
+	skos:prefLabel "Northern Ireland"@en ;
+	schema:name "Northern Ireland"@en ;
+	rdfs:label "Irlanda del Nord"@it ;
+	skos:prefLabel "Irlanda del Nord"@it ;
+	schema:name "Irlanda del Nord"@it ;
+	rdfs:label "Irlande du Nord"@fr ;
+	skos:prefLabel "Irlande du Nord"@fr ;
+	schema:name "Irlande du Nord"@fr ;
+	rdfs:label "Nord-Irlando"@eo ;
+	skos:prefLabel "Nord-Irlando"@eo ;
+	schema:name "Nord-Irlando"@eo ;
+	rdfs:label "Irlandia Północna"@pl ;
+	skos:prefLabel "Irlandia Północna"@pl ;
+	schema:name "Irlandia Północna"@pl ;
+	rdfs:label "Северная Ирландия"@ru ;
+	skos:prefLabel "Северная Ирландия"@ru ;
+	schema:name "Северная Ирландия"@ru ;
+	rdfs:label "北アイルランド"@ja ;
+	skos:prefLabel "北アイルランド"@ja ;
+	schema:name "北アイルランド"@ja ;
+	rdfs:label "Nordirland"@de ;
+	skos:prefLabel "Nordirland"@de ;
+	schema:name "Nordirland"@de ;
+	rdfs:label "北愛爾蘭"@zh-hant ;
+	skos:prefLabel "北愛爾蘭"@zh-hant ;
+	schema:name "北愛爾蘭"@zh-hant ;
+	rdfs:label "Irlanda del Norte"@es ;
+	skos:prefLabel "Irlanda del Norte"@es ;
+	schema:name "Irlanda del Norte"@es ;
+	rdfs:label "Northern Ireland"@en-ca ;
+	skos:prefLabel "Northern Ireland"@en-ca ;
+	schema:name "Northern Ireland"@en-ca ;
+	rdfs:label "Noord-Ierland"@nl ;
+	skos:prefLabel "Noord-Ierland"@nl ;
+	schema:name "Noord-Ierland"@nl ;
+	rdfs:label "北爱尔兰"@zh ;
+	skos:prefLabel "北爱尔兰"@zh ;
+	schema:name "北爱尔兰"@zh ;
+	rdfs:label "北爱尔兰"@zh-cn ;
+	skos:prefLabel "北爱尔兰"@zh-cn ;
+	schema:name "北爱尔兰"@zh-cn ;
+	rdfs:label "北爱尔兰"@zh-hans ;
+	skos:prefLabel "北爱尔兰"@zh-hans ;
+	schema:name "北爱尔兰"@zh-hans ;
+	rdfs:label "Северна Ирска"@mk ;
+	skos:prefLabel "Северна Ирска"@mk ;
+	schema:name "Северна Ирска"@mk ;
+	rdfs:label "Noord-Ierland"@af ;
+	skos:prefLabel "Noord-Ierland"@af ;
+	schema:name "Noord-Ierland"@af ;
+	rdfs:label "Irlanda d'o Norte"@an ;
+	skos:prefLabel "Irlanda d'o Norte"@an ;
+	schema:name "Irlanda d'o Norte"@an ;
+	rdfs:label "أيرلندا الشمالية"@ar ;
+	skos:prefLabel "أيرلندا الشمالية"@ar ;
+	schema:name "أيرلندا الشمالية"@ar ;
+	rdfs:label "ايرلاندا الشماليه"@arz ;
+	skos:prefLabel "ايرلاندا الشماليه"@arz ;
+	schema:name "ايرلاندا الشماليه"@arz ;
+	rdfs:label "Irlanda del Norte"@ast ;
+	skos:prefLabel "Irlanda del Norte"@ast ;
+	schema:name "Irlanda del Norte"@ast ;
+	rdfs:label "Şimali İrlandiya"@az ;
+	skos:prefLabel "Şimali İrlandiya"@az ;
+	schema:name "Şimali İrlandiya"@az ;
+	rdfs:label "Nordirland"@bar ;
+	skos:prefLabel "Nordirland"@bar ;
+	schema:name "Nordirland"@bar ;
+	rdfs:label "Паўночная Ірландыя"@be ;
+	skos:prefLabel "Паўночная Ірландыя"@be ;
+	schema:name "Паўночная Ірландыя"@be ;
+	rdfs:label "Северна Ирландия"@bg ;
+	skos:prefLabel "Северна Ирландия"@bg ;
+	schema:name "Северна Ирландия"@bg ;
+	rdfs:label "Norzhiwerzhon"@br ;
+	skos:prefLabel "Norzhiwerzhon"@br ;
+	schema:name "Norzhiwerzhon"@br ;
+	rdfs:label "Sjeverna Irska"@bs ;
+	skos:prefLabel "Sjeverna Irska"@bs ;
+	schema:name "Sjeverna Irska"@bs ;
+	rdfs:label "Irlanda del Nord"@ca ;
+	skos:prefLabel "Irlanda del Nord"@ca ;
+	schema:name "Irlanda del Nord"@ca ;
+	rdfs:label "Báe̤k Ái-ī-làng"@cdo ;
+	skos:prefLabel "Báe̤k Ái-ī-làng"@cdo ;
+	schema:name "Báe̤k Ái-ī-làng"@cdo ;
+	rdfs:label "Severní Irsko"@cs ;
+	skos:prefLabel "Severní Irsko"@cs ;
+	schema:name "Severní Irsko"@cs ;
+	rdfs:label "Çурçĕр Ирланди"@cv ;
+	skos:prefLabel "Çурçĕр Ирланди"@cv ;
+	schema:name "Çурçĕр Ирланди"@cv ;
+	rdfs:label "Gogledd Iwerddon"@cy ;
+	skos:prefLabel "Gogledd Iwerddon"@cy ;
+	schema:name "Gogledd Iwerddon"@cy ;
+	rdfs:label "Nordirland"@da ;
+	skos:prefLabel "Nordirland"@da ;
+	schema:name "Nordirland"@da ;
+	rdfs:label "İrlanda Zımey"@diq ;
+	skos:prefLabel "İrlanda Zımey"@diq ;
+	schema:name "İrlanda Zımey"@diq ;
+	rdfs:label "Pódpołnocna Irska"@dsb ;
+	skos:prefLabel "Pódpołnocna Irska"@dsb ;
+	schema:name "Pódpołnocna Irska"@dsb ;
+	rdfs:label "Βόρεια Ιρλανδία"@el ;
+	skos:prefLabel "Βόρεια Ιρλανδία"@el ;
+	schema:name "Βόρεια Ιρλανδία"@el ;
+	rdfs:label "Põhja-Iirimaa"@et ;
+	skos:prefLabel "Põhja-Iirimaa"@et ;
+	schema:name "Põhja-Iirimaa"@et ;
+	rdfs:label "Ipar Irlanda"@eu ;
+	skos:prefLabel "Ipar Irlanda"@eu ;
+	schema:name "Ipar Irlanda"@eu ;
+	rdfs:label "Irlanda del Norti"@ext ;
+	skos:prefLabel "Irlanda del Norti"@ext ;
+	schema:name "Irlanda del Norti"@ext ;
+	rdfs:label "ایرلند شمالی"@fa ;
+	skos:prefLabel "ایرلند شمالی"@fa ;
+	schema:name "ایرلند شمالی"@fa ;
+	rdfs:label "Pohjois-Irlanti"@fi ;
+	skos:prefLabel "Pohjois-Irlanti"@fi ;
+	schema:name "Pohjois-Irlanti"@fi ;
+	rdfs:label "Norðurírland"@fo ;
+	skos:prefLabel "Norðurírland"@fo ;
+	schema:name "Norðurírland"@fo ;
+	rdfs:label "Noard-Ierlân"@fy ;
+	skos:prefLabel "Noard-Ierlân"@fy ;
+	schema:name "Noard-Ierlân"@fy ;
+	rdfs:label "Tuaisceart Éireann"@ga ;
+	skos:prefLabel "Tuaisceart Éireann"@ga ;
+	schema:name "Tuaisceart Éireann"@ga ;
+	rdfs:label "Èirinn a Tuath"@gd ;
+	skos:prefLabel "Èirinn a Tuath"@gd ;
+	schema:name "Èirinn a Tuath"@gd ;
+	rdfs:label "Irlanda do Norte"@gl ;
+	skos:prefLabel "Irlanda do Norte"@gl ;
+	schema:name "Irlanda do Norte"@gl ;
+	rdfs:label "નોર્ધન આયર્લેન્ડ"@gu ;
+	skos:prefLabel "નોર્ધન આયર્લેન્ડ"@gu ;
+	schema:name "નોર્ધન આયર્લેન્ડ"@gu ;
+	rdfs:label "Nerin Hwoaie"@gv ;
+	skos:prefLabel "Nerin Hwoaie"@gv ;
+	schema:name "Nerin Hwoaie"@gv ;
+	rdfs:label "צפון אירלנד"@he ;
+	skos:prefLabel "צפון אירלנד"@he ;
+	schema:name "צפון אירלנד"@he ;
+	rdfs:label "उत्तरी आयरलैंड"@hi ;
+	skos:prefLabel "उत्तरी आयरलैंड"@hi ;
+	schema:name "उत्तरी आयरलैंड"@hi ;
+	rdfs:label "Sjeverna Irska"@hr ;
+	skos:prefLabel "Sjeverna Irska"@hr ;
+	schema:name "Sjeverna Irska"@hr ;
+	rdfs:label "Sewjerna Irska"@hsb ;
+	skos:prefLabel "Sewjerna Irska"@hsb ;
+	schema:name "Sewjerna Irska"@hsb ;
+	rdfs:label "Ilann dinò"@ht ;
+	skos:prefLabel "Ilann dinò"@ht ;
+	schema:name "Ilann dinò"@ht ;
+	rdfs:label "Észak-Írország"@hu ;
+	skos:prefLabel "Észak-Írország"@hu ;
+	schema:name "Észak-Írország"@hu ;
+	rdfs:label "Հյուսիսային Իռլանդիա"@hy ;
+	skos:prefLabel "Հյուսիսային Իռլանդիա"@hy ;
+	schema:name "Հյուսիսային Իռլանդիա"@hy ;
+	rdfs:label "Irlanda del Nord"@ia ;
+	skos:prefLabel "Irlanda del Nord"@ia ;
+	schema:name "Irlanda del Nord"@ia ;
+	rdfs:label "Irlandia Utara"@id ;
+	skos:prefLabel "Irlandia Utara"@id ;
+	schema:name "Irlandia Utara"@id ;
+	rdfs:label "Akin-amianan nga Irlanda"@ilo ;
+	skos:prefLabel "Akin-amianan nga Irlanda"@ilo ;
+	schema:name "Akin-amianan nga Irlanda"@ilo ;
+	rdfs:label "Nord-Irlando"@io ;
+	skos:prefLabel "Nord-Irlando"@io ;
+	schema:name "Nord-Irlando"@io ;
+	rdfs:label "Norður-Írland"@is ;
+	skos:prefLabel "Norður-Írland"@is ;
+	schema:name "Norður-Írland"@is ;
+	rdfs:label "Irlandia Lor"@jv ;
+	skos:prefLabel "Irlandia Lor"@jv ;
+	schema:name "Irlandia Lor"@jv ;
+	rdfs:label "ჩრდილოეთი ირლანდია"@ka ;
+	skos:prefLabel "ჩრდილოეთი ირლანდია"@ka ;
+	schema:name "ჩრდილოეთი ირლანდია"@ka ;
+	rdfs:label "អៀរឡង់ ខាងជើង"@km ;
+	skos:prefLabel "អៀរឡង់ ខាងជើង"@km ;
+	schema:name "អៀរឡង់ ខាងជើង"@km ;
+	rdfs:label "ಉತ್ತರ ಐರ್ಲೆಂಡ್"@kn ;
+	skos:prefLabel "ಉತ್ತರ ಐರ್ಲೆಂಡ್"@kn ;
+	schema:name "ಉತ್ತರ ಐರ್ಲೆಂಡ್"@kn ;
+	rdfs:label "북아일랜드"@ko ;
+	skos:prefLabel "북아일랜드"@ko ;
+	schema:name "북아일랜드"@ko ;
+	rdfs:label "Bakurê Îrlandê"@ku ;
+	skos:prefLabel "Bakurê Îrlandê"@ku ;
+	schema:name "Bakurê Îrlandê"@ku ;
+	rdfs:label "Wordhen Gledh"@kw ;
+	skos:prefLabel "Wordhen Gledh"@kw ;
+	schema:name "Wordhen Gledh"@kw ;
+	rdfs:label "Hibernia Septentrionalis"@la ;
+	skos:prefLabel "Hibernia Septentrionalis"@la ;
+	schema:name "Hibernia Septentrionalis"@la ;
+	rdfs:label "Nordirland"@lb ;
+	skos:prefLabel "Nordirland"@lb ;
+	schema:name "Nordirland"@lb ;
+	rdfs:label "Irlanda do Nòrd"@lij ;
+	skos:prefLabel "Irlanda do Nòrd"@lij ;
+	schema:name "Irlanda do Nòrd"@lij ;
+	rdfs:label "Irlandí ya Nola"@ln ;
+	skos:prefLabel "Irlandí ya Nola"@ln ;
+	schema:name "Irlandí ya Nola"@ln ;
+	rdfs:label "Šiaurės Airija"@lt ;
+	skos:prefLabel "Šiaurės Airija"@lt ;
+	schema:name "Šiaurės Airija"@lt ;
+	rdfs:label "Ziemeļīrija"@lv ;
+	skos:prefLabel "Ziemeļīrija"@lv ;
+	schema:name "Ziemeļīrija"@lv ;
+	rdfs:label "വടക്കൻ അയർലണ്ട്"@ml ;
+	skos:prefLabel "വടക്കൻ അയർലണ്ട്"@ml ;
+	schema:name "വടക്കൻ അയർലണ്ട്"@ml ;
+	rdfs:label "Умард Ирланд"@mn ;
+	skos:prefLabel "Умард Ирланд"@mn ;
+	schema:name "Умард Ирланд"@mn ;
+	rdfs:label "उत्तर आयर्लंड"@mr ;
+	skos:prefLabel "उत्तर आयर्लंड"@mr ;
+	schema:name "उत्तर आयर्लंड"@mr ;
+	rdfs:label "Ireland Utara"@ms ;
+	skos:prefLabel "Ireland Utara"@ms ;
+	schema:name "Ireland Utara"@ms ;
+	rdfs:label "Irlanda ta' Fuq"@mt ;
+	skos:prefLabel "Irlanda ta' Fuq"@mt ;
+	schema:name "Irlanda ta' Fuq"@mt ;
+	rdfs:label "Noord-Ierlaand"@nds-nl ;
+	skos:prefLabel "Noord-Ierlaand"@nds-nl ;
+	schema:name "Noord-Ierlaand"@nds-nl ;
+	rdfs:label "Nord-Irland"@nn ;
+	skos:prefLabel "Nord-Irland"@nn ;
+	schema:name "Nord-Irland"@nn ;
+	rdfs:label "Irlande du Nord"@nrm ;
+	skos:prefLabel "Irlande du Nord"@nrm ;
+	schema:name "Irlande du Nord"@nrm ;
+	rdfs:label "Irlanda del Nòrd"@oc ;
+	skos:prefLabel "Irlanda del Nòrd"@oc ;
+	schema:name "Irlanda del Nòrd"@oc ;
+	rdfs:label "Цæгат Ирланди"@os ;
+	skos:prefLabel "Цæгат Ирланди"@os ;
+	schema:name "Цæгат Ирланди"@os ;
+	rdfs:label "Irlanda dël Nòrd"@pms ;
+	skos:prefLabel "Irlanda dël Nòrd"@pms ;
+	schema:name "Irlanda dël Nòrd"@pms ;
+	rdfs:label "اتلا آئرلینڈ"@pnb ;
+	skos:prefLabel "اتلا آئرلینڈ"@pnb ;
+	schema:name "اتلا آئرلینڈ"@pnb ;
+	rdfs:label "Irlanda do Norte"@pt ;
+	skos:prefLabel "Irlanda do Norte"@pt ;
+	schema:name "Irlanda do Norte"@pt ;
+	rdfs:label "Chinchay Ilanda"@qu ;
+	skos:prefLabel "Chinchay Ilanda"@qu ;
+	schema:name "Chinchay Ilanda"@qu ;
+	rdfs:label "Irlanda dal Nord"@rm ;
+	skos:prefLabel "Irlanda dal Nord"@rm ;
+	schema:name "Irlanda dal Nord"@rm ;
+	rdfs:label "Nordutno Irland"@rmy ;
+	skos:prefLabel "Nordutno Irland"@rmy ;
+	schema:name "Nordutno Irland"@rmy ;
+	rdfs:label "Irlanda de Nord"@ro ;
+	skos:prefLabel "Irlanda de Nord"@ro ;
+	schema:name "Irlanda de Nord"@ro ;
+	rdfs:label "Irlanna dû Nord"@scn ;
+	skos:prefLabel "Irlanna dû Nord"@scn ;
+	schema:name "Irlanna dû Nord"@scn ;
+	rdfs:label "Northren Ireland"@sco ;
+	skos:prefLabel "Northren Ireland"@sco ;
+	schema:name "Northren Ireland"@sco ;
+	rdfs:label "Sjeverna Irska"@sh ;
+	skos:prefLabel "Sjeverna Irska"@sh ;
+	schema:name "Sjeverna Irska"@sh ;
+	rdfs:label "Severné Írsko"@sk ;
+	skos:prefLabel "Severné Írsko"@sk ;
+	schema:name "Severné Írsko"@sk ;
+	rdfs:label "Severna Irska"@sl ;
+	skos:prefLabel "Severna Irska"@sl ;
+	schema:name "Severna Irska"@sl ;
+	rdfs:label "Waqooyiga Ayrland"@so ;
+	skos:prefLabel "Waqooyiga Ayrland"@so ;
+	schema:name "Waqooyiga Ayrland"@so ;
+	rdfs:label "Irlanda Veriore"@sq ;
+	skos:prefLabel "Irlanda Veriore"@sq ;
+	schema:name "Irlanda Veriore"@sq ;
+	rdfs:label "Северна Ирска"@sr ;
+	skos:prefLabel "Северна Ирска"@sr ;
+	schema:name "Северна Ирска"@sr ;
+	rdfs:label "Irlandia Kalér"@su ;
+	skos:prefLabel "Irlandia Kalér"@su ;
+	schema:name "Irlandia Kalér"@su ;
+	rdfs:label "Nordirland"@sv ;
+	skos:prefLabel "Nordirland"@sv ;
+	schema:name "Nordirland"@sv ;
+	rdfs:label "வட அயர்லாந்து"@ta ;
+	skos:prefLabel "வட அயர்லாந்து"@ta ;
+	schema:name "வட அயர்லாந்து"@ta ;
+	rdfs:label "Irlanda Norte"@tet ;
+	skos:prefLabel "Irlanda Norte"@tet ;
+	schema:name "Irlanda Norte"@tet ;
+	rdfs:label "Ирландияи Шимолӣ"@tg ;
+	skos:prefLabel "Ирландияи Шимолӣ"@tg ;
+	schema:name "Ирландияи Шимолӣ"@tg ;
+	rdfs:label "นอร์เทิร์นไอร์แลนด์"@th ;
+	skos:prefLabel "นอร์เทิร์นไอร์แลนด์"@th ;
+	schema:name "นอร์เทิร์นไอร์แลนด์"@th ;
+	rdfs:label "Hilagang Irlanda"@tl ;
+	skos:prefLabel "Hilagang Irlanda"@tl ;
+	schema:name "Hilagang Irlanda"@tl ;
+	rdfs:label "Noten Aialan"@tpi ;
+	skos:prefLabel "Noten Aialan"@tpi ;
+	schema:name "Noten Aialan"@tpi ;
+	rdfs:label "Kuzey İrlanda"@tr ;
+	skos:prefLabel "Kuzey İrlanda"@tr ;
+	schema:name "Kuzey İrlanda"@tr ;
+	rdfs:label "Төньяк Ирландия"@tt ;
+	skos:prefLabel "Төньяк Ирландия"@tt ;
+	schema:name "Төньяк Ирландия"@tt ;
+	rdfs:label "Північна Ірландія"@uk ;
+	skos:prefLabel "Північна Ірландія"@uk ;
+	schema:name "Північна Ірландія"@uk ;
+	rdfs:label "شمالی آئرلینڈ"@ur ;
+	skos:prefLabel "شمالی آئرلینڈ"@ur ;
+	schema:name "شمالی آئرلینڈ"@ur ;
+	rdfs:label "Irlanda del Nord"@vec ;
+	skos:prefLabel "Irlanda del Nord"@vec ;
+	schema:name "Irlanda del Nord"@vec ;
+	rdfs:label "Bắc Ireland"@vi ;
+	skos:prefLabel "Bắc Ireland"@vi ;
+	schema:name "Bắc Ireland"@vi ;
+	rdfs:label "Amihanan nga Irlanda"@war ;
+	skos:prefLabel "Amihanan nga Irlanda"@war ;
+	schema:name "Amihanan nga Irlanda"@war ;
+	rdfs:label "Ар Гәәлгүдин Таңһч"@xal ;
+	skos:prefLabel "Ар Гәәлгүдин Таңһч"@xal ;
+	schema:name "Ар Гәәлгүдин Таңһч"@xal ;
+	rdfs:label "צפון אירלאנד"@yi ;
+	skos:prefLabel "צפון אירלאנד"@yi ;
+	schema:name "צפון אירלאנד"@yi ;
+	rdfs:label "Írẹ́lándì Apáàríwá"@yo ;
+	skos:prefLabel "Írẹ́lándì Apáàríwá"@yo ;
+	schema:name "Írẹ́lándì Apáàríwá"@yo ;
+	rdfs:label "Noord-Ierland"@zea ;
+	skos:prefLabel "Noord-Ierland"@zea ;
+	schema:name "Noord-Ierland"@zea ;
+	rdfs:label "Nord-Irland"@nb ;
+	skos:prefLabel "Nord-Irland"@nb ;
+	schema:name "Nord-Irland"@nb ;
+	rdfs:label "北爱尔兰"@zh-sg ;
+	skos:prefLabel "北爱尔兰"@zh-sg ;
+	schema:name "北爱尔兰"@zh-sg ;
+	rdfs:label "北爱尔兰"@zh-my ;
+	skos:prefLabel "北爱尔兰"@zh-my ;
+	schema:name "北爱尔兰"@zh-my ;
+	rdfs:label "北愛爾蘭"@zh-hk ;
+	skos:prefLabel "北愛爾蘭"@zh-hk ;
+	schema:name "北愛爾蘭"@zh-hk ;
+	rdfs:label "北愛爾蘭"@zh-tw ;
+	skos:prefLabel "北愛爾蘭"@zh-tw ;
+	schema:name "北愛爾蘭"@zh-tw ;
+	rdfs:label "北愛爾蘭"@zh-mo ;
+	skos:prefLabel "北愛爾蘭"@zh-mo ;
+	schema:name "北愛爾蘭"@zh-mo ;
+	rdfs:label "Irlanda do Norte"@pt-br ;
+	skos:prefLabel "Irlanda do Norte"@pt-br ;
+	schema:name "Irlanda do Norte"@pt-br ;
+	rdfs:label "北愛爾蘭"@yue ;
+	skos:prefLabel "北愛爾蘭"@yue ;
+	schema:name "北愛爾蘭"@yue ;
+	rdfs:label "Nordirland"@de-ch ;
+	skos:prefLabel "Nordirland"@de-ch ;
+	schema:name "Nordirland"@de-ch ;
+	rdfs:label "Norðerne Īrland"@ang ;
+	skos:prefLabel "Norðerne Īrland"@ang ;
+	schema:name "Norðerne Īrland"@ang ;
+	rdfs:label "উত্তর আয়ারল্যান্ড"@bn ;
+	skos:prefLabel "উত্তর আয়ারল্যান্ড"@bn ;
+	schema:name "উত্তর আয়ারল্যান্ড"@bn ;
+	rdfs:label "Irlanna d'o Nord"@nap ;
+	skos:prefLabel "Irlanna d'o Nord"@nap ;
+	schema:name "Irlanna d'o Nord"@nap ;
+	rdfs:label "Паўночная Ірляндыя"@be-tarask ;
+	skos:prefLabel "Паўночная Ірляндыя"@be-tarask ;
+	schema:name "Паўночная Ірляндыя"@be-tarask ;
+	rdfs:label "Pak Éire"@nan ;
+	skos:prefLabel "Pak Éire"@nan ;
+	schema:name "Pak Éire"@nan ;
+	rdfs:label "Nordi Irlande"@nov ;
+	skos:prefLabel "Nordi Irlande"@nov ;
+	schema:name "Nordi Irlande"@nov ;
+	rdfs:label "ਉੱਤਰੀ ਆਇਰਲੈਂਡ"@pa ;
+	skos:prefLabel "ਉੱਤਰੀ ਆਇਰਲੈਂਡ"@pa ;
+	schema:name "ਉੱਤਰੀ ਆਇਰਲੈਂਡ"@pa ;
+	rdfs:label "Nord-Irland"@ie ;
+	skos:prefLabel "Nord-Irland"@ie ;
+	schema:name "Nord-Irland"@ie ;
+	rdfs:label "Noudirlound"@stq ;
+	skos:prefLabel "Noudirlound"@stq ;
+	schema:name "Noudirlound"@stq ;
+	rdfs:label "Pet Oi-ngì-làn"@hak ;
+	skos:prefLabel "Pet Oi-ngì-làn"@hak ;
+	schema:name "Pet Oi-ngì-làn"@hak ;
+	rdfs:label "Noord-Ierland"@li ;
+	skos:prefLabel "Noord-Ierland"@li ;
+	schema:name "Noord-Ierland"@li ;
+	rdfs:label "ስሜን አየርላንድ"@am ;
+	skos:prefLabel "ስሜን አየርላንድ"@am ;
+	schema:name "ስሜን አየርላንድ"@am ;
+	rdfs:label "Төньяҡ Ирландия"@ba ;
+	skos:prefLabel "Төньяҡ Ирландия"@ba ;
+	schema:name "Төньяҡ Ирландия"@ba ;
+	rdfs:label "Shimoliy Irlandiya"@uz ;
+	skos:prefLabel "Shimoliy Irlandiya"@uz ;
+	schema:name "Shimoliy Irlandiya"@uz ;
+	rdfs:label "Солтүстік Ирландия"@kk ;
+	skos:prefLabel "Солтүстік Ирландия"@kk ;
+	schema:name "Солтүстік Ирландия"@kk ;
+	rdfs:label "Irlanda de su Norti"@sc ;
+	skos:prefLabel "Irlanda de su Norti"@sc ;
+	schema:name "Irlanda de su Norti"@sc ;
+	rdfs:label "شمالی ایرلند"@mzn ;
+	skos:prefLabel "شمالی ایرلند"@mzn ;
+	schema:name "شمالی ایرلند"@mzn ;
+	rdfs:label "Nuurdirlun"@frr ;
+	skos:prefLabel "Nuurdirlun"@frr ;
+	schema:name "Nuurdirlun"@frr ;
+	rdfs:label "उत्तरी आयरल्यान्ड"@ne ;
+	skos:prefLabel "उत्तरी आयरल्यान्ड"@ne ;
+	schema:name "उत्तरी आयरल्यान्ड"@ne ;
+	rdfs:label "उत्तर आयर्लंड"@gom ;
+	skos:prefLabel "उत्तर आयर्लंड"@gom ;
+	schema:name "उत्तर आयर्लंड"@gom ;
+	rdfs:label "شومالی ایرلند"@azb ;
+	skos:prefLabel "شومالی ایرلند"@azb ;
+	schema:name "شومالی ایرلند"@azb ;
+	rdfs:label "Nordirland"@gsw ;
+	skos:prefLabel "Nordirland"@gsw ;
+	schema:name "Nordirland"@gsw ;
+	rdfs:label "Northern Ireland"@ceb ;
+	skos:prefLabel "Northern Ireland"@ceb ;
+	schema:name "Northern Ireland"@ceb ;
+	rdfs:label "Irlanda del Nord"@lmo ;
+	skos:prefLabel "Irlanda del Nord"@lmo ;
+	schema:name "Irlanda del Nord"@lmo ;
+	rdfs:label "उत्तरी आयरलैंड"@bho ;
+	skos:prefLabel "उत्तरी आयरलैंड"@bho ;
+	schema:name "उत्तरी आयरलैंड"@bho ;
+	rdfs:label "ఉత్తర ఐర్లండ్"@te ;
+	skos:prefLabel "ఉత్తర ఐర్లండ్"@te ;
+	schema:name "ఉత్తర ఐర్లండ్"@te ;
+	rdfs:label "Eire ya Kaskazini"@sw ;
+	skos:prefLabel "Eire ya Kaskazini"@sw ;
+	schema:name "Eire ya Kaskazini"@sw ;
+	rdfs:label "උතුරු අයර්ලන්තය"@si ;
+	skos:prefLabel "උතුරු අයර්ලන්තය"@si ;
+	schema:name "උතුරු අයර්ලන්තය"@si ;
+	rdfs:label "Ut'tor Ireland"@gom-latn ;
+	skos:prefLabel "Ut'tor Ireland"@gom-latn ;
+	schema:name "Ut'tor Ireland"@gom-latn ;
+	rdfs:label "उत्तर आयर्लंड"@gom-deva ;
+	skos:prefLabel "उत्तर आयर्लंड"@gom-deva ;
+	schema:name "उत्तर आयर्लंड"@gom-deva ;
+	schema:description "region in north-west Europe, part of the United Kingdom"@en-gb,
+		"region in north-west Europe, part of the United Kingdom"@en,
+		"nazione del Regno Unito"@it,
+		"часть Соединённого Королевства Великобритании и Северной Ирландии, расположенная в северо-восточной части острова Ирландия."@ru,
+		"nation constitutive du Royaume-Uni"@fr,
+		"Landesteil im Vereinigten Königreich Großbritannien und Nordirland"@de,
+		"英國的地區"@zh-hant,
+		"nación constituyente del Reino Unido"@es,
+		"del av Det forente kongeriket Storbritannia og Nord-Irland"@nb,
+		"英国的地区"@zh-hans,
+		"英国的地区"@zh-cn,
+		"英国的地区"@zh-sg,
+		"英国的地区"@zh-my,
+		"英国的地区"@zh,
+		"英國的地區"@zh-hk,
+		"英國的地區"@zh-tw,
+		"英國的地區"@zh-mo,
+		"país europeu del Regne Unit"@ca,
+		"Irlannin saarella sijaitseva maa, joka kuuluu Yhdistyneeseen kuningaskuntaan"@fi,
+		"pagilian idiay Amianan nga Europa, paset ti Nagkaykaysa a Pagarian"@ilo,
+		"região no norte da Europa, parte do Reino Unido"@pt-br,
+		"Land in Europa, onderdeel van het Verenigd Koninkrijk"@nl,
+		"ஐக்கிய இராச்சியத்தின் ஒரு பகுதி"@ta,
+		"イギリスのカントリー"@ja,
+		"país na Europa"@pt,
+		"одна з чотирьох частин Сполученого королівства Великої Британії та Північної Ірландії"@uk,
+		"tagország az Egyesült Királyságban"@hu,
+		"țară în Regatul Unit al Marii Britanii și Irlandei de Nord"@ro,
+		"영국의 4개 지방 중 하나"@ko,
+		"Konstituerande del av Förenade kungariket"@sv,
+		"उत्तर-पश्चिम युरोपको क्षेत्र, संयुक्त अधिराज्यको भाग"@ne,
+		"երկիր Եվրոպայի հյուսիս-արևմուտքում: Մեծ Բրիտանիայի վարչաքաղաքական մաս"@hy,
+		"ਉੱਤਰ-ਪੱਛਮ ਯੂਰਪ 'ਚ ਦੇਸ਼, ਸੰਯੁਕਤ ਬਾਦਸ਼ਾਹੀ ਦਾ ਹਿੱਸਾ"@pa,
+		"ಯುನೈಟೆಡ್ ಕಿಂಗ್ಡಮ್ ನ ಒಂದು ದೇಶ. ಯುರೋಪ್ ಖಂಡದ ವಾಯುವ್ಯ ಭಾಗದಲ್ಲಿದೆ"@kn,
+		"isang bahagi ng Nagkakaisang Kaharian"@tl,
+		"част от Обединеното кралство Великобритания и Северна Ирландия"@bg,
+		"regija sjeverozapadne Europe, članica Ujedinjenog Kraljevstva"@hr,
+		"nchi ya visiwa katika Ulaya Kaskazini-Magharibi, sehemu ya Ufalme wa Muungano"@sw,
+		"ประเทศในยุโรปตะวันตกเฉียงเหนือ ส่วนหนึ่งของสหราชอาณาจักร"@th,
+		"parto de la Unuiĝinta Reĝlando kiu situas sur la insulo Irlando"@eo,
+		"wilayah di Eropa Utara, bagian dari Britania Raya"@id,
+		"യുണൈറ്റഡ് കിങ്ഡത്തിലെ നാലു രാജ്യങ്ങളിൽ ഒന്നാണ് വടക്കൻ അയർലണ്ട് അഥവാ നോർത്തേൺ അയർലണ്ട്"@ml,
+		"Birleşik Krallık'ın parçası olan Batı Avrupa ülkesi"@tr,
+		"регија у северозападној Европи, део Уједињеног Краљевства"@sr,
+		"Część składowa Wielkiej Brytanii"@pl ;
+	skos:altLabel "Ulster"@ca,
+		"NIR"@en,
+		"UKN"@en,
+		"North Ireland"@en,
+		"Northern Ireland"@th,
+		"ไอร์แลนด์เหนือ"@th,
+		"Norlin Airlan"@sco,
+		"Norlin Airlann"@sco,
+		"Norn Iron"@en-gb,
+		"നോർത്തേൺ അയർലണ്ട്"@ml,
+		"நொர்தேர்ந் இரேலண்ட்"@ta ;
+	wdt:P1549 "Northern Irish"@en,
+		"nordirisch"@de,
+		"Nordire"@de,
+		"Nordirin"@de,
+		"Noord-Ier"@nl,
+		"Nordirländare"@sv,
+		"észak-ír"@hu ;
+	wdt:P948 <http://commons.wikimedia.org/wiki/Special:FilePath/Northern%20Ireland%20Banner%20Giant%27s%20Causeway.jpg> ;
+	wdt:P1151 wd:Q11045856 ;
+	wdt:P37 wd:Q1860 ;
+	wdt:P17 wd:Q145 ;
+	wdt:P47 wd:Q27 ;
+	wdt:P38 wd:Q25224 ;
+	wdt:P36 wd:Q10686 ;
+	wdt:P194 wd:Q285714 ;
+	wdt:P30 wd:Q46 ;
+	wdt:P242 <http://commons.wikimedia.org/wiki/Special:FilePath/Northern%20Ireland%20in%20the%20UK%20and%20Europe.svg>,
+		<http://commons.wikimedia.org/wiki/Special:FilePath/LocationNorthernIreland.png>,
+		<http://commons.wikimedia.org/wiki/Special:FilePath/Northern-irland-religions-1991.jpg>,
+		<http://commons.wikimedia.org/wiki/Special:FilePath/LocationNorthernIreland.svg> ;
+	wdt:P300 "GB-NIR" ;
+	wdt:P421 wd:Q6574,
+		wd:Q28145993 ;
+	wdt:P373 "Northern Ireland" ;
+	wdt:P131 wd:Q145 ;
+	wdt:P18 <http://commons.wikimedia.org/wiki/Special:FilePath/Belfast%20City%20Hall%202.jpg> ;
+	wdt:P625 "Point(-5.84 54.590933333333)"^^geo:wktLiteral ;
+	wdt:P910 wd:Q7347668 ;
+	wdt:P836 "N92000002" ;
+	wdt:P41 <http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Northern%20Ireland.svg> ;
+	wdt:P94 <http://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20Arms%20of%20Northern%20Ireland.svg> ;
+	wdt:P237 wd:Q727872 ;
+	wdt:P31 wd:Q3336843,
+		wd:Q26934845 ;
+	wdt:P349 "00566023" ;
+	wdtn:P349 <http://id.ndl.go.jp/auth/ndlna/00566023> ;
+	wdt:P227 "4075462-5" ;
+	wdtn:P227 <http://d-nb.info/gnd/4075462-5> ;
+	wdt:P214 "260550545" ;
+	wdtn:P214 <http://viaf.org/viaf/260550545> ;
+	wdt:P214 "146210387" ;
+	wdtn:P214 <http://viaf.org/viaf/146210387> ;
+	wdt:P998 "Regional/Europe/United_Kingdom/Northern_Ireland/" ;
+	wdt:P361 wd:Q22890 ;
+	wdt:P268 "11984750z" ;
+	wdtn:P268 <http://data.bnf.fr/ark:/12148/cb11984750z> ;
+	wdt:P409 "35391416" ;
+	wdt:P269 "027906221" ;
+	wdtn:P269 <https://www.idref.fr/027906221/id> ;
+	wdt:P213 "0000 0001 2178 958X" ;
+	wdt:P244 "n79055927" ;
+	wdtn:P244 <http://id.loc.gov/authorities/names/n79055927> ;
+	wdt:P982 "2b30f961-ed7c-40d2-a9c5-6a905b35439a" ;
+	wdtn:P982 <http://musicbrainz.org/2b30f961-ed7c-40d2-a9c5-6a905b35439a/area> ;
+	wdt:P646 "/m/05bcl" ;
+	wdtn:P646 <http://g.co/kg/m/05bcl> ;
+	wdt:P1464 wd:Q14330736 ;
+	wdt:P1465 wd:Q6334317 ;
+	wdt:P1566 "2641364" ;
+	wdtn:P1566 <http://sws.geonames.org/2641364/> ;
+	wdt:P402 "156393" ;
+	wdt:P1740 wd:Q7140842 ;
+	wdt:P1792 wd:Q6993731 ;
+	wdt:P605 "UKN" ;
+	wdt:P2184 wd:Q1468953 ;
+	wdt:P2163 "1205215" ;
+	wdtn:P2163 <http://id.worldcat.org/fast/1205215> ;
+	wdt:P1082 "+1852168"^^xsd:decimal ;
+	wdt:P2046 "+14130"^^xsd:decimal ;
+	wdt:P571 "1921-01-01T00:00:00Z"^^xsd:dateTime ;
+	wdt:P150 wd:Q5444365,
+		wd:Q15213714,
+		wd:Q6840825,
+		wd:Q5054638,
+		wd:Q6841059,
+		wd:Q4777347,
+		wd:Q7055155,
+		wd:Q4792580,
+		wd:Q6558667,
+		wd:Q15262186,
+		wd:Q10686 ;
+	wdt:P935 "Northern Ireland" ;
+	wdt:P3222 "nordirland" ;
+	wdt:P3221 "destination/northern-ireland" ;
+	wdt:P3106 "uk/northernireland" ;
+	wdt:P2959 wd:Q25690650 ;
+	wdt:P3417 "Northern-Ireland-1" ;
+	wdt:P3612 "pays/irlandedunord" ;
+	wdt:P1343 wd:Q602358,
+		wd:Q4173137,
+		wd:Q19180675 ;
+	wdt:P3984 "northernireland" ;
+	wdt:P3722 "Maps of Northern Ireland" ;
+	wdt:P2347 "105720" ;
+	wdt:P1313 wd:Q22979263,
+		wd:Q23729452 ;
+	wdt:P4212 "pcrtJrLSEvk8S8" ;
+	wdt:P1225 "10044299" ;
+	wdt:P208 wd:Q2665914 ;
+	wdt:P1791 wd:Q13249230 ;
+	wdt:P4427 "26788" ;
+	wdt:P486 "D009660" ;
+	wdtn:P486 <http://id.nlm.nih.gov/mesh/D009660> ;
+	wdt:P2581 "00058082n" ;
+	wdtn:P2581 <http://babelnet.org/rdf/s00058082n> ;
+	p:P1549 wds:Q26-359b4cbf-41c5-4717-589c-eaee1ee2a323 .
+
+wds:Q26-359b4cbf-41c5-4717-589c-eaee1ee2a323 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "Northern Irish"@en .
+
+wd:Q26 p:P1549 wds:Q26-516ef7a7-48f8-5bdc-418e-d11f149b3759 .
+
+wds:Q26-516ef7a7-48f8-5bdc-418e-d11f149b3759 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "nordirisch"@de .
+
+wd:Q26 p:P1549 wds:Q26-d7eba786-444b-3bf2-3529-b67289c85b74 .
+
+wds:Q26-d7eba786-444b-3bf2-3529-b67289c85b74 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "Nordire"@de ;
+	pq:P518 wd:Q499327 .
+
+wd:Q26 p:P1549 wds:Q26-8cda36a5-4008-f348-b47f-04d49fb648b6 .
+
+wds:Q26-8cda36a5-4008-f348-b47f-04d49fb648b6 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "Nordirin"@de ;
+	pq:P518 wd:Q1775415 .
+
+wd:Q26 p:P1549 wds:Q26-7ccd5b99-446c-8d2f-9b8a-5ca797a5525a .
+
+wds:Q26-7ccd5b99-446c-8d2f-9b8a-5ca797a5525a a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "Noord-Ier"@nl .
+
+wd:Q26 p:P1549 wds:Q26-e2cf2db4-4712-15e4-5631-5573a8c1e80f .
+
+wds:Q26-e2cf2db4-4712-15e4-5631-5573a8c1e80f a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "Nordirländare"@sv .
+
+wd:Q26 p:P1549 wds:Q26-33845a2f-478a-be14-4530-8ae66339bec1 .
+
+wds:Q26-33845a2f-478a-be14-4530-8ae66339bec1 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1549 "észak-ír"@hu .
+
+wd:Q26 p:P948 wds:Q26-D6D18E05-FA36-4D70-B768-21E3F0081B56 .
+
+wds:Q26-D6D18E05-FA36-4D70-B768-21E3F0081B56 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P948 <http://commons.wikimedia.org/wiki/Special:FilePath/Northern%20Ireland%20Banner%20Giant%27s%20Causeway.jpg> .
+
+wd:Q26 p:P1151 wds:Q26-badd854c-42e5-e3cb-426d-36555c8a1469 .
+
+wds:Q26-badd854c-42e5-e3cb-426d-36555c8a1469 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1151 wd:Q11045856 .
+
+wd:Q26 p:P37 wds:q26-58A64967-9BE7-482F-AE54-3E8FB3F33FA3 .
+
+wds:q26-58A64967-9BE7-482F-AE54-3E8FB3F33FA3 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P37 wd:Q1860 .
+
+wd:Q26 p:P17 wds:q26-852B8F49-196A-45BE-8C26-2837E2A58892 .
+
+wds:q26-852B8F49-196A-45BE-8C26-2837E2A58892 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P17 wd:Q145 .
+
+wd:Q26 p:P47 wds:Q26-34E8055E-650D-4697-AF0A-C16C237427D7 .
+
+wds:Q26-34E8055E-650D-4697-AF0A-C16C237427D7 a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P47 wd:Q187402 .
+
+wd:Q26 p:P47 wds:Q26-a81b08d6-4efb-33c3-1ee4-6fa86145d572 .
+
+wds:Q26-a81b08d6-4efb-33c3-1ee4-6fa86145d572 a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P47 wd:Q179424 .
+
+wd:Q26 p:P47 wds:Q26-54f4d5c3-426d-9479-faac-2a98a24b54c1 .
+
+wds:Q26-54f4d5c3-426d-9479-faac-2a98a24b54c1 a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P47 wd:Q107397 .
+
+wd:Q26 p:P47 wds:Q26-64d73814-4522-e5cb-9a59-b4a6db8b12aa .
+
+wds:Q26-64d73814-4522-e5cb-9a59-b4a6db8b12aa a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P47 wd:Q184760 .
+
+wd:Q26 p:P47 wds:Q26-290bd0f6-4a0e-4455-6e72-28fffae1d23a .
+
+wds:Q26-290bd0f6-4a0e-4455-6e72-28fffae1d23a a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P47 wd:Q183539 .
+
+wd:Q26 p:P47 wds:Q26-6c7a4162-4911-6c2f-820f-bfd878f4e23d .
+
+wds:Q26-6c7a4162-4911-6c2f-820f-bfd878f4e23d a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:PreferredRank ;
+	ps:P47 wd:Q27 .
+
+wd:Q26 p:P38 wds:q26-64A388C0-E519-4CC4-8BD8-E7BE4C4E4336 .
+
+wds:q26-64A388C0-E519-4CC4-8BD8-E7BE4C4E4336 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P38 wd:Q25224 .
+
+wd:Q26 p:P36 wds:q26-94CA0F5F-9D0F-4CE8-9B76-D3066FDCF210 .
+
+wds:q26-94CA0F5F-9D0F-4CE8-9B76-D3066FDCF210 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P36 wd:Q10686 .
+
+wd:Q26 p:P194 wds:q26-F8B0C537-E9EB-4AEF-95BC-CD9C9C5D1D48 .
+
+wds:q26-F8B0C537-E9EB-4AEF-95BC-CD9C9C5D1D48 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P194 wd:Q285714 .
+
+wd:Q26 p:P30 wds:q26-25DB693C-CED1-459A-A88D-0249937FDE99 .
+
+wds:q26-25DB693C-CED1-459A-A88D-0249937FDE99 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P30 wd:Q46 .
+
+wd:Q26 p:P242 wds:q26-4395C5E4-CEAB-4FA9-94C3-D7AD35C7DABB .
+
+wds:q26-4395C5E4-CEAB-4FA9-94C3-D7AD35C7DABB a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P242 <http://commons.wikimedia.org/wiki/Special:FilePath/Northern%20Ireland%20in%20the%20UK%20and%20Europe.svg> .
+
+wd:Q26 p:P242 wds:q26-107CBB4F-EE93-4B6C-82C4-9E441E5A40AF .
+
+wds:q26-107CBB4F-EE93-4B6C-82C4-9E441E5A40AF a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P242 <http://commons.wikimedia.org/wiki/Special:FilePath/LocationNorthernIreland.png> .
+
+wd:Q26 p:P242 wds:q26-FC64A2EA-EC65-4611-AA1D-04B809E8F152 .
+
+wds:q26-FC64A2EA-EC65-4611-AA1D-04B809E8F152 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P242 <http://commons.wikimedia.org/wiki/Special:FilePath/Northern-irland-religions-1991.jpg> .
+
+wd:Q26 p:P242 wds:Q26-7F741ACA-60E2-4D2F-A9E7-2DFACACA7A80 .
+
+wds:Q26-7F741ACA-60E2-4D2F-A9E7-2DFACACA7A80 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P242 <http://commons.wikimedia.org/wiki/Special:FilePath/LocationNorthernIreland.svg> ;
+	pq:P195 wd:Q40426579 ;
+	pq:P2061 wd:Q30302657 .
+
+wd:Q26 p:P300 wds:q26-EA43356C-650E-4A95-86B4-C9B58DCF55A4 .
+
+wds:q26-EA43356C-650E-4A95-86B4-C9B58DCF55A4 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P300 "GB-NIR" .
+
+wd:Q26 p:P421 wds:q26-13F0388F-E40C-4236-9050-E5FBAA8436F4 .
+
+wds:q26-13F0388F-E40C-4236-9050-E5FBAA8436F4 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P421 wd:Q6574 .
+
+wd:Q26 p:P421 wds:Q26-81d8a852-4952-fcb2-d8b7-48551dbe4da6 .
+
+wds:Q26-81d8a852-4952-fcb2-d8b7-48551dbe4da6 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P421 wd:Q28145993 .
+
+wd:Q26 p:P373 wds:q26-9F7CB20C-E745-43FE-92F7-67A58315F157 .
+
+wds:q26-9F7CB20C-E745-43FE-92F7-67A58315F157 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P373 "Northern Ireland" .
+
+wd:Q26 p:P131 wds:q26-B0288EF9-B105-4697-864C-7C3529ED290B .
+
+wds:q26-B0288EF9-B105-4697-864C-7C3529ED290B a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P131 wd:Q145 .
+
+wd:Q26 p:P18 wds:q26-0AE3EEC4-5E42-43E3-9B36-2D31B953799B .
+
+wds:q26-0AE3EEC4-5E42-43E3-9B36-2D31B953799B a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P18 <http://commons.wikimedia.org/wiki/Special:FilePath/Belfast%20City%20Hall%202.jpg> .
+
+wd:Q26 p:P625 wds:q26-4ABA49AF-2C82-4A58-9F79-9B7AE08B89B8 .
+
+wds:q26-4ABA49AF-2C82-4A58-9F79-9B7AE08B89B8 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P625 "Point(-5.84 54.590933333333)"^^geo:wktLiteral ;
+	psv:P625 wdv:1777d55550c496775579f67621df083b ;
+	prov:wasDerivedFrom wdref:fa278ebfc458360e5aed63d5058cca83c46134f1 .
+
+wd:Q26 p:P910 wds:Q26-45D93F4D-9605-4D4F-83F2-74F9D7945412 .
+
+wds:Q26-45D93F4D-9605-4D4F-83F2-74F9D7945412 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P910 wd:Q7347668 .
+
+wd:Q26 p:P836 wds:Q26-fab59738-4f98-6d7e-e58e-a97d5c01e349 .
+
+wds:Q26-fab59738-4f98-6d7e-e58e-a97d5c01e349 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P836 "N92000002" .
+
+wd:Q26 p:P41 wds:Q26-730D4CF1-FA36-48D4-BEC2-878FC38E6170 .
+
+wds:Q26-730D4CF1-FA36-48D4-BEC2-878FC38E6170 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P41 <http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Northern%20Ireland.svg> ;
+	prov:wasDerivedFrom wdref:288ab581e7d2d02995a26dfa8b091d96e78457fc .
+
+wd:Q26 p:P94 wds:Q26-103e5afd-4a96-0442-1a3d-dd4d3c7dd411 .
+
+wds:Q26-103e5afd-4a96-0442-1a3d-dd4d3c7dd411 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P94 <http://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20Arms%20of%20Northern%20Ireland.svg> .
+
+wd:Q26 p:P237 wds:Q26-DC6580E2-0422-4CA8-A29C-143026849200 .
+
+wds:Q26-DC6580E2-0422-4CA8-A29C-143026849200 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P237 wd:Q727872 ;
+	prov:wasDerivedFrom wdref:288ab581e7d2d02995a26dfa8b091d96e78457fc .
+
+wd:Q26 p:P31 wds:Q26-826ab998-4e79-e266-27e3-33efea1b48d1 .
+
+wds:Q26-826ab998-4e79-e266-27e3-33efea1b48d1 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P31 wd:Q3336843 .
+
+wd:Q26 p:P31 wds:Q26-76f30a8e-4597-2f8f-4ff2-cf633437005c .
+
+wds:Q26-76f30a8e-4597-2f8f-4ff2-cf633437005c a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P31 wd:Q26934845 .
+
+wd:Q26 p:P349 wds:Q26-C39E783F-CE24-416F-931A-ADF72B5A6D27 .
+
+wds:Q26-C39E783F-CE24-416F-931A-ADF72B5A6D27 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P349 "00566023" ;
+	psn:P349 <http://id.ndl.go.jp/auth/ndlna/00566023> .
+
+wd:Q26 p:P227 wds:Q26-87E117CD-206E-40EA-A533-877AB5C5C847 .
+
+wds:Q26-87E117CD-206E-40EA-A533-877AB5C5C847 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P227 "4075462-5" ;
+	psn:P227 <http://d-nb.info/gnd/4075462-5> ;
+	prov:wasDerivedFrom wdref:9a24f7c0208b05d6be97077d855671d1dfdbc0dd .
+
+wd:Q26 p:P214 wds:Q26-AFBA3886-2F73-4670-93E0-4159066B3C1A .
+
+wds:Q26-AFBA3886-2F73-4670-93E0-4159066B3C1A a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P214 "260550545" ;
+	psn:P214 <http://viaf.org/viaf/260550545> ;
+	prov:wasDerivedFrom wdref:759b2a264fff886006b6f49c3ef2f1acbfd1cef0 .
+
+wd:Q26 p:P214 wds:Q26-5602979b-4c3e-ce14-db8b-b6e0a27f1446 .
+
+wds:Q26-5602979b-4c3e-ce14-db8b-b6e0a27f1446 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P214 "146210387" ;
+	psn:P214 <http://viaf.org/viaf/146210387> .
+
+wd:Q26 p:P998 wds:Q26-2530265C-B49F-4A4A-9F23-C1BFE27C27C7 .
+
+wds:Q26-2530265C-B49F-4A4A-9F23-C1BFE27C27C7 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P998 "Regional/Europe/United_Kingdom/Northern_Ireland/" .
+
+wd:Q26 p:P361 wds:Q26-2d5e1742-43c8-84d7-c30a-23ae15578e76 .
+
+wds:Q26-2d5e1742-43c8-84d7-c30a-23ae15578e76 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P361 wd:Q22890 .
+
+wd:Q26 p:P268 wds:Q26-220f9564-4c22-65b3-ca78-71e41b7856a9 .
+
+wds:Q26-220f9564-4c22-65b3-ca78-71e41b7856a9 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P268 "11984750z" ;
+	psn:P268 <http://data.bnf.fr/ark:/12148/cb11984750z> .
+
+wd:Q26 p:P409 wds:Q26-7DB43DBD-563D-47A2-86B5-271177FE5A7B .
+
+wds:Q26-7DB43DBD-563D-47A2-86B5-271177FE5A7B a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P409 "35391416" .
+
+wd:Q26 p:P269 wds:Q26-03D5AB24-26E6-4FAE-9F26-C8C4E96C9B44 .
+
+wds:Q26-03D5AB24-26E6-4FAE-9F26-C8C4E96C9B44 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P269 "027906221" ;
+	psn:P269 <https://www.idref.fr/027906221/id> .
+
+wd:Q26 p:P213 wds:Q26-332B67B0-24A6-48DE-B218-240F7D9004E2 .
+
+wds:Q26-332B67B0-24A6-48DE-B218-240F7D9004E2 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P213 "0000 0001 2178 958X" .
+
+wd:Q26 p:P244 wds:Q26-1B5E46A4-CBA4-49B0-B8EC-0732DBDD0190 .
+
+wds:Q26-1B5E46A4-CBA4-49B0-B8EC-0732DBDD0190 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P244 "n79055927" ;
+	psn:P244 <http://id.loc.gov/authorities/names/n79055927> .
+
+wd:Q26 p:P982 wds:Q26-C6F29E7D-DA14-4C1A-8F13-3E7DFF92A140 .
+
+wds:Q26-C6F29E7D-DA14-4C1A-8F13-3E7DFF92A140 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P982 "2b30f961-ed7c-40d2-a9c5-6a905b35439a" ;
+	psn:P982 <http://musicbrainz.org/2b30f961-ed7c-40d2-a9c5-6a905b35439a/area> ;
+	prov:wasDerivedFrom wdref:706208b3024200fd0a39ad499808dd0d98d74065 .
+
+wd:Q26 p:P646 wds:Q26-998388AD-C5BA-4FCA-A818-6DA9C920A4EA .
+
+wds:Q26-998388AD-C5BA-4FCA-A818-6DA9C920A4EA a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P646 "/m/05bcl" ;
+	psn:P646 <http://g.co/kg/m/05bcl> ;
+	prov:wasDerivedFrom wdref:2b00cb481cddcac7623114367489b5c194901c4a .
+
+wd:Q26 p:P1464 wds:Q26-81FD59F2-C0C6-4C07-AF2F-FEE32D7E0360 .
+
+wds:Q26-81FD59F2-C0C6-4C07-AF2F-FEE32D7E0360 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1464 wd:Q14330736 ;
+	prov:wasDerivedFrom wdref:288ab581e7d2d02995a26dfa8b091d96e78457fc .
+
+wd:Q26 p:P1465 wds:Q26-9558A45A-B861-4085-B9E5-BEB29DD1F023 .
+
+wds:Q26-9558A45A-B861-4085-B9E5-BEB29DD1F023 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1465 wd:Q6334317 ;
+	prov:wasDerivedFrom wdref:288ab581e7d2d02995a26dfa8b091d96e78457fc .
+
+wd:Q26 p:P1566 wds:Q26-38E0F450-B251-42FC-BBB0-DF511D89D264 .
+
+wds:Q26-38E0F450-B251-42FC-BBB0-DF511D89D264 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1566 "2641364" ;
+	psn:P1566 <http://sws.geonames.org/2641364/> ;
+	prov:wasDerivedFrom wdref:64133510dcdf15e7943de41e4835c673fc5d6fe4 .
+
+wd:Q26 p:P402 wds:Q26-2E8FBD83-1CB8-47C0-9480-E19C166D363D .
+
+wds:Q26-2E8FBD83-1CB8-47C0-9480-E19C166D363D a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P402 "156393" ;
+	prov:wasDerivedFrom wdref:ee5f9c964b309c1c15d9c51bfcbc41b0cfea0462 .
+
+wd:Q26 p:P1740 wds:Q26-E1722202-D49C-4D59-9A8C-9BAA1EDF2220 .
+
+wds:Q26-E1722202-D49C-4D59-9A8C-9BAA1EDF2220 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1740 wd:Q7140842 .
+
+wd:Q26 p:P1792 wds:Q26-3AE96A73-345D-4207-9522-DE8A240DC2AF .
+
+wds:Q26-3AE96A73-345D-4207-9522-DE8A240DC2AF a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1792 wd:Q6993731 ;
+	prov:wasDerivedFrom wdref:288ab581e7d2d02995a26dfa8b091d96e78457fc .
+
+wd:Q26 p:P605 wds:Q26-9C3323AE-3369-49FA-9B23-E9759AC2933F .
+
+wds:Q26-9C3323AE-3369-49FA-9B23-E9759AC2933F a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P605 "UKN" ;
+	pq:P580 "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+	pqv:P580 wdv:c86dd467f6ae1208acf7f3b066561b48 .
+
+wd:Q26 p:P2184 wds:Q26-a99b4ba0-46d6-cdec-2181-e415c83df6f5 .
+
+wds:Q26-a99b4ba0-46d6-cdec-2181-e415c83df6f5 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P2184 wd:Q1468953 .
+
+wd:Q26 p:P2163 wds:Q26-9a8954d9-40e6-0e88-3c16-8459f1eaaaae .
+
+wds:Q26-9a8954d9-40e6-0e88-3c16-8459f1eaaaae a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P2163 "1205215" ;
+	psn:P2163 <http://id.worldcat.org/fast/1205215> .
+
+wd:Q26 p:P1082 wds:Q26-0778968d-4a21-5593-8469-3a1ea8dfb3bd .
+
+wds:Q26-0778968d-4a21-5593-8469-3a1ea8dfb3bd a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:PreferredRank ;
+	ps:P1082 "+1852168"^^xsd:decimal ;
+	psv:P1082 wdv:4755bda544f7850b1fba97a8e1137196 ;
+	pq:P459 wd:Q791801 ;
+	pq:P585 "2015-01-01T00:00:00Z"^^xsd:dateTime ;
+	pqv:P585 wdv:418aedfba643e02a5ba758952f8f7765 .
+
+wd:Q26 p:P1082 wds:Q26-02de7dcb-450a-6316-e82c-2e004f292c22 .
+
+wds:Q26-02de7dcb-450a-6316-e82c-2e004f292c22 a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1082 "+1810863"^^xsd:decimal ;
+	psv:P1082 wdv:423ee6802a7a544b27120a1a4811a586 ;
+	pq:P459 wd:Q39825 ;
+	pq:P585 "2011-01-01T00:00:00Z"^^xsd:dateTime ;
+	pqv:P585 wdv:19fb1e607fb895edac44d92bd9141272 ;
+	prov:wasDerivedFrom wdref:5a01d63fe7596970c28852af94f513ab888d7ffc .
+
+wd:Q26 p:P1082 wds:Q26-55a1c4ad-4740-8d86-65ef-85fb710ef399 .
+
+wds:Q26-55a1c4ad-4740-8d86-65ef-85fb710ef399 a wikibase:Statement ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1082 "+1862100"^^xsd:decimal ;
+	psv:P1082 wdv:7eb0114cad5f3575fe8d459947b9c0f0 ;
+	pq:P585 "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+	pqv:P585 wdv:864c28093f3e70d5e1967de207df801e ;
+	pq:P459 wd:Q791801 .
+
+wd:Q26 p:P2046 wds:Q26-a1f0c632-49c5-1799-b271-d3b8cf5eae50 .
+
+wds:Q26-a1f0c632-49c5-1799-b271-d3b8cf5eae50 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P2046 "+14130"^^xsd:decimal ;
+	psv:P2046 wdv:b32162b6898cd452ac9bf9408b4649c5 ;
+	psn:P2046 wdv:fa800b9f3cda99341403ba99d3b19b97 .
+
+wd:Q26 p:P571 wds:Q26-5a049e09-480f-bb66-8b9c-d9b32b0ee909 .
+
+wds:Q26-5a049e09-480f-bb66-8b9c-d9b32b0ee909 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P571 "1921-01-01T00:00:00Z"^^xsd:dateTime ;
+	psv:P571 wdv:a52bee464ca9cb1a0bbc22c3cf42f444 .
+
+wd:Q26 p:P150 wds:Q26-76835ed4-4fa9-9446-cec5-09b169b54754 .
+
+wds:Q26-76835ed4-4fa9-9446-cec5-09b169b54754 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q5444365 .
+
+wd:Q26 p:P150 wds:Q26-2fc474eb-4972-ac1d-e10b-1ea2a4b1faf5 .
+
+wds:Q26-2fc474eb-4972-ac1d-e10b-1ea2a4b1faf5 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q15213714 .
+
+wd:Q26 p:P150 wds:Q26-6d6861b8-41ca-e366-8afa-8fc8a7adb5b1 .
+
+wds:Q26-6d6861b8-41ca-e366-8afa-8fc8a7adb5b1 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q6840825 .
+
+wd:Q26 p:P150 wds:Q26-e293ab78-4f50-e8ef-1ef1-8b89f2884881 .
+
+wds:Q26-e293ab78-4f50-e8ef-1ef1-8b89f2884881 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q5054638 .
+
+wd:Q26 p:P150 wds:Q26-22587fc2-4d78-5f33-1854-7c56a6cddb02 .
+
+wds:Q26-22587fc2-4d78-5f33-1854-7c56a6cddb02 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q6841059 .
+
+wd:Q26 p:P150 wds:Q26-0468ca24-4c6a-943c-0946-a28a05e8a524 .
+
+wds:Q26-0468ca24-4c6a-943c-0946-a28a05e8a524 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q4777347 .
+
+wd:Q26 p:P150 wds:Q26-99b949c7-4066-997c-d725-d173e6531ca7 .
+
+wds:Q26-99b949c7-4066-997c-d725-d173e6531ca7 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q7055155 .
+
+wd:Q26 p:P150 wds:Q26-a99f4432-43ee-7b31-5f08-62b5a9e8aef1 .
+
+wds:Q26-a99f4432-43ee-7b31-5f08-62b5a9e8aef1 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q4792580 .
+
+wd:Q26 p:P150 wds:Q26-2a75e6cf-4a6a-596d-ed34-98bdff451824 .
+
+wds:Q26-2a75e6cf-4a6a-596d-ed34-98bdff451824 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q6558667 .
+
+wd:Q26 p:P150 wds:Q26-1641e8ad-446c-b6cb-c612-d2e29626cfae .
+
+wds:Q26-1641e8ad-446c-b6cb-c612-d2e29626cfae a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q15262186 .
+
+wd:Q26 p:P150 wds:Q26-6656dfc9-42cc-f39d-1476-cb8a12ccb19e .
+
+wds:Q26-6656dfc9-42cc-f39d-1476-cb8a12ccb19e a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P150 wd:Q10686 .
+
+wd:Q26 p:P935 wds:Q26-08AC6E4B-0DAD-4B7D-88E8-1FA8FC62B27F .
+
+wds:Q26-08AC6E4B-0DAD-4B7D-88E8-1FA8FC62B27F a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P935 "Northern Ireland" .
+
+wd:Q26 p:P3222 wds:Q26-385fcb04-487e-2c95-e5a6-a4ea3f6bf28a .
+
+wds:Q26-385fcb04-487e-2c95-e5a6-a4ea3f6bf28a a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3222 "nordirland" .
+
+wd:Q26 p:P3221 wds:Q26-8C8DA062-E64C-41B0-B757-B97415DC00EF .
+
+wds:Q26-8C8DA062-E64C-41B0-B757-B97415DC00EF a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3221 "destination/northern-ireland" .
+
+wd:Q26 p:P3106 wds:Q26-18f0bd31-4908-4fa4-c11d-fb500fa9b9e6 .
+
+wds:Q26-18f0bd31-4908-4fa4-c11d-fb500fa9b9e6 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3106 "uk/northernireland" .
+
+wd:Q26 p:P2959 wds:Q26-3D92219B-A1BC-4646-96C1-E28E25AABC81 .
+
+wds:Q26-3D92219B-A1BC-4646-96C1-E28E25AABC81 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P2959 wd:Q25690650 .
+
+wd:Q26 p:P3417 wds:Q26-5DE67B4B-D7AE-498B-9FF6-908D1FE141D2 .
+
+wds:Q26-5DE67B4B-D7AE-498B-9FF6-908D1FE141D2 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3417 "Northern-Ireland-1" .
+
+wd:Q26 p:P3612 wds:Q26-E7AE36A9-DAA8-4FDC-AE6E-D1B4CC2BAD14 .
+
+wds:Q26-E7AE36A9-DAA8-4FDC-AE6E-D1B4CC2BAD14 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3612 "pays/irlandedunord" .
+
+wd:Q26 p:P1343 wds:Q26-97e62f26-40f0-e53b-a906-f840af4bfbf9 .
+
+wds:Q26-97e62f26-40f0-e53b-a906-f840af4bfbf9 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1343 wd:Q602358 ;
+	pq:P248 wd:Q24435322 .
+
+wd:Q26 p:P1343 wds:Q26-3bcc1572-40c3-06d4-dd15-a1401e8b3879 .
+
+wds:Q26-3bcc1572-40c3-06d4-dd15-a1401e8b3879 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1343 wd:Q4173137 ;
+	pq:P248 wd:Q25035425 .
+
+wd:Q26 p:P1343 wds:Q26-28f6263a-4cfe-c477-5dfd-68f46c7a0c96 .
+
+wds:Q26-28f6263a-4cfe-c477-5dfd-68f46c7a0c96 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1343 wd:Q19180675 ;
+	pq:P248 wd:Q24729289 .
+
+wd:Q26 p:P3984 wds:Q26-38171B67-CBAE-4D20-9F17-B7C2AC56DBA1 .
+
+wds:Q26-38171B67-CBAE-4D20-9F17-B7C2AC56DBA1 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3984 "northernireland" .
+
+wd:Q26 p:P3722 wds:Q26-5379cacb-4c8d-ac3f-f86b-6e3058711a1d .
+
+wds:Q26-5379cacb-4c8d-ac3f-f86b-6e3058711a1d a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P3722 "Maps of Northern Ireland" .
+
+wd:Q26 p:P2347 wds:Q26-15BB5088-22AC-4AB4-8CE3-AB1F8347CCCA .
+
+wds:Q26-15BB5088-22AC-4AB4-8CE3-AB1F8347CCCA a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P2347 "105720" .
+
+wd:Q26 p:P1313 wds:Q26-44a6132c-4c73-c635-9d5e-e351e3dcd37c .
+
+wds:Q26-44a6132c-4c73-c635-9d5e-e351e3dcd37c a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1313 wd:Q22979263 .
+
+wd:Q26 p:P1313 wds:Q26-c11041ac-4202-b920-4e9f-eb6069cc7c3b .
+
+wds:Q26-c11041ac-4202-b920-4e9f-eb6069cc7c3b a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1313 wd:Q23729452 .
+
+wd:Q26 p:P4212 wds:Q26-B4ED23F0-CA21-4330-AD35-7987D719C836 .
+
+wds:Q26-B4ED23F0-CA21-4330-AD35-7987D719C836 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P4212 "pcrtJrLSEvk8S8" .
+
+wd:Q26 p:P1225 wds:Q26-660E8D56-B110-4942-8C21-977D87668BAB .
+
+wds:Q26-660E8D56-B110-4942-8C21-977D87668BAB a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1225 "10044299" .
+
+wd:Q26 p:P208 wds:Q26-13ac3f50-4a6f-963e-2978-d50425abcae2 .
+
+wds:Q26-13ac3f50-4a6f-963e-2978-d50425abcae2 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P208 wd:Q2665914 .
+
+wd:Q26 p:P1791 wds:Q26-ab3262b4-471b-0d39-5c2a-6f114c72c745 .
+
+wds:Q26-ab3262b4-471b-0d39-5c2a-6f114c72c745 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P1791 wd:Q13249230 .
+
+wd:Q26 p:P4427 wds:Q26-28397F42-3978-484A-ABA6-1E3A4F463480 .
+
+wds:Q26-28397F42-3978-484A-ABA6-1E3A4F463480 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P4427 "26788" .
+
+wd:Q26 p:P486 wds:Q26-DD0683D8-3CD6-44BB-88D1-043C2C399580 .
+
+wds:Q26-DD0683D8-3CD6-44BB-88D1-043C2C399580 a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P486 "D009660" ;
+	psn:P486 <http://id.nlm.nih.gov/mesh/D009660> .
+
+wd:Q26 p:P2581 wds:Q26-6CDB09A1-8142-4F03-9C82-DD993883C7AE .
+
+wds:Q26-6CDB09A1-8142-4F03-9C82-DD993883C7AE a wikibase:Statement,
+		wikibase:BestRank ;
+	wikibase:rank wikibase:NormalRank ;
+	ps:P2581 "00058082n" ;
+	psn:P2581 <http://babelnet.org/rdf/s00058082n> ;
+	prov:wasDerivedFrom wdref:bd0ee81488cd8c23d4b655e417aac78dca370283 .
+
+<https://sv.wikivoyage.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sv" ;
+	schema:isPartOf <https://sv.wikivoyage.org/> ;
+	schema:name "Nordirland"@sv .
+
+<https://sv.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://pl.wikivoyage.org/wiki/Irlandia_P%C3%B3%C5%82nocna> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pl" ;
+	schema:isPartOf <https://pl.wikivoyage.org/> ;
+	schema:name "Irlandia Północna"@pl .
+
+<https://pl.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://nl.wikivoyage.org/wiki/Noord-Ierland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nl" ;
+	schema:isPartOf <https://nl.wikivoyage.org/> ;
+	schema:name "Noord-Ierland"@nl .
+
+<https://nl.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://pt.wikivoyage.org/wiki/Irlanda_do_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pt" ;
+	schema:isPartOf <https://pt.wikivoyage.org/> ;
+	schema:name "Irlanda do Norte"@pt .
+
+<https://pt.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://it.wikivoyage.org/wiki/Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "it" ;
+	schema:isPartOf <https://it.wikivoyage.org/> ;
+	schema:name "Irlanda del Nord"@it .
+
+<https://it.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://de.wikivoyage.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "de" ;
+	schema:isPartOf <https://de.wikivoyage.org/> ;
+	schema:name "Nordirland"@de .
+
+<https://de.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://fr.wikivoyage.org/wiki/Irlande_du_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fr" ;
+	schema:isPartOf <https://fr.wikivoyage.org/> ;
+	schema:name "Irlande du Nord"@fr .
+
+<https://fr.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://vi.wikivoyage.org/wiki/B%E1%BA%AFc_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "vi" ;
+	schema:isPartOf <https://vi.wikivoyage.org/> ;
+	schema:name "Bắc Ireland"@vi .
+
+<https://vi.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://commons.wikimedia.org/wiki/Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "en" ;
+	schema:isPartOf <https://commons.wikimedia.org/> ;
+	schema:name "Northern Ireland"@en .
+
+<https://commons.wikimedia.org/> wikibase:wikiGroup "commons" .
+
+<https://he.wikivoyage.org/wiki/%D7%A6%D7%A4%D7%95%D7%9F_%D7%90%D7%99%D7%A8%D7%9C%D7%A0%D7%93> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "he" ;
+	schema:isPartOf <https://he.wikivoyage.org/> ;
+	schema:name "צפון אירלנד"@he .
+
+<https://he.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://ru.wikivoyage.org/wiki/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ru" ;
+	schema:isPartOf <https://ru.wikivoyage.org/> ;
+	schema:name "Северная Ирландия"@ru .
+
+<https://ru.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://en.wikivoyage.org/wiki/Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "en" ;
+	schema:isPartOf <https://en.wikivoyage.org/> ;
+	schema:name "Northern Ireland"@en ;
+	wikibase:badge wd:Q17559452 .
+
+<https://en.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://fa.wikivoyage.org/wiki/%D8%A7%DB%8C%D8%B1%D9%84%D9%86%D8%AF_%D8%B4%D9%85%D8%A7%D9%84%DB%8C> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fa" ;
+	schema:isPartOf <https://fa.wikivoyage.org/> ;
+	schema:name "ایرلند شمالی"@fa .
+
+<https://fa.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://ca.wikinews.org/wiki/Categoria:Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ca" ;
+	schema:isPartOf <https://ca.wikinews.org/> ;
+	schema:name "Categoria:Irlanda del Nord"@ca .
+
+<https://ca.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://de.wikinews.org/wiki/Kategorie:Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "de" ;
+	schema:isPartOf <https://de.wikinews.org/> ;
+	schema:name "Kategorie:Nordirland"@de .
+
+<https://de.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://el.wikinews.org/wiki/%CE%9A%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%AF%CE%B1:%CE%92%CF%8C%CF%81%CE%B5%CE%B9%CE%B1_%CE%99%CF%81%CE%BB%CE%B1%CE%BD%CE%B4%CE%AF%CE%B1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "el" ;
+	schema:isPartOf <https://el.wikinews.org/> ;
+	schema:name "Κατηγορία:Βόρεια Ιρλανδία"@el .
+
+<https://el.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://en.wikinews.org/wiki/Category:Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "en" ;
+	schema:isPartOf <https://en.wikinews.org/> ;
+	schema:name "Category:Northern Ireland"@en .
+
+<https://en.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://eo.wikinews.org/wiki/Kategorio:Nord-Irlando> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "eo" ;
+	schema:isPartOf <https://eo.wikinews.org/> ;
+	schema:name "Kategorio:Nord-Irlando"@eo .
+
+<https://eo.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://es.wikinews.org/wiki/Categor%C3%ADa:Irlanda_del_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "es" ;
+	schema:isPartOf <https://es.wikinews.org/> ;
+	schema:name "Categoría:Irlanda del Norte"@es .
+
+<https://es.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://fr.wikinews.org/wiki/Cat%C3%A9gorie:Irlande_du_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fr" ;
+	schema:isPartOf <https://fr.wikinews.org/> ;
+	schema:name "Catégorie:Irlande du Nord"@fr .
+
+<https://fr.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://it.wikinews.org/wiki/Categoria:Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "it" ;
+	schema:isPartOf <https://it.wikinews.org/> ;
+	schema:name "Categoria:Irlanda del Nord"@it .
+
+<https://it.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://pl.wikinews.org/wiki/Kategoria:Irlandia_P%C3%B3%C5%82nocna> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pl" ;
+	schema:isPartOf <https://pl.wikinews.org/> ;
+	schema:name "Kategoria:Irlandia Północna"@pl .
+
+<https://pl.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://pt.wikinews.org/wiki/Categoria:Irlanda_do_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pt" ;
+	schema:isPartOf <https://pt.wikinews.org/> ;
+	schema:name "Categoria:Irlanda do Norte"@pt .
+
+<https://pt.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://ro.wikinews.org/wiki/Categorie:Irlanda_de_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ro" ;
+	schema:isPartOf <https://ro.wikinews.org/> ;
+	schema:name "Categorie:Irlanda de Nord"@ro .
+
+<https://ro.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://ru.wikinews.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ru" ;
+	schema:isPartOf <https://ru.wikinews.org/> ;
+	schema:name "Категория:Северная Ирландия"@ru .
+
+<https://ru.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://sr.wikinews.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%98%D0%B0:%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0_%D0%98%D1%80%D1%81%D0%BA%D0%B0> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sr" ;
+	schema:isPartOf <https://sr.wikinews.org/> ;
+	schema:name "Категорија:Северна Ирска"@sr .
+
+<https://sr.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://sv.wikinews.org/wiki/Kategori:Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sv" ;
+	schema:isPartOf <https://sv.wikinews.org/> ;
+	schema:name "Kategori:Nordirland"@sv .
+
+<https://sv.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+<https://es.wikivoyage.org/wiki/Irlanda_del_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "es" ;
+	schema:isPartOf <https://es.wikivoyage.org/> ;
+	schema:name "Irlanda del Norte"@es .
+
+<https://es.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://en.wikipedia.org/wiki/Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "en" ;
+	schema:isPartOf <https://en.wikipedia.org/> ;
+	schema:name "Northern Ireland"@en .
+
+<https://en.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://de.wikipedia.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "de" ;
+	schema:isPartOf <https://de.wikipedia.org/> ;
+	schema:name "Nordirland"@de .
+
+<https://de.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://fr.wikipedia.org/wiki/Irlande_du_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fr" ;
+	schema:isPartOf <https://fr.wikipedia.org/> ;
+	schema:name "Irlande du Nord"@fr .
+
+<https://fr.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://es.wikipedia.org/wiki/Irlanda_del_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "es" ;
+	schema:isPartOf <https://es.wikipedia.org/> ;
+	schema:name "Irlanda del Norte"@es .
+
+<https://es.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ru" ;
+	schema:isPartOf <https://ru.wikipedia.org/> ;
+	schema:name "Северная Ирландия"@ru .
+
+<https://ru.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://it.wikipedia.org/wiki/Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "it" ;
+	schema:isPartOf <https://it.wikipedia.org/> ;
+	schema:name "Irlanda del Nord"@it .
+
+<https://it.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ja.wikipedia.org/wiki/%E5%8C%97%E3%82%A2%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%89> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ja" ;
+	schema:isPartOf <https://ja.wikipedia.org/> ;
+	schema:name "北アイルランド"@ja .
+
+<https://ja.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nl.wikipedia.org/wiki/Noord-Ierland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nl" ;
+	schema:isPartOf <https://nl.wikipedia.org/> ;
+	schema:name "Noord-Ierland"@nl .
+
+<https://nl.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://pl.wikipedia.org/wiki/Irlandia_P%C3%B3%C5%82nocna> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pl" ;
+	schema:isPartOf <https://pl.wikipedia.org/> ;
+	schema:name "Irlandia Północna"@pl .
+
+<https://pl.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://pt.wikipedia.org/wiki/Irlanda_do_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pt" ;
+	schema:isPartOf <https://pt.wikipedia.org/> ;
+	schema:name "Irlanda do Norte"@pt .
+
+<https://pt.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://zh.wikipedia.org/wiki/%E5%8C%97%E7%88%B1%E5%B0%94%E5%85%B0> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "zh" ;
+	schema:isPartOf <https://zh.wikipedia.org/> ;
+	schema:name "北爱尔兰"@zh .
+
+<https://zh.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sv.wikipedia.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sv" ;
+	schema:isPartOf <https://sv.wikipedia.org/> ;
+	schema:name "Nordirland"@sv .
+
+<https://sv.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D8%B1%D9%84%D9%86%D8%AF_%D8%B4%D9%85%D8%A7%D9%84%DB%8C> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fa" ;
+	schema:isPartOf <https://fa.wikipedia.org/> ;
+	schema:name "ایرلند شمالی"@fa .
+
+<https://fa.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://he.wikipedia.org/wiki/%D7%A6%D7%A4%D7%95%D7%9F_%D7%90%D7%99%D7%A8%D7%9C%D7%A0%D7%93> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "he" ;
+	schema:isPartOf <https://he.wikipedia.org/> ;
+	schema:name "צפון אירלנד"@he .
+
+<https://he.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://tr.wikipedia.org/wiki/Kuzey_%C4%B0rlanda> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "tr" ;
+	schema:isPartOf <https://tr.wikipedia.org/> ;
+	schema:name "Kuzey İrlanda"@tr .
+
+<https://tr.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://hu.wikipedia.org/wiki/%C3%89szak-%C3%8Drorsz%C3%A1g> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "hu" ;
+	schema:isPartOf <https://hu.wikipedia.org/> ;
+	schema:name "Észak-Írország"@hu .
+
+<https://hu.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://fi.wikipedia.org/wiki/Pohjois-Irlanti> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fi" ;
+	schema:isPartOf <https://fi.wikipedia.org/> ;
+	schema:name "Pohjois-Irlanti"@fi .
+
+<https://fi.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D8%B1%D9%84%D9%86%D8%AF%D8%A7_%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D8%A9> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ar" ;
+	schema:isPartOf <https://ar.wikipedia.org/> ;
+	schema:name "أيرلندا الشمالية"@ar .
+
+<https://ar.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://vi.wikipedia.org/wiki/B%E1%BA%AFc_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "vi" ;
+	schema:isPartOf <https://vi.wikipedia.org/> ;
+	schema:name "Bắc Ireland"@vi .
+
+<https://vi.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://no.wikipedia.org/wiki/Nord-Irland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nb" ;
+	schema:isPartOf <https://no.wikipedia.org/> ;
+	schema:name "Nord-Irland"@nb .
+
+<https://no.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D0%B2%D0%BD%D1%96%D1%87%D0%BD%D0%B0_%D0%86%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%96%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "uk" ;
+	schema:isPartOf <https://uk.wikipedia.org/> ;
+	schema:name "Північна Ірландія"@uk .
+
+<https://uk.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ko.wikipedia.org/wiki/%EB%B6%81%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ko" ;
+	schema:isPartOf <https://ko.wikipedia.org/> ;
+	schema:name "북아일랜드"@ko .
+
+<https://ko.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ca.wikipedia.org/wiki/Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ca" ;
+	schema:isPartOf <https://ca.wikipedia.org/> ;
+	schema:name "Irlanda del Nord"@ca .
+
+<https://ca.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://cs.wikipedia.org/wiki/Severn%C3%AD_Irsko> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "cs" ;
+	schema:isPartOf <https://cs.wikipedia.org/> ;
+	schema:name "Severní Irsko"@cs .
+
+<https://cs.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sr.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0_%D0%98%D1%80%D1%81%D0%BA%D0%B0> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sr" ;
+	schema:isPartOf <https://sr.wikipedia.org/> ;
+	schema:name "Северна Ирска"@sr .
+
+<https://sr.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ro.wikipedia.org/wiki/Irlanda_de_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ro" ;
+	schema:isPartOf <https://ro.wikipedia.org/> ;
+	schema:name "Irlanda de Nord"@ro .
+
+<https://ro.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://id.wikipedia.org/wiki/Irlandia_Utara> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "id" ;
+	schema:isPartOf <https://id.wikipedia.org/> ;
+	schema:name "Irlandia Utara"@id .
+
+<https://id.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://da.wikipedia.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "da" ;
+	schema:isPartOf <https://da.wikipedia.org/> ;
+	schema:name "Nordirland"@da .
+
+<https://da.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://simple.wikipedia.org/wiki/Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "en-simple" ;
+	schema:isPartOf <https://simple.wikipedia.org/> ;
+	schema:name "Northern Ireland"@en-simple .
+
+<https://simple.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://bg.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "bg" ;
+	schema:isPartOf <https://bg.wikipedia.org/> ;
+	schema:name "Северна Ирландия"@bg .
+
+<https://bg.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://af.wikipedia.org/wiki/Noord-Ierland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "af" ;
+	schema:isPartOf <https://af.wikipedia.org/> ;
+	schema:name "Noord-Ierland"@af ;
+	wikibase:badge wd:Q17437796 .
+
+<https://af.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://als.wikipedia.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "gsw" ;
+	schema:isPartOf <https://als.wikipedia.org/> ;
+	schema:name "Nordirland"@gsw .
+
+<https://als.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://am.wikipedia.org/wiki/%E1%88%B5%E1%88%9C%E1%8A%95_%E1%8A%A0%E1%8B%A8%E1%88%AD%E1%88%8B%E1%8A%95%E1%8B%B5> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "am" ;
+	schema:isPartOf <https://am.wikipedia.org/> ;
+	schema:name "ስሜን አየርላንድ"@am .
+
+<https://am.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://an.wikipedia.org/wiki/Irlanda_d%27o_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "an" ;
+	schema:isPartOf <https://an.wikipedia.org/> ;
+	schema:name "Irlanda d'o Norte"@an .
+
+<https://an.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ang.wikipedia.org/wiki/Nor%C3%B0erne_%C4%AArland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ang" ;
+	schema:isPartOf <https://ang.wikipedia.org/> ;
+	schema:name "Norðerne Īrland"@ang .
+
+<https://ang.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://arz.wikipedia.org/wiki/%D8%A7%D9%8A%D8%B1%D9%84%D8%A7%D9%86%D8%AF%D8%A7_%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D9%87> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "arz" ;
+	schema:isPartOf <https://arz.wikipedia.org/> ;
+	schema:name "ايرلاندا الشماليه"@arz .
+
+<https://arz.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ast.wikipedia.org/wiki/Irlanda_del_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ast" ;
+	schema:isPartOf <https://ast.wikipedia.org/> ;
+	schema:name "Irlanda del Norte"@ast .
+
+<https://ast.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://az.wikipedia.org/wiki/%C5%9Eimali_%C4%B0rlandiya> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "az" ;
+	schema:isPartOf <https://az.wikipedia.org/> ;
+	schema:name "Şimali İrlandiya"@az .
+
+<https://az.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://azb.wikipedia.org/wiki/%D8%B4%D9%88%D9%85%D8%A7%D9%84%DB%8C_%D8%A7%DB%8C%D8%B1%D9%84%D9%86%D8%AF> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "azb" ;
+	schema:isPartOf <https://azb.wikipedia.org/> ;
+	schema:name "شومالی ایرلند"@azb .
+
+<https://azb.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ba.wikipedia.org/wiki/%D0%A2%D3%A9%D0%BD%D1%8C%D1%8F%D2%A1_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ba" ;
+	schema:isPartOf <https://ba.wikipedia.org/> ;
+	schema:name "Төньяҡ Ирландия"@ba .
+
+<https://ba.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://be.wikipedia.org/wiki/%D0%9F%D0%B0%D1%9E%D0%BD%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%86%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%8B%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "be" ;
+	schema:isPartOf <https://be.wikipedia.org/> ;
+	schema:name "Паўночная Ірландыя"@be .
+
+<https://be.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://be-tarask.wikipedia.org/wiki/%D0%9F%D0%B0%D1%9E%D0%BD%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%86%D1%80%D0%BB%D1%8F%D0%BD%D0%B4%D1%8B%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "be-tarask" ;
+	schema:isPartOf <https://be-tarask.wikipedia.org/> ;
+	schema:name "Паўночная Ірляндыя"@be-tarask .
+
+<https://be-tarask.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://bn.wikipedia.org/wiki/%E0%A6%89%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%B0_%E0%A6%86%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B0%E0%A6%B2%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "bn" ;
+	schema:isPartOf <https://bn.wikipedia.org/> ;
+	schema:name "উত্তর আয়ারল্যান্ড"@bn .
+
+<https://bn.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://br.wikipedia.org/wiki/Norzhiwerzhon> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "br" ;
+	schema:isPartOf <https://br.wikipedia.org/> ;
+	schema:name "Norzhiwerzhon"@br .
+
+<https://br.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://bs.wikipedia.org/wiki/Sjeverna_Irska> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "bs" ;
+	schema:isPartOf <https://bs.wikipedia.org/> ;
+	schema:name "Sjeverna Irska"@bs .
+
+<https://bs.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ceb.wikipedia.org/wiki/Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ceb" ;
+	schema:isPartOf <https://ceb.wikipedia.org/> ;
+	schema:name "Northern Ireland"@ceb .
+
+<https://ceb.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://cv.wikipedia.org/wiki/%C3%87%D1%83%D1%80%C3%A7%C4%95%D1%80_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "cv" ;
+	schema:isPartOf <https://cv.wikipedia.org/> ;
+	schema:name "Çурçĕр Ирланди"@cv .
+
+<https://cv.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://cy.wikipedia.org/wiki/Gogledd_Iwerddon> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "cy" ;
+	schema:isPartOf <https://cy.wikipedia.org/> ;
+	schema:name "Gogledd Iwerddon"@cy .
+
+<https://cy.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://dsb.wikipedia.org/wiki/P%C3%B3dpo%C5%82nocna_Irska> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "dsb" ;
+	schema:isPartOf <https://dsb.wikipedia.org/> ;
+	schema:name "Pódpołnocna Irska"@dsb .
+
+<https://dsb.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://el.wikipedia.org/wiki/%CE%92%CF%8C%CF%81%CE%B5%CE%B9%CE%B1_%CE%99%CF%81%CE%BB%CE%B1%CE%BD%CE%B4%CE%AF%CE%B1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "el" ;
+	schema:isPartOf <https://el.wikipedia.org/> ;
+	schema:name "Βόρεια Ιρλανδία"@el .
+
+<https://el.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://eo.wikipedia.org/wiki/Nord-Irlando> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "eo" ;
+	schema:isPartOf <https://eo.wikipedia.org/> ;
+	schema:name "Nord-Irlando"@eo .
+
+<https://eo.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://et.wikipedia.org/wiki/P%C3%B5hja-Iirimaa> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "et" ;
+	schema:isPartOf <https://et.wikipedia.org/> ;
+	schema:name "Põhja-Iirimaa"@et .
+
+<https://et.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://eu.wikipedia.org/wiki/Ipar_Irlanda> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "eu" ;
+	schema:isPartOf <https://eu.wikipedia.org/> ;
+	schema:name "Ipar Irlanda"@eu .
+
+<https://eu.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ext.wikipedia.org/wiki/Irlanda_del_Norti> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ext" ;
+	schema:isPartOf <https://ext.wikipedia.org/> ;
+	schema:name "Irlanda del Norti"@ext .
+
+<https://ext.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://fo.wikipedia.org/wiki/Nor%C3%B0ur%C3%ADrland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fo" ;
+	schema:isPartOf <https://fo.wikipedia.org/> ;
+	schema:name "Norðurírland"@fo .
+
+<https://fo.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://frr.wikipedia.org/wiki/Nuurdirlun> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "frr" ;
+	schema:isPartOf <https://frr.wikipedia.org/> ;
+	schema:name "Nuurdirlun"@frr .
+
+<https://frr.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://fy.wikipedia.org/wiki/Noard-Ierl%C3%A2n> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fy" ;
+	schema:isPartOf <https://fy.wikipedia.org/> ;
+	schema:name "Noard-Ierlân"@fy .
+
+<https://fy.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ga.wikipedia.org/wiki/Tuaisceart_%C3%89ireann> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ga" ;
+	schema:isPartOf <https://ga.wikipedia.org/> ;
+	schema:name "Tuaisceart Éireann"@ga .
+
+<https://ga.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://gd.wikipedia.org/wiki/%C3%88irinn_a_Tuath> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "gd" ;
+	schema:isPartOf <https://gd.wikipedia.org/> ;
+	schema:name "Èirinn a Tuath"@gd .
+
+<https://gd.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://gl.wikipedia.org/wiki/Irlanda_do_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "gl" ;
+	schema:isPartOf <https://gl.wikipedia.org/> ;
+	schema:name "Irlanda do Norte"@gl .
+
+<https://gl.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://gom.wikipedia.org/wiki/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0_%E0%A4%86%E0%A4%AF%E0%A4%B0%E0%A5%8D%E0%A4%B2%E0%A4%82%E0%A4%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "gom" ;
+	schema:isPartOf <https://gom.wikipedia.org/> ;
+	schema:name "उत्तर आयर्लंड"@gom .
+
+<https://gom.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://gu.wikipedia.org/wiki/%E0%AA%A8%E0%AB%8B%E0%AA%B0%E0%AB%8D%E0%AA%A7%E0%AA%A8_%E0%AA%86%E0%AA%AF%E0%AA%B0%E0%AB%8D%E0%AA%B2%E0%AB%87%E0%AA%A8%E0%AB%8D%E0%AA%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "gu" ;
+	schema:isPartOf <https://gu.wikipedia.org/> ;
+	schema:name "નોર્ધન આયર્લેન્ડ"@gu .
+
+<https://gu.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://gv.wikipedia.org/wiki/Nerin_Hwoaie> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "gv" ;
+	schema:isPartOf <https://gv.wikipedia.org/> ;
+	schema:name "Nerin Hwoaie"@gv .
+
+<https://gv.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://hr.wikipedia.org/wiki/Sjeverna_Irska> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "hr" ;
+	schema:isPartOf <https://hr.wikipedia.org/> ;
+	schema:name "Sjeverna Irska"@hr .
+
+<https://hr.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://hsb.wikipedia.org/wiki/Sewjerna_Irska> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "hsb" ;
+	schema:isPartOf <https://hsb.wikipedia.org/> ;
+	schema:name "Sewjerna Irska"@hsb .
+
+<https://hsb.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ht.wikipedia.org/wiki/Ilann_din%C3%B2> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ht" ;
+	schema:isPartOf <https://ht.wikipedia.org/> ;
+	schema:name "Ilann dinò"@ht .
+
+<https://ht.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://hy.wikipedia.org/wiki/%D5%80%D5%B5%D5%B8%D6%82%D5%BD%D5%AB%D5%BD%D5%A1%D5%B5%D5%AB%D5%B6_%D4%BB%D5%BC%D5%AC%D5%A1%D5%B6%D5%A4%D5%AB%D5%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "hy" ;
+	schema:isPartOf <https://hy.wikipedia.org/> ;
+	schema:name "Հյուսիսային Իռլանդիա"@hy .
+
+<https://hy.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ia.wikipedia.org/wiki/Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ia" ;
+	schema:isPartOf <https://ia.wikipedia.org/> ;
+	schema:name "Irlanda del Nord"@ia .
+
+<https://ia.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ie.wikipedia.org/wiki/Nord-Irland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ie" ;
+	schema:isPartOf <https://ie.wikipedia.org/> ;
+	schema:name "Nord-Irland"@ie .
+
+<https://ie.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ilo.wikipedia.org/wiki/Akin-amianan_nga_Irlanda> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ilo" ;
+	schema:isPartOf <https://ilo.wikipedia.org/> ;
+	schema:name "Akin-amianan nga Irlanda"@ilo .
+
+<https://ilo.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://io.wikipedia.org/wiki/Nord-Irlando> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "io" ;
+	schema:isPartOf <https://io.wikipedia.org/> ;
+	schema:name "Nord-Irlando"@io .
+
+<https://io.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://is.wikipedia.org/wiki/Nor%C3%B0ur-%C3%8Drland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "is" ;
+	schema:isPartOf <https://is.wikipedia.org/> ;
+	schema:name "Norður-Írland"@is .
+
+<https://is.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://jv.wikipedia.org/wiki/Irlandia_Lor> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "jv" ;
+	schema:isPartOf <https://jv.wikipedia.org/> ;
+	schema:name "Irlandia Lor"@jv .
+
+<https://jv.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ka.wikipedia.org/wiki/%E1%83%A9%E1%83%A0%E1%83%93%E1%83%98%E1%83%9A%E1%83%9D%E1%83%94%E1%83%97%E1%83%98_%E1%83%98%E1%83%A0%E1%83%9A%E1%83%90%E1%83%9C%E1%83%93%E1%83%98%E1%83%90> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ka" ;
+	schema:isPartOf <https://ka.wikipedia.org/> ;
+	schema:name "ჩრდილოეთი ირლანდია"@ka .
+
+<https://ka.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://kk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D1%82%D2%AF%D1%81%D1%82%D1%96%D0%BA_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "kk" ;
+	schema:isPartOf <https://kk.wikipedia.org/> ;
+	schema:name "Солтүстік Ирландия"@kk .
+
+<https://kk.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://km.wikipedia.org/wiki/%E1%9E%A2%E1%9F%80%E1%9E%9A%E1%9E%A1%E1%9E%84%E1%9F%8B%E1%9E%81%E1%9E%B6%E1%9E%84%E1%9E%87%E1%9E%BE%E1%9E%84> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "km" ;
+	schema:isPartOf <https://km.wikipedia.org/> ;
+	schema:name "អៀរឡង់ខាងជើង"@km .
+
+<https://km.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://kn.wikipedia.org/wiki/%E0%B2%89%E0%B2%A4%E0%B3%8D%E0%B2%A4%E0%B2%B0_%E0%B2%90%E0%B2%B0%E0%B3%8D%E0%B2%B2%E0%B3%86%E0%B2%82%E0%B2%A1%E0%B3%8D%E2%80%8C%E2%80%8C> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "kn" ;
+	schema:isPartOf <https://kn.wikipedia.org/> ;
+	schema:name "ಉತ್ತರ ಐರ್ಲೆಂಡ್‌‌"@kn .
+
+<https://kn.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ku.wikipedia.org/wiki/%C3%8Erlendaya_Bakur> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ku" ;
+	schema:isPartOf <https://ku.wikipedia.org/> ;
+	schema:name "Îrlendaya Bakur"@ku .
+
+<https://ku.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://kw.wikipedia.org/wiki/Wordhen_Gledh> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "kw" ;
+	schema:isPartOf <https://kw.wikipedia.org/> ;
+	schema:name "Wordhen Gledh"@kw .
+
+<https://kw.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://la.wikipedia.org/wiki/Hibernia_Septentrionalis> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "la" ;
+	schema:isPartOf <https://la.wikipedia.org/> ;
+	schema:name "Hibernia Septentrionalis"@la .
+
+<https://la.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://lb.wikipedia.org/wiki/Nordirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "lb" ;
+	schema:isPartOf <https://lb.wikipedia.org/> ;
+	schema:name "Nordirland"@lb .
+
+<https://lb.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://li.wikipedia.org/wiki/Noord-Ierland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "li" ;
+	schema:isPartOf <https://li.wikipedia.org/> ;
+	schema:name "Noord-Ierland"@li .
+
+<https://li.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://lij.wikipedia.org/wiki/Irlanda_do_N%C3%B2rd> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "lij" ;
+	schema:isPartOf <https://lij.wikipedia.org/> ;
+	schema:name "Irlanda do Nòrd"@lij .
+
+<https://lij.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ln.wikipedia.org/wiki/Irland%C3%AD_ya_Nola> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ln" ;
+	schema:isPartOf <https://ln.wikipedia.org/> ;
+	schema:name "Irlandí ya Nola"@ln .
+
+<https://ln.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://lt.wikipedia.org/wiki/%C5%A0iaur%C4%97s_Airija> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "lt" ;
+	schema:isPartOf <https://lt.wikipedia.org/> ;
+	schema:name "Šiaurės Airija"@lt .
+
+<https://lt.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://lv.wikipedia.org/wiki/Zieme%C4%BC%C4%ABrija> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "lv" ;
+	schema:isPartOf <https://lv.wikipedia.org/> ;
+	schema:name "Ziemeļīrija"@lv .
+
+<https://lv.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://mk.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0_%D0%98%D1%80%D1%81%D0%BA%D0%B0> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "mk" ;
+	schema:isPartOf <https://mk.wikipedia.org/> ;
+	schema:name "Северна Ирска"@mk .
+
+<https://mk.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ml.wikipedia.org/wiki/%E0%B4%B5%E0%B4%9F%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%BB_%E0%B4%85%E0%B4%AF%E0%B5%BC%E0%B4%B2%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B5%8D> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ml" ;
+	schema:isPartOf <https://ml.wikipedia.org/> ;
+	schema:name "വടക്കൻ അയർലണ്ട്"@ml .
+
+<https://ml.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://mn.wikipedia.org/wiki/%D0%A3%D0%BC%D0%B0%D1%80%D0%B4_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "mn" ;
+	schema:isPartOf <https://mn.wikipedia.org/> ;
+	schema:name "Умард Ирланд"@mn .
+
+<https://mn.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://mr.wikipedia.org/wiki/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0_%E0%A4%86%E0%A4%AF%E0%A4%B0%E0%A5%8D%E0%A4%B2%E0%A4%82%E0%A4%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "mr" ;
+	schema:isPartOf <https://mr.wikipedia.org/> ;
+	schema:name "उत्तर आयर्लंड"@mr .
+
+<https://mr.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ms.wikipedia.org/wiki/Ireland_Utara> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ms" ;
+	schema:isPartOf <https://ms.wikipedia.org/> ;
+	schema:name "Ireland Utara"@ms .
+
+<https://ms.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://mt.wikipedia.org/wiki/Irlanda_ta%27_Fuq> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "mt" ;
+	schema:isPartOf <https://mt.wikipedia.org/> ;
+	schema:name "Irlanda ta' Fuq"@mt .
+
+<https://mt.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://mzn.wikipedia.org/wiki/%D8%B4%D9%85%D8%A7%D9%84%DB%8C_%D8%A7%DB%8C%D8%B1%D9%84%D9%86%D8%AF> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "mzn" ;
+	schema:isPartOf <https://mzn.wikipedia.org/> ;
+	schema:name "شمالی ایرلند"@mzn .
+
+<https://mzn.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nap.wikipedia.org/wiki/Irlanna_d%27o_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nap" ;
+	schema:isPartOf <https://nap.wikipedia.org/> ;
+	schema:name "Irlanna d'o Nord"@nap .
+
+<https://nap.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nds-nl.wikipedia.org/wiki/Noord-Ierlaand> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nds-NL" ;
+	schema:isPartOf <https://nds-nl.wikipedia.org/> ;
+	schema:name "Noord-Ierlaand"@nds-NL .
+
+<https://nds-nl.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nn.wikipedia.org/wiki/Nord-Irland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nn" ;
+	schema:isPartOf <https://nn.wikipedia.org/> ;
+	schema:name "Nord-Irland"@nn .
+
+<https://nn.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nov.wikipedia.org/wiki/Nordi_Irlande> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nov" ;
+	schema:isPartOf <https://nov.wikipedia.org/> ;
+	schema:name "Nordi Irlande"@nov .
+
+<https://nov.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nrm.wikipedia.org/wiki/Irlande_du_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fr-x-nrm" ;
+	schema:isPartOf <https://nrm.wikipedia.org/> ;
+	schema:name "Irlande du Nord"@fr-x-nrm .
+
+<https://nrm.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://oc.wikipedia.org/wiki/Irlanda_del_N%C3%B2rd> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "oc" ;
+	schema:isPartOf <https://oc.wikipedia.org/> ;
+	schema:name "Irlanda del Nòrd"@oc .
+
+<https://oc.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://os.wikipedia.org/wiki/%D0%A6%C3%A6%D0%B3%D0%B0%D1%82_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "os" ;
+	schema:isPartOf <https://os.wikipedia.org/> ;
+	schema:name "Цæгат Ирланди"@os .
+
+<https://os.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://pa.wikipedia.org/wiki/%E0%A8%89%E0%A9%B1%E0%A8%A4%E0%A8%B0%E0%A9%80_%E0%A8%86%E0%A8%87%E0%A8%B0%E0%A8%B2%E0%A9%88%E0%A8%82%E0%A8%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pa" ;
+	schema:isPartOf <https://pa.wikipedia.org/> ;
+	schema:name "ਉੱਤਰੀ ਆਇਰਲੈਂਡ"@pa .
+
+<https://pa.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://pms.wikipedia.org/wiki/Irlanda_d%C3%ABl_N%C3%B2rd> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pms" ;
+	schema:isPartOf <https://pms.wikipedia.org/> ;
+	schema:name "Irlanda dël Nòrd"@pms .
+
+<https://pms.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://pnb.wikipedia.org/wiki/%D8%A7%D8%AA%D9%84%D8%A7_%D8%A2%D8%A6%D8%B1%D9%84%DB%8C%D9%86%DA%88> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "pnb" ;
+	schema:isPartOf <https://pnb.wikipedia.org/> ;
+	schema:name "اتلا آئرلینڈ"@pnb .
+
+<https://pnb.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://qu.wikipedia.org/wiki/Chinchay_Ilanda> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "qu" ;
+	schema:isPartOf <https://qu.wikipedia.org/> ;
+	schema:name "Chinchay Ilanda"@qu .
+
+<https://qu.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://rm.wikipedia.org/wiki/Irlanda_dal_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "rm" ;
+	schema:isPartOf <https://rm.wikipedia.org/> ;
+	schema:name "Irlanda dal Nord"@rm .
+
+<https://rm.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://rmy.wikipedia.org/wiki/Nordutno_Irland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "rmy" ;
+	schema:isPartOf <https://rmy.wikipedia.org/> ;
+	schema:name "Nordutno Irland"@rmy .
+
+<https://rmy.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sc.wikipedia.org/wiki/Irlanda_de_su_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sc" ;
+	schema:isPartOf <https://sc.wikipedia.org/> ;
+	schema:name "Irlanda de su Norte"@sc .
+
+<https://sc.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://scn.wikipedia.org/wiki/Irlanna_d%C3%BB_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "scn" ;
+	schema:isPartOf <https://scn.wikipedia.org/> ;
+	schema:name "Irlanna dû Nord"@scn .
+
+<https://scn.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sco.wikipedia.org/wiki/Northren_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sco" ;
+	schema:isPartOf <https://sco.wikipedia.org/> ;
+	schema:name "Northren Ireland"@sco ;
+	wikibase:badge wd:Q17437796 .
+
+<https://sco.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sh.wikipedia.org/wiki/Sjeverna_Irska> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sh" ;
+	schema:isPartOf <https://sh.wikipedia.org/> ;
+	schema:name "Sjeverna Irska"@sh .
+
+<https://sh.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sk.wikipedia.org/wiki/Severn%C3%A9_%C3%8Drsko> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sk" ;
+	schema:isPartOf <https://sk.wikipedia.org/> ;
+	schema:name "Severné Írsko"@sk .
+
+<https://sk.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sl.wikipedia.org/wiki/Severna_Irska> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sl" ;
+	schema:isPartOf <https://sl.wikipedia.org/> ;
+	schema:name "Severna Irska"@sl .
+
+<https://sl.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://so.wikipedia.org/wiki/Waqooyiga_Ayrland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "so" ;
+	schema:isPartOf <https://so.wikipedia.org/> ;
+	schema:name "Waqooyiga Ayrland"@so .
+
+<https://so.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://sq.wikipedia.org/wiki/Irlanda_Veriore> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "sq" ;
+	schema:isPartOf <https://sq.wikipedia.org/> ;
+	schema:name "Irlanda Veriore"@sq .
+
+<https://sq.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://stq.wikipedia.org/wiki/Noudirlound> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "stq" ;
+	schema:isPartOf <https://stq.wikipedia.org/> ;
+	schema:name "Noudirlound"@stq .
+
+<https://stq.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://su.wikipedia.org/wiki/Irlandia_Kal%C3%A9r> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "su" ;
+	schema:isPartOf <https://su.wikipedia.org/> ;
+	schema:name "Irlandia Kalér"@su .
+
+<https://su.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ta.wikipedia.org/wiki/%E0%AE%B5%E0%AE%9F_%E0%AE%85%E0%AE%AF%E0%AE%B0%E0%AF%8D%E0%AE%B2%E0%AE%BE%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AF%81> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ta" ;
+	schema:isPartOf <https://ta.wikipedia.org/> ;
+	schema:name "வட அயர்லாந்து"@ta .
+
+<https://ta.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://tet.wikipedia.org/wiki/Irlanda_Norte> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "tet" ;
+	schema:isPartOf <https://tet.wikipedia.org/> ;
+	schema:name "Irlanda Norte"@tet .
+
+<https://tet.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://tg.wikipedia.org/wiki/%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F%D0%B8_%D0%A8%D0%B8%D0%BC%D0%BE%D0%BB%D3%A3> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "tg" ;
+	schema:isPartOf <https://tg.wikipedia.org/> ;
+	schema:name "Ирландияи Шимолӣ"@tg .
+
+<https://tg.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://tpi.wikipedia.org/wiki/Noten_Aialan> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "tpi" ;
+	schema:isPartOf <https://tpi.wikipedia.org/> ;
+	schema:name "Noten Aialan"@tpi .
+
+<https://tpi.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://tt.wikipedia.org/wiki/%D0%A2%D3%A9%D0%BD%D1%8C%D1%8F%D0%BA_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "tt" ;
+	schema:isPartOf <https://tt.wikipedia.org/> ;
+	schema:name "Төньяк Ирландия"@tt .
+
+<https://tt.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://uz.wikipedia.org/wiki/Shimoliy_Irlandiya> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "uz" ;
+	schema:isPartOf <https://uz.wikipedia.org/> ;
+	schema:name "Shimoliy Irlandiya"@uz .
+
+<https://uz.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://vec.wikipedia.org/wiki/Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "vec" ;
+	schema:isPartOf <https://vec.wikipedia.org/> ;
+	schema:name "Irlanda del Nord"@vec .
+
+<https://vec.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://war.wikipedia.org/wiki/Amihanan_nga_Irlanda> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "war" ;
+	schema:isPartOf <https://war.wikipedia.org/> ;
+	schema:name "Amihanan nga Irlanda"@war .
+
+<https://war.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://xal.wikipedia.org/wiki/%D0%90%D1%80_%D0%93%D3%99%D3%99%D0%BB%D0%B3%D2%AF%D0%B4%D0%B8%D0%BD_%D0%A2%D0%B0%D2%A3%D2%BB%D1%87> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "xal" ;
+	schema:isPartOf <https://xal.wikipedia.org/> ;
+	schema:name "Ар Гәәлгүдин Таңһч"@xal .
+
+<https://xal.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://yi.wikipedia.org/wiki/%D7%A6%D7%A4%D7%95%D7%9F_%D7%90%D7%99%D7%A8%D7%9C%D7%90%D7%A0%D7%93> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "yi" ;
+	schema:isPartOf <https://yi.wikipedia.org/> ;
+	schema:name "צפון אירלאנד"@yi .
+
+<https://yi.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://yo.wikipedia.org/wiki/%C3%8Dr%E1%BA%B9%CC%81l%C3%A1nd%C3%AC_Ap%C3%A1%C3%A0r%C3%ADw%C3%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "yo" ;
+	schema:isPartOf <https://yo.wikipedia.org/> ;
+	schema:name "Írẹ́lándì Apáàríwá"@yo .
+
+<https://yo.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://zea.wikipedia.org/wiki/Noord-Ierland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "zea" ;
+	schema:isPartOf <https://zea.wikipedia.org/> ;
+	schema:name "Noord-Ierland"@zea .
+
+<https://zea.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://zh-yue.wikipedia.org/wiki/%E5%8C%97%E6%84%9B%E7%88%BE%E8%98%AD> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "yue" ;
+	schema:isPartOf <https://zh-yue.wikipedia.org/> ;
+	schema:name "北愛爾蘭"@yue .
+
+<https://zh-yue.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://el.wikivoyage.org/wiki/%CE%92%CF%8C%CF%81%CE%B5%CE%B9%CE%B1_%CE%99%CF%81%CE%BB%CE%B1%CE%BD%CE%B4%CE%AF%CE%B1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "el" ;
+	schema:isPartOf <https://el.wikivoyage.org/> ;
+	schema:name "Βόρεια Ιρλανδία"@el .
+
+<https://el.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://lmo.wikipedia.org/wiki/Irlanda_del_Nord> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "lmo" ;
+	schema:isPartOf <https://lmo.wikipedia.org/> ;
+	schema:name "Irlanda del Nord"@lmo .
+
+<https://lmo.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://bh.wikipedia.org/wiki/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0%E0%A5%80_%E0%A4%86%E0%A4%AF%E0%A4%B0%E0%A4%B2%E0%A5%88%E0%A4%82%E0%A4%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "bho" ;
+	schema:isPartOf <https://bh.wikipedia.org/> ;
+	schema:name "उत्तरी आयरलैंड"@bho .
+
+<https://bh.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://en.wikiquote.org/wiki/Northern_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "en" ;
+	schema:isPartOf <https://en.wikiquote.org/> ;
+	schema:name "Northern Ireland"@en .
+
+<https://en.wikiquote.org/> wikibase:wikiGroup "wikiquote" .
+
+<https://hi.wikipedia.org/wiki/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0%E0%A5%80_%E0%A4%86%E0%A4%AF%E0%A4%B0%E0%A5%8D%E0%A4%B2%E0%A5%88%E0%A4%A3%E0%A5%8D%E0%A4%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "hi" ;
+	schema:isPartOf <https://hi.wikipedia.org/> ;
+	schema:name "उत्तरी आयर्लैण्ड"@hi .
+
+<https://hi.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nn.wikiquote.org/wiki/Nord-Irland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nn" ;
+	schema:isPartOf <https://nn.wikiquote.org/> ;
+	schema:name "Nord-Irland"@nn .
+
+<https://nn.wikiquote.org/> wikibase:wikiGroup "wikiquote" .
+
+<https://hak.wikipedia.org/wiki/Pet_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "hak" ;
+	schema:isPartOf <https://hak.wikipedia.org/> ;
+	schema:name "Pet Ireland"@hak .
+
+<https://hak.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://ur.wikipedia.org/wiki/%D8%B4%D9%85%D8%A7%D9%84%DB%8C_%D8%A2%D8%A6%D8%B1%D9%84%DB%8C%D9%86%DA%88> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "ur" ;
+	schema:isPartOf <https://ur.wikipedia.org/> ;
+	schema:name "شمالی آئرلینڈ"@ur .
+
+<https://ur.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://bar.wikipedia.org/wiki/Noadirland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "bar" ;
+	schema:isPartOf <https://bar.wikipedia.org/> ;
+	schema:name "Noadirland"@bar .
+
+<https://bar.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://cdo.wikipedia.org/wiki/B%C3%A1e%CC%A4k_Ireland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "cdo" ;
+	schema:isPartOf <https://cdo.wikipedia.org/> ;
+	schema:name "Báe̤k Ireland"@cdo .
+
+<https://cdo.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://zh.wikivoyage.org/wiki/%E5%8C%97%E7%88%B1%E5%B0%94%E5%85%B0> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "zh" ;
+	schema:isPartOf <https://zh.wikivoyage.org/> ;
+	schema:name "北爱尔兰"@zh .
+
+<https://zh.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://th.wikipedia.org/wiki/%E0%B9%84%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%99%E0%B8%94%E0%B9%8C%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "th" ;
+	schema:isPartOf <https://th.wikipedia.org/> ;
+	schema:name "ไอร์แลนด์เหนือ"@th .
+
+<https://th.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://fi.wikivoyage.org/wiki/Pohjois-Irlanti> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "fi" ;
+	schema:isPartOf <https://fi.wikivoyage.org/> ;
+	schema:name "Pohjois-Irlanti"@fi .
+
+<https://fi.wikivoyage.org/> wikibase:wikiGroup "wikivoyage" .
+
+<https://tl.wikipedia.org/wiki/Hilagang_Irlanda> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "tl" ;
+	schema:isPartOf <https://tl.wikipedia.org/> ;
+	schema:name "Hilagang Irlanda"@tl .
+
+<https://tl.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://diq.wikipedia.org/wiki/%C4%B0rlanday_Z%C4%B1mey> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "diq" ;
+	schema:isPartOf <https://diq.wikipedia.org/> ;
+	schema:name "İrlanday Zımey"@diq .
+
+<https://diq.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://zh-min-nan.wikipedia.org/wiki/Pak_%C3%80i-n%C3%AD-l%C3%A2n> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nan" ;
+	schema:isPartOf <https://zh-min-nan.wikipedia.org/> ;
+	schema:name "Pak Ài-ní-lân"@nan .
+
+<https://zh-min-nan.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://dty.wikipedia.org/wiki/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0%E0%A5%80_%E0%A4%86%E0%A4%AF%E0%A4%B0%E0%A4%B2%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A3%E0%A5%8D%E0%A4%A1> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "dty" ;
+	schema:isPartOf <https://dty.wikipedia.org/> ;
+	schema:name "उत्तरी आयरल्याण्ड"@dty .
+
+<https://dty.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://si.wikipedia.org/wiki/%E0%B6%8B%E0%B6%AD%E0%B7%94%E0%B6%BB%E0%B7%94_%E0%B6%85%E0%B6%BA%E0%B6%BB%E0%B7%8A%E0%B6%BD%E0%B6%B1%E0%B7%8A%E0%B6%AD%E0%B6%BA> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "si" ;
+	schema:isPartOf <https://si.wikipedia.org/> ;
+	schema:name "උතුරු අයර්ලන්තය"@si .
+
+<https://si.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://udm.wikipedia.org/wiki/%D0%A3%D0%B9%D0%BF%D0%B0%D0%BB_%D0%98%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "udm" ;
+	schema:isPartOf <https://udm.wikipedia.org/> ;
+	schema:name "Уйпал Ирландия"@udm .
+
+<https://udm.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://kbp.wikipedia.org/wiki/Irland%C9%A9_n%C9%9B_hay%C9%A9_ki%C5%8B> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "kbp" ;
+	schema:isPartOf <https://kbp.wikipedia.org/> ;
+	schema:name "Irlandɩ nɛ hayɩ kiŋ"@kbp .
+
+<https://kbp.wikipedia.org/> wikibase:wikiGroup "wikipedia" .
+
+<https://nl.wikinews.org/wiki/Categorie:Noord-Ierland> a schema:Article ;
+	schema:about wd:Q26 ;
+	schema:inLanguage "nl" ;
+	schema:isPartOf <https://nl.wikinews.org/> ;
+	schema:name "Categorie:Noord-Ierland"@nl .
+
+<https://nl.wikinews.org/> wikibase:wikiGroup "wikinews" .
+
+wdv:1777d55550c496775579f67621df083b a wikibase:GlobecoordinateValue ;
+	wikibase:geoLatitude "54.590933333333"^^xsd:double ;
+	wikibase:geoLongitude "-5.84"^^xsd:double ;
+	wikibase:geoPrecision "0.016666666666667"^^xsd:double ;
+	wikibase:geoGlobe <http://www.wikidata.org/entity/Q2> .
+
+wdv:4755bda544f7850b1fba97a8e1137196 a wikibase:QuantityValue ;
+	wikibase:quantityAmount "+1852168"^^xsd:decimal ;
+	wikibase:quantityUpperBound "+1852168"^^xsd:decimal ;
+	wikibase:quantityLowerBound "+1852168"^^xsd:decimal ;
+	wikibase:quantityUnit <http://www.wikidata.org/entity/Q199> .
+
+wdv:423ee6802a7a544b27120a1a4811a586 a wikibase:QuantityValue ;
+	wikibase:quantityAmount "+1810863"^^xsd:decimal ;
+	wikibase:quantityUpperBound "+1810863"^^xsd:decimal ;
+	wikibase:quantityLowerBound "+1810863"^^xsd:decimal ;
+	wikibase:quantityUnit <http://www.wikidata.org/entity/Q199> .
+
+wdv:7eb0114cad5f3575fe8d459947b9c0f0 a wikibase:QuantityValue ;
+	wikibase:quantityAmount "+1862100"^^xsd:decimal ;
+	wikibase:quantityUnit <http://www.wikidata.org/entity/Q199> .
+
+wdv:b32162b6898cd452ac9bf9408b4649c5 a wikibase:QuantityValue ;
+	wikibase:quantityAmount "+14130"^^xsd:decimal ;
+	wikibase:quantityUpperBound "+14131"^^xsd:decimal ;
+	wikibase:quantityLowerBound "+14129"^^xsd:decimal ;
+	wikibase:quantityUnit <http://www.wikidata.org/entity/Q712226> .
+
+wdv:fa800b9f3cda99341403ba99d3b19b97 a wikibase:QuantityValue ;
+	wikibase:quantityAmount "+14130000000"^^xsd:decimal ;
+	wikibase:quantityUpperBound "+14131000000"^^xsd:decimal ;
+	wikibase:quantityLowerBound "+14129000000"^^xsd:decimal ;
+	wikibase:quantityUnit <http://www.wikidata.org/entity/Q25343> ;
+	wikibase:quantityNormalized wdv:fa800b9f3cda99341403ba99d3b19b97 .
+
+wdv:b32162b6898cd452ac9bf9408b4649c5 wikibase:quantityNormalized wdv:fa800b9f3cda99341403ba99d3b19b97 .
+
+wdv:f987783e1f9c9fa0cb0b774d330af52d a wikibase:TimeValue ;
+	wikibase:timeValue "2013-10-28T00:00:00Z"^^xsd:dateTime ;
+	wikibase:timePrecision "11"^^xsd:integer ;
+	wikibase:timeTimezone "0"^^xsd:integer ;
+	wikibase:timeCalendarModel <http://www.wikidata.org/entity/Q1985727> .
+
+wdv:c86dd467f6ae1208acf7f3b066561b48 a wikibase:TimeValue ;
+	wikibase:timeValue "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+	wikibase:timePrecision "11"^^xsd:integer ;
+	wikibase:timeTimezone "0"^^xsd:integer ;
+	wikibase:timeCalendarModel <http://www.wikidata.org/entity/Q1985727> .
+
+wdv:418aedfba643e02a5ba758952f8f7765 a wikibase:TimeValue ;
+	wikibase:timeValue "2015-01-01T00:00:00Z"^^xsd:dateTime ;
+	wikibase:timePrecision "9"^^xsd:integer ;
+	wikibase:timeTimezone "0"^^xsd:integer ;
+	wikibase:timeCalendarModel <http://www.wikidata.org/entity/Q1985727> .
+
+wdv:19fb1e607fb895edac44d92bd9141272 a wikibase:TimeValue ;
+	wikibase:timeValue "2011-01-01T00:00:00Z"^^xsd:dateTime ;
+	wikibase:timePrecision "9"^^xsd:integer ;
+	wikibase:timeTimezone "0"^^xsd:integer ;
+	wikibase:timeCalendarModel <http://www.wikidata.org/entity/Q1985727> .
+
+wdv:864c28093f3e70d5e1967de207df801e a wikibase:TimeValue ;
+	wikibase:timeValue "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+	wikibase:timePrecision "9"^^xsd:integer ;
+	wikibase:timeTimezone "0"^^xsd:integer ;
+	wikibase:timeCalendarModel <http://www.wikidata.org/entity/Q1985727> .
+
+wdv:a52bee464ca9cb1a0bbc22c3cf42f444 a wikibase:TimeValue ;
+	wikibase:timeValue "1921-01-01T00:00:00Z"^^xsd:dateTime ;
+	wikibase:timePrecision "9"^^xsd:integer ;
+	wikibase:timeTimezone "0"^^xsd:integer ;
+	wikibase:timeCalendarModel <http://www.wikidata.org/entity/Q1985727> .
+
+wdref:fa278ebfc458360e5aed63d5058cca83c46134f1 a wikibase:Reference ;
+	pr:P143 wd:Q328 .
+
+wdref:288ab581e7d2d02995a26dfa8b091d96e78457fc a wikibase:Reference ;
+	pr:P143 wd:Q206855 .
+
+wdref:9a24f7c0208b05d6be97077d855671d1dfdbc0dd a wikibase:Reference ;
+	pr:P143 wd:Q48183 .
+
+wdref:759b2a264fff886006b6f49c3ef2f1acbfd1cef0 a wikibase:Reference ;
+	pr:P143 wd:Q54919 .
+
+wdref:706208b3024200fd0a39ad499808dd0d98d74065 a wikibase:Reference ;
+	pr:P248 wd:Q14005 .
+
+wdref:2b00cb481cddcac7623114367489b5c194901c4a a wikibase:Reference ;
+	pr:P248 wd:Q15241312 ;
+	pr:P577 "2013-10-28T00:00:00Z"^^xsd:dateTime ;
+	prv:P577 wdv:f987783e1f9c9fa0cb0b774d330af52d .
+
+wdref:64133510dcdf15e7943de41e4835c673fc5d6fe4 a wikibase:Reference ;
+	pr:P143 wd:Q830106 .
+
+wdref:ee5f9c964b309c1c15d9c51bfcbc41b0cfea0462 a wikibase:Reference ;
+	pr:P143 wd:Q936 .
+
+wdref:5a01d63fe7596970c28852af94f513ab888d7ffc a wikibase:Reference ;
+	pr:P248 wd:Q855531 .
+
+wdref:bd0ee81488cd8c23d4b655e417aac78dca370283 a wikibase:Reference ;
+	pr:P143 wd:Q4837690 .
+
+wdata:Q27 a schema:Dataset ;
+	schema:about wd:Q27 ;
+	schema:version "613314177"^^xsd:integer ;
+	schema:dateModified "2017-12-24T19:19:37Z"^^xsd:dateTime ;
+	wikibase:sitelinks "268"^^xsd:integer ;
+	wikibase:statements "317"^^xsd:integer ;
+	wikibase:identifiers "43"^^xsd:integer .
+
+wd:Q27 a wikibase:Item ;
+	rdfs:label "Ireland"@en-gb ;
+	skos:prefLabel "Ireland"@en-gb ;
+	schema:name "Ireland"@en-gb ;
+	rdfs:label "Ireland"@en ;
+	skos:prefLabel "Ireland"@en ;
+	schema:name "Ireland"@en ;
+	rdfs:label "Irlande"@fr ;
+	skos:prefLabel "Irlande"@fr ;
+	schema:name "Irlande"@fr ;
+	rdfs:label "Irlandia"@pl ;
+	skos:prefLabel "Irlandia"@pl ;
+	schema:name "Irlandia"@pl ;
+	rdfs:label "Irland"@de ;
+	skos:prefLabel "Irland"@de ;
+	schema:name "Irland"@de ;
+	rdfs:label "Irlanda"@es ;
+	skos:prefLabel "Irlanda"@es ;
+	schema:name "Irlanda"@es ;
+	rdfs:label "Irland"@nb ;
+	skos:prefLabel "Irland"@nb ;
+	schema:name "Irland"@nb ;
+	rdfs:label "Irlandyjo"@szl ;
+	skos:prefLabel "Irlandyjo"@szl ;
+	schema:name "Irlandyjo"@szl ;
+	rdfs:label "Irlandiya"@uz ;
+	skos:prefLabel "Irlandiya"@uz ;
+	schema:name "Irlandiya"@uz ;
+	rdfs:label "Airangi"@mi ;
+	skos:prefLabel "Airangi"@mi ;
+	schema:name "Airangi"@mi ;
+	rdfs:label "Ireland"@ts ;
+	skos:prefLabel "Ireland"@ts ;
+	schema:name "Ireland"@ts ;
+	rdfs:label "Írország"@hu ;
+	skos:prefLabel "Írország"@hu ;
+	schema:name "Írország"@hu ;
+	rdfs:label "Ái-ī-làng"@cdo ;
+	skos:prefLabel "Ái-ī-làng"@cdo ;
+	schema:name "Ái-ī-làng"@cdo ;
+	rdfs:label "Repubblika tal-Irlanda"@mt ;
+	skos:prefLabel "Repubblika tal-Irlanda"@mt ;
+	schema:name "Repubblika tal-Irlanda"@mt ;
+	rdfs:label "Republica de Irlanda"@ia ;
+	skos:prefLabel "Republica de Irlanda"@ia ;
+	schema:name "Republica de Irlanda"@ia ;
+	rdfs:label "Poblacht na hÉireann"@ga ;
+	skos:prefLabel "Poblacht na hÉireann"@ga ;
+	schema:name "Poblacht na hÉireann"@ga ;
+	rdfs:label "Irlandiýa"@tk ;
+	skos:prefLabel "Irlandiýa"@tk ;
+	schema:name "Irlandiýa"@tk ;
+	rdfs:label "İrlandiya"@kaa ;
+	skos:prefLabel "İrlandiya"@kaa ;
+	schema:name "İrlandiya"@kaa ;
+	rdfs:label "אירלאנד"@yi ;
+	skos:prefLabel "אירלאנד"@yi ;
+	schema:name "אירלאנד"@yi ;
+	rdfs:label "ئیرلەند"@ckb ;
+	skos:prefLabel "ئیرلەند"@ckb ;
+	schema:name "ئیرلەند"@ckb ;
+	rdfs:label "Irlanti"@fi ;
+	skos:prefLabel "Irlanti"@fi ;
+	schema:name "Irlanti"@fi ;
+	rdfs:label "Ірландія"@uk ;
+	skos:prefLabel "Ірландія"@uk ;
+	schema:name "Ірландія"@uk ;
+	rdfs:label "airland"@jbo ;
+	skos:prefLabel "airland"@jbo ;
+	schema:name "airland"@jbo ;
+	rdfs:label "Ірляндыя"@be-tarask ;
+	skos:prefLabel "Ірляндыя"@be-tarask ;
+	schema:name "Ірляндыя"@be-tarask ;
+	rdfs:label "Irlande"@frp ;
+	skos:prefLabel "Irlande"@frp ;
+	schema:name "Irlande"@frp ;
+	rdfs:label "Ирландия Республиката"@sah ;
+	skos:prefLabel "Ирландия Республиката"@sah ;
+	schema:name "Ирландия Республиката"@sah ;
+	rdfs:label "Republic o Ireland"@sco ;
+	skos:prefLabel "Republic o Ireland"@sco ;
+	schema:name "Republic o Ireland"@sco ;
+	rdfs:label "Ирландия"@kv ;
+	skos:prefLabel "Ирландия"@kv ;
+	schema:name "Ирландия"@kv ;
+	rdfs:label "Irska"@hr ;
+	skos:prefLabel "Irska"@hr ;
+	schema:name "Irska"@hr ;
+	rdfs:label "އަޔަލޭންޑުގެ ޖުމްހޫރިއްޔާ"@dv ;
+	skos:prefLabel "އަޔަލޭންޑުގެ ޖުމްހޫރިއްޔާ"@dv ;
+	schema:name "އަޔަލޭންޑުގެ ޖުމްހޫރިއްޔާ"@dv ;
+	rdfs:label "Irland"@gsw ;
+	skos:prefLabel "Irland"@gsw ;
+	schema:name "Irland"@gsw ;
+	rdfs:label "Ирландия"@lez ;
+	skos:prefLabel "Ирландия"@lez ;
+	schema:name "Ирландия"@lez ;
+	rdfs:label "جمهورية ايرلاندا"@arz ;
+	skos:prefLabel "جمهورية ايرلاندا"@arz ;
+	schema:name "جمهورية ايرلاندا"@arz ;
+	rdfs:label "Irlanda"@lad ;
+	skos:prefLabel "Irlanda"@lad ;
+	schema:name "Irlanda"@lad ;
+	rdfs:label "Irlönj"@frr ;
+	skos:prefLabel "Irlönj"@frr ;
+	schema:name "Irlönj"@frr ;
+	rdfs:label "Írẹ́lándì"@yo ;
+	skos:prefLabel "Írẹ́lándì"@yo ;
+	schema:name "Írẹ́lándì"@yo ;
+	rdfs:label "Irland"@ie ;
+	skos:prefLabel "Irland"@ie ;
+	schema:name "Irland"@ie ;
+	rdfs:label "Ирлэнд"@kbd ;
+	skos:prefLabel "Ирлэнд"@kbd ;
+	schema:name "Ирлэнд"@kbd ;
+	rdfs:label "アイルランド"@ja ;
+	skos:prefLabel "アイルランド"@ja ;
+	schema:name "アイルランド"@ja ;
+	rdfs:label "Irska"@hsb ;
+	skos:prefLabel "Irska"@hsb ;
+	schema:name "Irska"@hsb ;
+	rdfs:label "Ilann"@ht ;
+	skos:prefLabel "Ilann"@ht ;
+	schema:name "Ilann"@ht ;
+	rdfs:label "Ilandia"@gn ;
+	skos:prefLabel "Ilandia"@gn ;
+	schema:name "Ilandia"@gn ;
+	rdfs:label "Írsko"@sk ;
+	skos:prefLabel "Írsko"@sk ;
+	schema:name "Írsko"@sk ;
+	rdfs:label "Komara Îrlandê"@ku ;
+	skos:prefLabel "Komara Îrlandê"@ku ;
+	schema:name "Komara Îrlandê"@ku ;
+	rdfs:label "Ирланд"@mn ;
+	skos:prefLabel "Ирланд"@mn ;
+	schema:name "Ирланд"@mn ;
+	rdfs:label "ประเทศไอร์แลนด์"@th ;
+	skos:prefLabel "ประเทศไอร์แลนด์"@th ;
+	schema:name "ประเทศไอร์แลนด์"@th ;
+	rdfs:label "República d'Irlanda"@ca ;
+	skos:prefLabel "República d'Irlanda"@ca ;
+	schema:name "República d'Irlanda"@ca ;
+	rdfs:label "Hibernia"@la ;
+	skos:prefLabel "Hibernia"@la ;
+	schema:name "Hibernia"@la ;
+	rdfs:label "Írland"@fo ;
+	skos:prefLabel "Írland"@fo ;
+	schema:name "Írland"@fo ;
+	rdfs:label "Iwerddon"@cy ;
+	skos:prefLabel "Iwerddon"@cy ;
+	schema:name "Iwerddon"@cy ;
+	rdfs:label "Republika Irland"@rmy ;
+	skos:prefLabel "Republika Irland"@rmy ;
+	schema:name "Republika Irland"@rmy ;
+	rdfs:label "Airėjė"@sgs ;
+	skos:prefLabel "Airėjė"@sgs ;
+	schema:name "Airėjė"@sgs ;
+	rdfs:label "جمہوریہ آئرستان"@ur ;
+	skos:prefLabel "جمہوریہ آئرستان"@ur ;
+	schema:name "جمہوریہ آئرستان"@ur ;
+	rdfs:label "I-Ayilendi"@zu ;
+	skos:prefLabel "I-Ayilendi"@zu ;
+	schema:name "I-Ayilendi"@zu ;
+	rdfs:label "Irland"@lb ;
+	skos:prefLabel "Irland"@lb ;
+	schema:name "Irland"@lb ;
+	rdfs:label "ཨར་ལེན་ཌ།"@bo ;
+	skos:prefLabel "ཨར་ལེན་ཌ།"@bo ;
+	schema:name "ཨར་ལེན་ཌ།"@bo ;
+	rdfs:label "Irlande"@pag ;
+	skos:prefLabel "Irlande"@pag ;
+	schema:name "Irlande"@pag ;
+	rdfs:label "Irlanda"@rup ;
+	skos:prefLabel "Irlanda"@rup ;
+	schema:name "Irlanda"@rup ;
+	rdfs:label "Aiwjlanz Gunghozgoz"@za ;
+	skos:prefLabel "Aiwjlanz Gunghozgoz"@za ;
+	schema:name "Aiwjlanz Gunghozgoz"@za ;
+	rdfs:label "ଆୟରଲ୍ୟାଣ୍ଡ"@or ;
+	skos:prefLabel "ଆୟରଲ୍ୟାଣ୍ଡ"@or ;
+	schema:name "ଆୟରଲ୍ୟାଣ୍ଡ"@or ;
+	rdfs:label "Republiek van Ierland"@af ;
+	skos:prefLabel "Republiek van Ierland"@af ;
+	schema:name "Republiek van Ierland"@af ;
+	rdfs:label "İrlandiya"@gag ;
+	skos:prefLabel "İrlandiya"@gag ;
+	schema:name "İrlandiya"@gag ;
+	rdfs:label "Irlanda"@ceb ;
+	skos:prefLabel "Irlanda"@ceb ;
+	schema:name "Irlanda"@ceb ;
+	rdfs:label "Republik Iwerzhon"@br ;
+	skos:prefLabel "Republik Iwerzhon"@br ;
+	schema:name "Republik Iwerzhon"@br ;
+	rdfs:label "Δημοκρατία της Ιρλανδίας"@el ;
+	skos:prefLabel "Δημοκρατία της Ιρλανδίας"@el ;
+	schema:name "Δημοκρατία της Ιρλανδίας"@el ;
+	rdfs:label "Irilande"@rw ;
+	skos:prefLabel "Irilande"@rw ;
+	schema:name "Irilande"@rw ;
+	rdfs:label "IYalendi"@ss ;
+	skos:prefLabel "IYalendi"@ss ;
+	schema:name "IYalendi"@ss ;
+	rdfs:label "لوکراج آئرلینڈ"@pnb ;
+	skos:prefLabel "لوکراج آئرلینڈ"@pnb ;
+	schema:name "لوکراج آئرلینڈ"@pnb ;
+	rdfs:label "Írska lýðveldið"@is ;
+	skos:prefLabel "Írska lýðveldið"@is ;
+	schema:name "Írska lýðveldið"@is ;
+	rdfs:label "Гәәлгүдин Орн"@xal ;
+	skos:prefLabel "Гәәлгүдин Орн"@xal ;
+	schema:name "Гәәлгүдин Орн"@xal ;
+	rdfs:label "República d'Irlanda"@ast ;
+	skos:prefLabel "República d'Irlanda"@ast ;
+	schema:name "República d'Irlanda"@ast ;
+	rdfs:label "Eire"@se ;
+	skos:prefLabel "Eire"@se ;
+	schema:name "Eire"@se ;
+	rdfs:label "Irlandi"@kl ;
+	skos:prefLabel "Irlandi"@kl ;
+	schema:name "Irlandi"@kl ;
+	rdfs:label "Ierland"@zea ;
+	skos:prefLabel "Ierland"@zea ;
+	schema:name "Ierland"@zea ;
+	rdfs:label "Republiko di Irlando"@io ;
+	skos:prefLabel "Republiko di Irlando"@io ;
+	schema:name "Republiko di Irlando"@io ;
+	rdfs:label "Ирландия"@kk ;
+	skos:prefLabel "Ирландия"@kk ;
+	schema:name "Ирландия"@kk ;
+	rdfs:label "Éire"@nan ;
+	skos:prefLabel "Éire"@nan ;
+	schema:name "Éire"@nan ;
+	rdfs:label "Irlanda"@pam ;
+	skos:prefLabel "Irlanda"@pam ;
+	schema:name "Irlanda"@pam ;
+	rdfs:label "Irlandia"@ace ;
+	skos:prefLabel "Irlandia"@ace ;
+	schema:name "Irlandia"@ace ;
+	rdfs:label "Irland"@bar ;
+	skos:prefLabel "Irland"@bar ;
+	schema:name "Irland"@bar ;
+	rdfs:label "Irlandia"@bug ;
+	skos:prefLabel "Irlandia"@bug ;
+	schema:name "Irlandia"@bug ;
+	rdfs:label "Īrija"@lv ;
+	skos:prefLabel "Īrija"@lv ;
+	schema:name "Īrija"@lv ;
+	rdfs:label "Ierland"@li ;
+	skos:prefLabel "Ierland"@li ;
+	schema:name "Ierland"@li ;
+	rdfs:label "Ιρλανδία"@pnt ;
+	skos:prefLabel "Ιρλανδία"@pnt ;
+	schema:name "Ιρλανδία"@pnt ;
+	rdfs:label "आयरलैण्ड"@hi ;
+	skos:prefLabel "आयरलैण्ड"@hi ;
+	schema:name "आयरलैण्ड"@hi ;
+	rdfs:label "Republike de Irlande"@nov ;
+	skos:prefLabel "Republike de Irlande"@nov ;
+	schema:name "Republike de Irlande"@nov ;
+	rdfs:label "Իռլանդիա"@hy ;
+	skos:prefLabel "Իռլանդիա"@hy ;
+	schema:name "Իռլանդիա"@hy ;
+	rdfs:label "Ирландия"@tt ;
+	skos:prefLabel "Ирландия"@tt ;
+	schema:name "Ирландия"@tt ;
+	rdfs:label "Ирланди Республики"@cv ;
+	skos:prefLabel "Ирланди Республики"@cv ;
+	schema:name "Ирланди Республики"@cv ;
+	rdfs:label "Irlanda"@ro ;
+	skos:prefLabel "Irlanda"@ro ;
+	schema:name "Irlanda"@ro ;
+	rdfs:label "Irlandii"@vep ;
+	skos:prefLabel "Irlandii"@vep ;
+	schema:name "Irlandii"@vep ;
+	rdfs:label "Republika han Irlanda"@war ;
+	skos:prefLabel "Republika han Irlanda"@war ;
+	schema:name "Republika han Irlanda"@war ;
+	rdfs:label "ایرلند"@fa ;
+	skos:prefLabel "ایرلند"@fa ;
+	schema:name "ایرلند"@fa ;
+	rdfs:label "ირლანდიის რესპუბლიკა"@ka ;
+	skos:prefLabel "ირლანდიის რესპუბლიკა"@ka ;
+	schema:name "ირლანდიის რესპუბლიკა"@ka ;
+	rdfs:label "Republiek Ierland"@vls ;
+	skos:prefLabel "Republiek Ierland"@vls ;
+	schema:name "Republiek Ierland"@vls ;
+	rdfs:label "Iirimaa"@vro ;
+	skos:prefLabel "Iirimaa"@vro ;
+	schema:name "Iirimaa"@vro ;
+	rdfs:label "Ripablik bilong Aialan"@tpi ;
+	skos:prefLabel "Ripablik bilong Aialan"@tpi ;
+	schema:name "Ripablik bilong Aialan"@tpi ;
+	rdfs:label "Ирландия"@ky ;
+	skos:prefLabel "Ирландия"@ky ;
+	schema:name "Ирландия"@ky ;
+	rdfs:label "Irlandako Errepublika"@eu ;
+	skos:prefLabel "Irlandako Errepublika"@eu ;
+	schema:name "Irlandako Errepublika"@eu ;
+	rdfs:label "Republika Irska"@bs ;
+	skos:prefLabel "Republika Irska"@bs ;
+	schema:name "Republika Irska"@bs ;
+	rdfs:label "Īrland Cynewīse"@ang ;
+	skos:prefLabel "Īrland Cynewīse"@ang ;
+	schema:name "Īrland Cynewīse"@ang ;
+	rdfs:label "Éire"@lij ;
+	skos:prefLabel "Éire"@lij ;
+	schema:name "Éire"@lij ;
+	rdfs:label "Republica d'Irlanda"@oc ;
+	skos:prefLabel "Republica d'Irlanda"@oc ;
+	schema:name "Republica d'Irlanda"@oc ;
+	rdfs:label "Republika e Irlandës"@sq ;
+	skos:prefLabel "Republika e Irlandës"@sq ;
+	schema:name "Republika e Irlandës"@sq ;
+	rdfs:label "አየርላንድ ሪፑብሊክ"@am ;
+	skos:prefLabel "አየርላንድ ሪፑብሊክ"@am ;
+	schema:name "አየርላንድ ሪፑብሊክ"@am ;
+	rdfs:label "အိုင်ယာလန်သမ္မတနိုင်ငံ"@my ;
+	skos:prefLabel "အိုင်ယာလန်သမ္မတနိုင်ငံ"@my ;
+	schema:name "အိုင်ယာလန်သမ္မတနိုင်ငံ"@my ;
+	rdfs:label "Repoblek Wordhen"@kw ;
+	skos:prefLabel "Repoblek Wordhen"@kw ;
+	schema:name "Repoblek Wordhen"@kw ;
+	rdfs:label "جمهورية أيرلندا"@ar ;
+	skos:prefLabel "جمهورية أيرلندا"@ar ;
+	schema:name "جمهورية أيرلندا"@ar ;
+	rdfs:label "ირლანდია"@xmf ;
+	skos:prefLabel "ირლანდია"@xmf ;
+	schema:name "ირლანდია"@xmf ;
+	rdfs:label "Républyique d'Irlande"@nrm ;
+	skos:prefLabel "Républyique d'Irlande"@nrm ;
+	schema:name "Républyique d'Irlande"@nrm ;
+	rdfs:label "Република Ирска"@sr ;
+	skos:prefLabel "Република Ирска"@sr ;
+	schema:name "Република Ирска"@sr ;
+	rdfs:label "Ирландия"@krc ;
+	skos:prefLabel "Ирландия"@krc ;
+	schema:name "Ирландия"@krc ;
+	rdfs:label "愛爾蘭"@gan ;
+	skos:prefLabel "愛爾蘭"@gan ;
+	schema:name "愛爾蘭"@gan ;
+	rdfs:label "Irlanda"@tet ;
+	skos:prefLabel "Irlanda"@tet ;
+	schema:name "Irlanda"@tet ;
+	rdfs:label "Irlanne"@roa-tara ;
+	skos:prefLabel "Irlanne"@roa-tara ;
+	schema:name "Irlanne"@roa-tara ;
+	rdfs:label "गणतन्त्र आयरल्याण्ड"@ne ;
+	skos:prefLabel "गणतन्त्र आयरल्याण्ड"@ne ;
+	schema:name "गणतन्त्र आयरल्याण्ड"@ne ;
+	rdfs:label "Republica da l'Irlanda"@rm ;
+	skos:prefLabel "Republica da l'Irlanda"@rm ;
+	schema:name "Republica da l'Irlanda"@rm ;
+	rdfs:label "Irlanda"@lmo ;
+	skos:prefLabel "Irlanda"@lmo ;
+	schema:name "Irlanda"@lmo ;
+	rdfs:label "Irlandëjô"@csb ;
+	skos:prefLabel "Irlandëjô"@csb ;
+	schema:name "Irlandëjô"@csb ;
+	rdfs:label "Irlanda"@an ;
+	skos:prefLabel "Irlanda"@an ;
+	schema:name "Irlanda"@an ;
+	rdfs:label "Irlanda"@vec ;
+	skos:prefLabel "Irlanda"@vec ;
+	schema:name "Irlanda"@vec ;
+	rdfs:label "Irlanda"@pms ;
+	skos:prefLabel "Irlanda"@pms ;
+	schema:name "Irlanda"@pms ;
+	rdfs:label "Ирландия"@udm ;
+	skos:prefLabel "Ирландия"@udm ;
+	schema:name "Ирландия"@udm ;
+	rdfs:label "Irtlālpan"@nah ;
+	skos:prefLabel "Irtlālpan"@nah ;
+	schema:name "Irtlālpan"@nah ;
+	rdfs:label "Ірландыя"@be ;
+	skos:prefLabel "Ірландыя"@be ;
+	schema:name "Ірландыя"@be ;
+	rdfs:label "אירלנד"@he ;
+	skos:prefLabel "אירלנד"@he ;
+	schema:name "אירלנד"@he ;
+	rdfs:label "Irlanda"@mwl ;
+	skos:prefLabel "Irlanda"@mwl ;
+	schema:name "Irlanda"@mwl ;
+	rdfs:label "Republic of Ireland"@hif ;
+	skos:prefLabel "Republic of Ireland"@hif ;
+	schema:name "Republic of Ireland"@hif ;
+	rdfs:label "د آيرلېنډ جمهوريت"@ps ;
+	skos:prefLabel "د آيرلېنډ جمهوريت"@ps ;
+	schema:name "د آيرلېنډ جمهوريت"@ps ;
+	rdfs:label "റിപ്പബ്ലിക്ക് ഓഫ് അയർലണ്ട്"@ml ;
+	skos:prefLabel "റിപ്പബ്ലിക്ക് ഓഫ് അയർലണ്ട്"@ml ;
+	schema:name "റിപ്പബ്ലിക്ക് ഓഫ് അയർലണ്ട്"@ml ;
+	rdfs:label "Cộng hòa Ireland"@vi ;
+	skos:prefLabel "Cộng hòa Ireland"@vi ;
+	schema:name "Cộng hòa Ireland"@vi ;
+	rdfs:label "Irlanda"@sc ;
+	skos:prefLabel "Irlanda"@sc ;
+	schema:name "Irlanda"@sc ;
+	rdfs:label "愛爾蘭共和國"@yue ;
+	skos:prefLabel "愛爾蘭共和國"@yue ;
+	schema:name "愛爾蘭共和國"@yue ;
+	rdfs:label "Repablik o' Airiland"@pih ;
+	skos:prefLabel "Repablik o' Airiland"@pih ;
+	schema:name "Repablik o' Airiland"@pih ;
+	rdfs:label "Ҷумҳурии Ирландия"@tg ;
+	skos:prefLabel "Ҷумҳурии Ирландия"@tg ;
+	schema:name "Ҷумҳурии Ирландия"@tg ;
+	rdfs:label "Irlanda"@ext ;
+	skos:prefLabel "Irlanda"@ext ;
+	schema:name "Irlanda"@ext ;
+	rdfs:label "Irsko"@cs ;
+	skos:prefLabel "Irsko"@cs ;
+	schema:name "Irsko"@cs ;
+	rdfs:label "Ирланди"@os ;
+	skos:prefLabel "Ирланди"@os ;
+	schema:name "Ирланди"@os ;
+	rdfs:label "आयर्लंडचे प्रजासत्ताक"@mr ;
+	skos:prefLabel "आयर्लंडचे प्रजासत्ताक"@mr ;
+	schema:name "आयर्लंडचे प्रजासत्ताक"@mr ;
+	rdfs:label "Република Ирландия"@bg ;
+	skos:prefLabel "Република Ирландия"@bg ;
+	schema:name "Република Ирландия"@bg ;
+	rdfs:label "రిపబ్లిక్ ఆఫ్ ఐర్లాండ్"@te ;
+	skos:prefLabel "రిపబ్లిక్ ఆఫ్ ఐర్లాండ్"@te ;
+	schema:name "రిపబ్లిక్ ఆఫ్ ఐర్లాండ్"@te ;
+	rdfs:label "ܩܘܛܢܝܘܬܐ ܕܐܝܪܠܢܕ"@arc ;
+	skos:prefLabel "ܩܘܛܢܝܘܬܐ ܕܐܝܪܠܢܕ"@arc ;
+	schema:name "ܩܘܛܢܝܘܬܐ ܕܐܝܪܠܢܕ"@arc ;
+	rdfs:label "សាធារណរដ្ឋអៀរឡង់"@km ;
+	skos:prefLabel "សាធារណរដ្ឋអៀរឡង់"@km ;
+	schema:name "សាធារណរដ្ឋអៀរឡង់"@km ;
+	rdfs:label "Republik Irlandia"@jv ;
+	skos:prefLabel "Republik Irlandia"@jv ;
+	schema:name "Republik Irlandia"@jv ;
+	rdfs:label "Ilanda"@qu ;
+	skos:prefLabel "Ilanda"@qu ;
+	schema:name "Ilanda"@qu ;
+	rdfs:label "Poblachd na h-Èireann"@gd ;
+	skos:prefLabel "Poblachd na h-Èireann"@gd ;
+	schema:name "Poblachd na h-Èireann"@gd ;
+	rdfs:label "ʻIlelani"@haw ;
+	skos:prefLabel "ʻIlelani"@haw ;
+	schema:name "ʻIlelani"@haw ;
+	rdfs:label "Lireyän"@vo ;
+	skos:prefLabel "Lireyän"@vo ;
+	schema:name "Lireyän"@vo ;
+	rdfs:label "அயர்லாந்து குடியரசு"@ta ;
+	skos:prefLabel "அயர்லாந்து குடியரசு"@ta ;
+	schema:name "அயர்லாந்து குடியரசு"@ta ;
+	rdfs:label "Eireja"@ltg ;
+	skos:prefLabel "Eireja"@ltg ;
+	schema:name "Eireja"@ltg ;
+	rdfs:label "Republik Ireland"@ms ;
+	skos:prefLabel "Republik Ireland"@ms ;
+	schema:name "Republik Ireland"@ms ;
+	rdfs:label "Ирланди"@ce ;
+	skos:prefLabel "Ирланди"@ce ;
+	schema:name "Ирланди"@ce ;
+	rdfs:label "Iirimaa"@et ;
+	skos:prefLabel "Iirimaa"@et ;
+	schema:name "Iirimaa"@et ;
+	rdfs:label "প্রজাতন্ত্রী আয়ারল্যান্ড"@bn ;
+	skos:prefLabel "প্রজাতন্ত্রী আয়ারল্যান্ড"@bn ;
+	schema:name "প্রজাতন্ত্রী আয়ারল্যান্ড"@bn ;
+	rdfs:label "Ripubrikit Airerand"@na ;
+	skos:prefLabel "Ripubrikit Airerand"@na ;
+	schema:name "Ripubrikit Airerand"@na ;
+	rdfs:label "Ireland"@bi ;
+	skos:prefLabel "Ireland"@bi ;
+	schema:name "Ireland"@bi ;
+	rdfs:label "İrlanda"@diq ;
+	skos:prefLabel "İrlanda"@diq ;
+	schema:name "İrlanda"@diq ;
+	rdfs:label "Ireland"@ee ;
+	skos:prefLabel "Ireland"@ee ;
+	schema:name "Ireland"@ee ;
+	rdfs:label "İrlanda"@tr ;
+	skos:prefLabel "İrlanda"@tr ;
+	schema:name "İrlanda"@tr ;
+	rdfs:label "Irlound"@stq ;
+	skos:prefLabel "Irlound"@stq ;
+	schema:name "Irlound"@stq ;
+	rdfs:label "Irland"@nn ;
+	skos:prefLabel "Irland"@nn ;
+	schema:name "Irland"@nn ;
+	rdfs:label "Irlandí"@ln ;
+	skos:prefLabel "Irlandí"@ln ;
+	schema:name "Irlandí"@ln ;
+	rdfs:label "Bitsiighaʼ Łichííʼí Bikéyah"@nv ;
+	skos:prefLabel "Bitsiighaʼ Łichííʼí Bikéyah"@nv ;
+	schema:name "Bitsiighaʼ Łichííʼí Bikéyah"@nv ;
+	rdfs:label "Irlanda"@tl ;
+	skos:prefLabel "Irlanda"@tl ;
+	schema:name "Irlanda"@tl ;
+	rdfs:label "Irlande"@wa ;
+	skos:prefLabel "Irlande"@wa ;
+	schema:name "Irlande"@wa ;
+	rdfs:label "Ireland"@so ;
+	skos:prefLabel "Ireland"@so ;
+	schema:name "Ireland"@so ;
+	rdfs:label "아일랜드"@ko ;
+	skos:prefLabel "아일랜드"@ko ;
+	schema:name "아일랜드"@ko ;
+	rdfs:label "Irlanda"@gl ;
+	skos:prefLabel "Irlanda"@gl ;
+	schema:name "Irlanda"@gl ;
+	rdfs:label "Republik Irlandia"@id ;
+	skos:prefLabel "Republik Irlandia"@id ;
+	schema:name "Republik Irlandia"@id ;
+	rdfs:label "Irska"@sh ;
+	skos:prefLabel "Irska"@sh ;
+	schema:name "Irska"@sh ;
+	rdfs:label "Irlandia"@pap ;
+	skos:prefLabel "Irlandia"@pap ;
+	schema:name "Irlandia"@pap ;
+	rdfs:label "Ирму"@koi ;
+	skos:prefLabel "Ирму"@koi ;
+	schema:name "Ирму"@koi ;
+	rdfs:label "Irlanna"@scn ;
+	skos:prefLabel "Irlanna"@scn ;
+	schema:name "Irlanna"@scn ;
+	rdfs:label "Єирь"@cu ;
+	skos:prefLabel "Єирь"@cu ;
+	schema:name "Єирь"@cu ;
+	rdfs:label "ಐರ್ಲೆಂಡ್ ಗಣರಾಜ್ಯ"@kn ;
+	skos:prefLabel "ಐರ್ಲೆಂಡ್ ಗಣರಾಜ್ಯ"@kn ;
+	schema:name "ಐರ್ಲೆಂಡ್ ಗಣರಾಜ್ಯ"@kn ;
+	rdfs:label "Ierlân"@fy ;
+	skos:prefLabel "Ierlân"@fy ;
+	schema:name "Ierlân"@fy ;
+	rdfs:label "Ierlaand"@nds-nl ;
+	skos:prefLabel "Ierlaand"@nds-nl ;
+	schema:name "Ierlaand"@nds-nl ;
+	rdfs:label "Irlanda"@co ;
+	skos:prefLabel "Irlanda"@co ;
+	schema:name "Irlanda"@co ;
+	rdfs:label "Republika ti Irlanda"@ilo ;
+	skos:prefLabel "Republika ti Irlanda"@ilo ;
+	schema:name "Republika ti Irlanda"@ilo ;
+	rdfs:label "Irska"@sl ;
+	skos:prefLabel "Irska"@sl ;
+	schema:name "Irska"@sl ;
+	rdfs:label "Irska"@dsb ;
+	skos:prefLabel "Irska"@dsb ;
+	schema:name "Irska"@dsb ;
+	rdfs:label "Irland"@nds ;
+	skos:prefLabel "Irland"@nds ;
+	schema:name "Irland"@nds ;
+	rdfs:label "Airija"@lt ;
+	skos:prefLabel "Airija"@lt ;
+	schema:name "Airija"@lt ;
+	rdfs:label "Irlanda"@it ;
+	skos:prefLabel "Irlanda"@it ;
+	schema:name "Irlanda"@it ;
+	rdfs:label "Ирландия"@ru ;
+	skos:prefLabel "Ирландия"@ru ;
+	schema:name "Ирландия"@ru ;
+	rdfs:label "愛爾蘭"@zh-hant ;
+	skos:prefLabel "愛爾蘭"@zh-hant ;
+	schema:name "愛爾蘭"@zh-hant ;
+	rdfs:label "Republic of Ireland"@en-ca ;
+	skos:prefLabel "Republic of Ireland"@en-ca ;
+	schema:name "Republic of Ireland"@en-ca ;
+	rdfs:label "Ierland"@nl ;
+	skos:prefLabel "Ierland"@nl ;
+	schema:name "Ierland"@nl ;
+	rdfs:label "爱尔兰共和国"@zh ;
+	skos:prefLabel "爱尔兰共和国"@zh ;
+	schema:name "爱尔兰共和国"@zh ;
+	rdfs:label "爱尔兰"@zh-cn ;
+	skos:prefLabel "爱尔兰"@zh-cn ;
+	schema:name "爱尔兰"@zh-cn ;
+	rdfs:label "爱尔兰"@zh-hans ;
+	skos:prefLabel "爱尔兰"@zh-hans ;
+	schema:name "爱尔兰"@zh-hans ;
+	rdfs:label "Ирска"@mk ;
+	skos:prefLabel "Ирска"@mk ;
+	schema:name "Ирска"@mk ;
+	rdfs:label "Irlando"@eo ;
+	skos:prefLabel "Irlando"@eo ;
+	schema:name "Irlando"@eo ;
+	rdfs:label "República da Irlanda"@pt ;
+	skos:prefLabel "República da Irlanda"@pt ;
+	schema:name "República da Irlanda"@pt ;
+	rdfs:label "Irland"@da ;
+	skos:prefLabel "Irland"@da ;
+	schema:name "Irland"@da ;
+	rdfs:label "Irland"@sv ;
+	skos:prefLabel "Irland"@sv ;
+	schema:name "Irland"@sv ;
+	rdfs:label "Eire"@sw ;
+	skos:prefLabel "Eire"@sw ;
+	schema:name "Eire"@sw ;
+	rdfs:label "Pobblaght Nerin"@gv ;
+	skos:prefLabel "Pobblaght Nerin"@gv ;
+	schema:name "Pobblaght Nerin"@gv ;
+	rdfs:label "İrlandiya Respublikası"@az ;
+	skos:prefLabel "İrlandiya Respublikası"@az ;
+	schema:name "İrlandiya Respublikası"@az ;
+	rdfs:label "爱尔兰共和国"@zh-sg ;
+	skos:prefLabel "爱尔兰共和国"@zh-sg ;
+	schema:name "爱尔兰共和国"@zh-sg ;
+	rdfs:label "爱尔兰共和国"@zh-my ;
+	skos:prefLabel "爱尔兰共和国"@zh-my ;
+	schema:name "爱尔兰共和国"@zh-my ;
+	rdfs:label "愛爾蘭"@zh-hk ;
+	skos:prefLabel "愛爾蘭"@zh-hk ;
+	schema:name "愛爾蘭"@zh-hk ;
+	rdfs:label "愛爾蘭"@zh-tw ;
+	skos:prefLabel "愛爾蘭"@zh-tw ;
+	schema:name "愛爾蘭"@zh-tw ;
+	rdfs:label "愛爾蘭共和國"@zh-mo ;
+	skos:prefLabel "愛爾蘭共和國"@zh-mo ;
+	schema:name "愛爾蘭共和國"@zh-mo ;
+	rdfs:label "Irland"@de-ch ;
+	skos:prefLabel "Irland"@de-ch ;
+	schema:name "Irland"@de-ch ;
+	rdfs:label "República da Irlanda"@pt-br ;
+	skos:prefLabel "República da Irlanda"@pt-br ;
+	schema:name "República da Irlanda"@pt-br ;
+	rdfs:label "Irlinde"@pcd ;
+	skos:prefLabel "Irlinde"@pcd ;
+	schema:name "Irlinde"@pcd ;
+	rdfs:label "Iirlaante"@sma ;
+	skos:prefLabel "Iirlaante"@sma ;
+	schema:name "Iirlaante"@sma ;
+	rdfs:label "Īrõmō"@liv ;
+	skos:prefLabel "Īrõmō"@liv ;
+	schema:name "Īrõmō"@liv ;
+	rdfs:label "Irlandiya"@ay ;
+	skos:prefLabel "Irlandiya"@ay ;
+	schema:name "Irlandiya"@ay ;
+	rdfs:label "गणतन्त्र आयरल्यान्द"@new ;
+	skos:prefLabel "गणतन्त्र आयरल्यान्द"@new ;
+	schema:name "गणतन्त्र आयरल्यान्द"@new ;
+	rdfs:label "Ирланд"@bxr ;
+	skos:prefLabel "Ирланд"@bxr ;
+	schema:name "Ирланд"@bxr ;
+	rdfs:label "Ірьско"@rue ;
+	skos:prefLabel "Ірьско"@rue ;
+	schema:name "Ірьско"@rue ;
+	rdfs:label "අයර්ලන්ත සමූහාණ්ඩුව"@si ;
+	skos:prefLabel "අයර්ලන්ත සමූහාණ්ඩුව"@si ;
+	schema:name "අයර්ලන්ත සමූහාණ්ඩුව"@si ;
+	rdfs:label "Ирландия"@ba ;
+	skos:prefLabel "Ирландия"@ba ;
+	schema:name "Ирландия"@ba ;
+	rdfs:label "Република Ирска"@sr-ec ;
+	skos:prefLabel "Република Ирска"@sr-ec ;
+	schema:name "Република Ирска"@sr-ec ;
+	rdfs:label "Republika Irska"@sr-el ;
+	skos:prefLabel "Republika Irska"@sr-el ;
+	schema:name "Republika Irska"@sr-el ;
+	rdfs:label "ऐर्लेण्ड्देशः"@sa ;
+	skos:prefLabel "ऐर्लेण्ड्देशः"@sa ;
+	schema:name "ऐर्लेण्ड्देशः"@sa ;
+	rdfs:label "Irlanna"@nap ;
+	skos:prefLabel "Irlanna"@nap ;
+	schema:name "Irlanna"@nap ;
+	rdfs:label "Ireland"@ha ;
+	skos:prefLabel "Ireland"@ha ;
+	schema:name "Ireland"@ha ;
+	rdfs:label "ປະເທດອຽກລັງ"@lo ;
+	skos:prefLabel "ປະເທດອຽກລັງ"@lo ;
+	schema:name "ປະເທດອຽກລັງ"@lo ;
+	rdfs:label "Irlanda"@rn ;
+	skos:prefLabel "Irlanda"@rn ;
+	schema:name "Irlanda"@rn ;
+	rdfs:label "Irlaand"@wo ;
+	skos:prefLabel "Irlaand"@wo ;
+	schema:name "Irlaand"@wo ;
+	rdfs:label "Irlanda"@mg ;
+	skos:prefLabel "Irlanda"@mg ;
+	schema:name "Irlanda"@mg ;
+	rdfs:label "Irlande"@fur ;
+	skos:prefLabel "Irlande"@fur ;
+	schema:name "Irlande"@fur ;
+	rdfs:label "ਆਇਰਲੈਂਡ"@pa ;
+	skos:prefLabel "ਆਇਰਲੈਂਡ"@pa ;
+	schema:name "ਆਇਰਲੈਂਡ"@pa ;
+	rdfs:label "Ireland"@sn ;
+	skos:prefLabel "Ireland"@sn ;
+	schema:name "Ireland"@sn ;
+	rdfs:label "Irlannda"@ff ;
+	skos:prefLabel "Irlannda"@ff ;
+	schema:name "Irlannda"@ff ;
+	rdfs:label "愛爾蘭共和國"@lzh ;
+	skos:prefLabel "愛爾蘭共和國"@lzh ;
+	schema:name "愛爾蘭共和國"@lzh ;
+	rdfs:label "Ireland"@chy ;
+	skos:prefLabel "Ireland"@chy ;
+	schema:name "Ireland"@chy ;
+	rdfs:label "Aayerlaandi"@om ;
+	skos:prefLabel "Aayerlaandi"@om ;
+	schema:name "Aayerlaandi"@om ;
+	rdfs:label "Ирландия Мастор"@myv ;
+	skos:prefLabel "Ирландия Мастор"@myv ;
+	schema:name "Ирландия Мастор"@myv ;
+	rdfs:label "İrlandiya"@crh-latn ;
+	skos:prefLabel "İrlandiya"@crh-latn ;
+	schema:name "İrlandiya"@crh-latn ;
+	rdfs:label "ایرلند"@lrc ;
+	skos:prefLabel "ایرلند"@lrc ;
+	schema:name "ایرلند"@lrc ;
+	rdfs:label "ایرلند"@azb ;
+	skos:prefLabel "ایرلند"@azb ;
+	schema:name "ایرلند"@azb ;
+	rdfs:label "Ireland"@ve ;
+	skos:prefLabel "Ireland"@ve ;
+	schema:name "Ireland"@ve ;
+	rdfs:label "Ireland"@nso ;
+	skos:prefLabel "Ireland"@nso ;
+	schema:name "Ireland"@nso ;
+	rdfs:label "आयर्लंड गणराज्य"@gom ;
+	skos:prefLabel "आयर्लंड गणराज्य"@gom ;
+	schema:name "आयर्लंड गणराज्य"@gom ;
+	rdfs:label "Oi-ngì-làn Khiung-fò-koet"@hak ;
+	skos:prefLabel "Oi-ngì-làn Khiung-fò-koet"@hak ;
+	schema:name "Oi-ngì-làn Khiung-fò-koet"@hak ;
+	rdfs:label "Irland"@ksh ;
+	skos:prefLabel "Irland"@ksh ;
+	schema:name "Irland"@ksh ;
+	rdfs:label "Irikondre"@srn ;
+	skos:prefLabel "Irikondre"@srn ;
+	schema:name "Irikondre"@srn ;
+	rdfs:label "ᎠᏲᎳᏂ"@chr ;
+	skos:prefLabel "ᎠᏲᎳᏂ"@chr ;
+	schema:name "ᎠᏲᎳᏂ"@chr ;
+	rdfs:label "ایرلند جمهوری"@mzn ;
+	skos:prefLabel "ایرلند جمهوری"@mzn ;
+	schema:name "ایرلند جمهوری"@mzn ;
+	rdfs:label "Ripapelika o Aialani"@sm ;
+	skos:prefLabel "Ripapelika o Aialani"@sm ;
+	schema:name "Ripapelika o Aialani"@sm ;
+	rdfs:label "Airilan"@jam ;
+	skos:prefLabel "Airilan"@jam ;
+	schema:name "Airilan"@jam ;
+	rdfs:label "ایرلند ئی جمهوریت"@bgn ;
+	skos:prefLabel "ایرلند ئی جمهوریت"@bgn ;
+	schema:name "ایرلند ئی جمهوریت"@bgn ;
+	rdfs:label "爱尔兰"@wuu ;
+	skos:prefLabel "爱尔兰"@wuu ;
+	schema:name "爱尔兰"@wuu ;
+	rdfs:label "Irlànda"@eml ;
+	skos:prefLabel "Irlànda"@eml ;
+	schema:name "Irlànda"@eml ;
+	rdfs:label "Ireland"@ig ;
+	skos:prefLabel "Ireland"@ig ;
+	schema:name "Ireland"@ig ;
+	rdfs:label "आयरलैंड गणराज्य"@bho ;
+	skos:prefLabel "आयरलैंड गणराज्य"@bho ;
+	schema:name "आयरलैंड गणराज्य"@bho ;
+	rdfs:label "Irlandii"@olo ;
+	skos:prefLabel "Irlandii"@olo ;
+	schema:name "Irlandii"@olo ;
+	rdfs:label "ཨའིརི་ལེནཌ"@dz ;
+	skos:prefLabel "ཨའིརི་ལེནཌ"@dz ;
+	schema:name "ཨའིརི་ལེནཌ"@dz ;
+	rdfs:label "આયર્લેન્ડ"@gu ;
+	skos:prefLabel "આયર્લેન્ડ"@gu ;
+	schema:name "આયર્લેન્ડ"@gu ;
+	rdfs:label "আয়ারল্যান্ড"@bpy ;
+	skos:prefLabel "আয়ারল্যান্ড"@bpy ;
+	schema:name "আয়ারল্যান্ড"@bpy ;
+	rdfs:label "Irland"@de-at ;
+	skos:prefLabel "Irland"@de-at ;
+	schema:name "Irland"@de-at ;
+	rdfs:label "Ирландий"@mhr ;
+	skos:prefLabel "Ирландий"@mhr ;
+	schema:name "Ирландий"@mhr ;
+	rdfs:label "ma Alan"@tokipona ;
+	skos:prefLabel "ma Alan"@tokipona ;
+	schema:name "ma Alan"@tokipona ;
+	rdfs:label "गणतन्त्र आयरल्यान्ड"@dty ;
+	skos:prefLabel "गणतन्त्र आयरल्यान्ड"@dty ;
+	schema:name "गणतन्त्र आयरल्यान्ड"@dty ;
+	rdfs:label "Ирландия"@kk-cyrl ;
+	skos:prefLabel "Ирландия"@kk-cyrl ;
+	schema:name "Ирландия"@kk-cyrl ;
+	rdfs:label "Irɩlandɩ"@kbp ;
+	skos:prefLabel "Irɩlandɩ"@kbp ;
+	schema:name "Irɩlandɩ"@kbp ;
+	rdfs:label "Ҷумҳурии Ирландия"@tg-cyrl ;
+	skos:prefLabel "Ҷумҳурии Ирландия"@tg-cyrl ;
+	schema:name "Ҷумҳурии Ирландия"@tg-cyrl ;
+	rdfs:label "Ireland"@gom-latn ;
+	skos:prefLabel "Ireland"@gom-latn ;
+	schema:name "Ireland"@gom-latn ;
+	rdfs:label "आयर्लंड गणराज्य"@gom-deva ;
+	skos:prefLabel "आयर्लंड गणराज्य"@gom-deva ;
+	schema:name "आयर्लंड गणराज्य"@gom-deva ;
+	rdfs:label "Ирланди"@mrj ;
+	skos:prefLabel "Ирланди"@mrj ;
+	schema:name "Ирланди"@mrj ;
+	rdfs:label "Irlanda"@cbk-zam ;
+	skos:prefLabel "Irlanda"@cbk-zam ;
+	schema:name "Irlanda"@cbk-zam ;
+	schema:description "country in north-west Europe"@en-gb,
+		"republic covering major parts of the island of Ireland"@en,
+		"pays d'Europe"@fr,
+		"Staat in Westeuropa"@de,
+		"país de Europa"@es,
+		"land i Europa"@nb,
+		"Stato dell'Europa"@it,
+		"歐洲國家"@zh-hant,
+		"государство в Европе"@ru,
+		"欧洲国家"@zh-hans,
+		"欧洲国家"@zh-cn,
+		"欧洲国家"@zh-sg,
+		"欧洲国家"@zh-my,
+		"欧洲国家"@zh,
+		"歐洲國家"@zh-hk,
+		"歐洲國家"@zh-tw,
+		"歐洲國家"@zh-mo,
+		"país d'Europa"@ca,
+		"valtio Euroopassa"@fi,
+		"pagilian idiay Amianan nga Europa"@ilo,
+		"stát v západní Evropě"@cs,
+		"civitas Europae"@la,
+		"país no norte da Europa"@pt-br,
+		"ஐரோப்பிய நாடு"@ta,
+		"negara di Eropah Utara"@ms,
+		"land in Europa"@nl,
+		"北大西洋のアイルランド島に存在する立憲共和制国家"@ja,
+		"país na Europa"@pt,
+		"држава у западној Европи"@sr,
+		"држава у западној Европи"@sr-ec,
+		"država u zapadnoj Evropi"@sr-el,
+		"ଇଉରୋପର ଦେଶ"@or,
+		"vesteuropæisk land"@da,
+		"twisky"@id,
+		"держава в північно-західній Європі на 5/6 території о. Ірландія"@uk,
+		"állam Északnyugat-Európában"@hu,
+		"stat în Europa de Vest"@ro,
+		"republik omfattande större delen av ön Irland"@sv,
+		"država zapadne Europe"@hr,
+		"państwo w Europie Północnej"@pl,
+		"País do norte de Europa"@gl,
+		"paìsi di l'Europa"@scn,
+		"उत्तर-पश्चिम युरोपको देश"@ne,
+		"pais européu"@ast,
+		"երկիր Եվրոպայի հյուսիս-արևմուտքում"@hy,
+		"ਉੱਤਰ-ਪੱਛਮ ਯੂਰਪ ਵਿਚ ਦੇਸ਼"@pa,
+		"ಐರ್ಲೆಂಡ್ ದ್ವೀಪವನ್ನು ಆವರಿಸಿರುವ ಗಣರಾಜ್ಯ"@kn,
+		"държава в Западна Европа"@bg,
+		"מדינה באירופה"@he,
+		"دولة في أوروبا الغربية"@ar,
+		"Staat in Westeuropa"@de-at,
+		"Staat in Westeuropa"@de-ch,
+		"country in north-west Europe"@en-ca,
+		"nchi ya visiwa katika Ulaya Kaskazini-Magharibi"@sw,
+		"Staat a Westeuropa"@lb,
+		"Gweriniaeth Iwerddon"@cy,
+		"युरोप का एक देश"@hi,
+		"สาธารณรัฐที่ตั้งอยู่บนเกาะไอร์แลนด์ ทวีปยุโรป"@th,
+		"lando en okcidenta Eŭropo"@eo,
+		"വടക്കു പറിഞ്ഞാറൻ യൂറോപ്പിൽ അയർലന്റ് ദ്വീപിന്റെ 85 ശതമാനത്തോളം ഭൂവിഭാഗം ഉൾക്കൊള്ളുന്ന ഒരു സ്വതന്ത്ര രാജ്യമാണ് അയർലണ്ട് എന്ന് പൊതുവേ അറിയപ്പെടുന്ന റിപ്പബ്ലിക്ക് ഓഫ് അയർലന്റ്"@ml,
+		"stat w zapadnej Europje"@hsb,
+		"Батыс Еуропадағы ел"@kk-cyrl,
+		"ইউরোপের রাষ্ট্র"@bn,
+		"Tír in iarthar na hEorpa"@ga,
+		"İrlanda adasının çoğunu kaplayan Batı Avrupa ülkesi"@tr ;
+	skos:altLabel "Éire"@en,
+		"IE"@en,
+		"IRL"@en,
+		"Republic of Ireland"@en,
+		"Hibernia"@en,
+		"Ireland, Republic of"@en,
+		"ie"@en,
+		"ireland"@en,
+		"🇮🇪"@en,
+		"Eire"@en,
+		"Southern Ireland"@en,
+		"République d'Irlande"@fr,
+		"Eire"@fr,
+		"Éire"@fr,
+		"Republic of Ireland"@fr,
+		"Ireland"@fr,
+		"Republik Irland"@de,
+		"Irlandja"@szl,
+		"Republic of Ireland"@ts,
+		"Ír Királyság"@hu,
+		"Ír Köztársaság"@hu,
+		"Repubblika Irlandiża"@mt,
+		"Repubblika ta' l-Irlanda"@mt,
+		"Irlandiýa Respublikasy"@tk,
+		"אירלאַנד"@yi,
+		"איירלענד"@yi,
+		"אירענלאנד"@yi,
+		"ئێرلەندا"@ckb,
+		"کۆماری ئێرلەندا"@ckb,
+		"کۆماری ئیرلەند"@ckb,
+		"Éire"@fi,
+		"Irlannin tasavalta"@fi,
+		"Republic of Ireland"@fi,
+		"Ірландська Республіка"@uk,
+		"Республіка Ірландія"@uk,
+		"Ірляндія"@uk,
+		"Ireland"@jbo,
+		"eris"@jbo,
+		"irland"@jbo,
+		"Рэспубліка Ірляндыя"@be-tarask,
+		"Ирландия"@sah,
+		"Republika Irska"@hr,
+		"Republik Irland"@gsw,
+		"ايرلاندا"@arz,
+		"Irlun"@frr,
+		"Irland"@frr,
+		"Ireland"@yo,
+		"Irelandi"@yo,
+		"The Republic of Ireland"@yo,
+		"Republic of Ireland"@yo,
+		"アイリッシュ"@ja,
+		"ヒベルニア"@ja,
+		"エール共和国"@ja,
+		"エーラ"@ja,
+		"Ireland"@ja,
+		"アイルランド共和国"@ja,
+		"愛蘭"@ja,
+		"Republic of Ireland"@ja,
+		"Írska republika"@sk,
+		"Komara Îrlanda"@ku,
+		"Îrland"@ku,
+		"Ирландын Бүгд Найрамдах Улс"@mn,
+		"Бүгд Найрамдах Ирланд Улс"@mn,
+		"Ireland"@th,
+		"ประเทศสาธารณรัฐไอร์แลนด์"@th,
+		"สาธารณรัฐไอร์แลนด์"@th,
+		"Republic of Ireland"@th,
+		"República d’Irlanda"@ca,
+		"Irlanda"@ca,
+		"Eire"@ca,
+		"Éire"@ca,
+		"Res publica Hiberniae"@la,
+		"Irlandia"@la,
+		"Írsk mentan"@fo,
+		"Írska Republikkin"@fo,
+		"Éire"@cy,
+		"Iwerddon Rydd"@cy,
+		"Ireland"@sgs,
+		"Airėjės Respoblėka"@sgs,
+		"جمہوریہ آئرلینڈ"@ur,
+		"آئرستان"@ur,
+		"آئرلینڈ"@ur,
+		"آئر لینڈ"@ur,
+		"Republic of Ireland"@ur,
+		"Celts"@zu,
+		"I-Ayilandi"@zu,
+		"Éire"@lb,
+		"Republik Irland"@lb,
+		"ཨའི་རི་ལེནཌི།"@bo,
+		"ཨར་ལེན་ཌ་"@bo,
+		"Ireland"@or,
+		"Ierse Republiek"@af,
+		"Ireland"@ceb,
+		"Republika sa Irlanda"@ceb,
+		"Republik Éire"@br,
+		"Έιρε"@el,
+		"Ιρλανδική Δημοκρατία"@el,
+		"ЭйринҺазр"@xal,
+		"Ирландь"@xal,
+		"Irlánda"@se,
+		"Irland"@kl,
+		"Éire / Ireland"@io,
+		"Irlando"@io,
+		"Ирландия Республикасы"@kk,
+		"Ейре"@kk,
+		"Éire-kok"@nan,
+		"Éire Kiōng-hô-kok"@nan,
+		"Éire-lân"@nan,
+		"Ireland Kiōng-hô-kok"@nan,
+		"Ài-ní-lân"@nan,
+		"Ireulandia"@ace,
+		"Irlãnd"@bar,
+		"Irlånd"@bar,
+		"IRL"@lv,
+		"Īrijas republika"@lv,
+		"Ierlandj"@li,
+		"Իրլանդիա"@hy,
+		"Իռլանդիայի Հանրապետություն"@hy,
+		"Республика Ирландия"@tt,
+		"Ирландия Җөмһүрияте"@tt,
+		"Ирланди"@cv,
+		"Republica irlanda"@ro,
+		"Republic of Ireland"@ro,
+		"Irlandya"@war,
+		"Republika han Irlandya"@war,
+		"Irlandia"@war,
+		"Republika han Irlandia"@war,
+		"Republic of Ireland"@war,
+		"ایرلندی"@fa,
+		"ايرلند جنوبي"@fa,
+		"جمهوری ایرلند"@fa,
+		"ايرلندي"@fa,
+		"ایرلند جنوبی"@fa,
+		"ايرلند"@fa,
+		"جمهوري ايرلند"@fa,
+		"ირლანდია"@ka,
+		"Republik bilong Aialan"@tpi,
+		"Republik long Aialan"@tpi,
+		"Éire"@eu,
+		"Cynewīse Īrlandes"@ang,
+		"Repubbrica d'Irlanda"@lij,
+		"Eire"@lij,
+		"Irlanda"@oc,
+		"Ireland"@sq,
+		"Irland"@sq,
+		"Ireland"@my,
+		"အယ်ရာနိုင်ငံ"@my,
+		"အိုင်ယာလန်နိုင်ငံ"@my,
+		"Republyk Ywerdhon"@kw,
+		"Repoblek Wordhon"@kw,
+		"Repoblek Iwerdhon"@kw,
+		"جمهورية إيرلندا"@ar,
+		"جمهورية إيرلندة"@ar,
+		"جمهورية ايرلندة"@ar,
+		"الجمهورية الأيرلندية"@ar,
+		"جمهوريه أيرلندا"@ar,
+		"إيرلنده"@ar,
+		"جمهورية آيرلندا"@ar,
+		"ايرلاندية"@ar,
+		"جمهورية ايرلاندا"@ar,
+		"آيرلندية"@ar,
+		"آرسنال"@ar,
+		"جمهورية ايرلندا"@ar,
+		"جمهورية أيرلندة"@ar,
+		"إيرلندي"@ar,
+		"Republyique d'Irlande"@nrm,
+		"Républlique d'Irlaunde"@nrm,
+		"Republic of Ireland"@sr,
+		"Ирска"@sr,
+		"Irska"@sr,
+		"Ирландия Республика"@krc,
+		"Republic of Ireland"@gan,
+		"Irlanda"@roa-tara,
+		"आयरल्याण्ड"@ne,
+		"İrlandiya"@az,
+		"Eire"@lmo,
+		"Repüblica d'Irlanda"@lmo,
+		"Republica d'Irlanda"@an,
+		"Repubblica d'Irlanda"@vec,
+		"Eire"@vec,
+		"Republica d'Irlanda"@vec,
+		"Republica de Irlanda"@vec,
+		"Repùblica de Irlanda"@vec,
+		"Irlanda"@nah,
