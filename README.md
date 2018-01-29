@@ -37,6 +37,16 @@ wd:Q457 ps:P1376 wd:Q1726747
 
 2. Run rdftype-subclass_graph.awk to retireve a graph of all edges the go through either P31 (RDF:Type) or P297 (subClassOf) 
 
+3. Use the graph .txt file from the previous step with python snap. This gets all Entities with OutDegree of 0.
+
+ ```python
+ 	import snap
+ 	G1 = snap.LoadEdgeList(snap.PNGraph, "inputfile.txt", 0, 1)
+    for NI in G1.Nodes():
+        if NI.GetOutDeg() == 0:
+            print NI.GetId()
+```
+
 3. Run getlabelsforentities as decribed below
 
 ### AWK-script Explanations
