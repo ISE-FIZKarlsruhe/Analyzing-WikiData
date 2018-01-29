@@ -3,11 +3,6 @@
 This repository hosts various scripts for compression and analyzing WikiData.
 Currently all scripts are .awk-scripts. The output location must be added manually for the moment.
 
-To execute a script type
-```sh
-$ awk -f program-file input-file
-```
-
 Files that were created with the provided scripts can be found on:
 https://drive.google.com/drive/folders/0B1VsD7AFoAMVb01BaGhMWXpscVU 
 
@@ -34,7 +29,22 @@ The Script privides multiple options that are explained with comments within the
 
 In the current version it requires approximately 8GB of free RAM and robustly finds all shortest paths from a given entity to all other entities for an unlimited (testing in progress) pathlength.   
 
+### General Explanations
+
+####**--Find all "Supertypes"**
+1. Input is the prefixed WikiData file:
+wd:Q457 ps:P1376 wd:Q1726747
+
+2. Run rdftype-subclass_graph.awk to retireve a graph of all edges the go through either P31 (RDF:Type) or P297 (subClassOf) 
+
+3. Run getlabelsforentities as decribed below
+
 ### AWK-script Explanations
+
+To execute a awk script type
+```sh
+$ awk -f program-file input-file
+```
 
 #####**--compressing.awk**
 
@@ -132,6 +142,27 @@ Step 0: Q78 Basel
 Step 1: Q39 Switzerland
 Step 2: Q183 Germany
 Step 3: Q567 Angela Merkel
+
+#####**--getlabelsforentities.awk** 
+
+The script takes a list of entities inputfile1, and the wikidata label file as iputfile2.
+
+-Example inputfile1-  
+1  
+2  
+3  
+4  
+...  
+
+-Example inputfile2-  
+1 Universe  
+2 Earth  
+3 Life  
+4 Death  
+...  
+
+To properly execute the script, all files must be sorted. 
+
 
 #####**--insertpredicatestopath.awk** 
 
