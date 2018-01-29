@@ -4,8 +4,8 @@ import csv
 from collections import defaultdict
 import snap
 
-inputfile = "../../WikiData/py/wikidata_objects.txt"
-inputfile = "../results/wikidata_typesubclass.txt"
+#inputfile = "../../WikiData/py/wikidata_objects.txt"
+inputfile = "../results/wikidata_supertypeGraph.txt"
 #inputfile = "../../WikiData/py/smallgraph4.txt"
 #inputfile = "smallgraph4.txt"                       #Server
 #inputfile = "../results/wikidata_objects.txt"       #Server
@@ -53,11 +53,15 @@ def main():
     #snap.PlotInDegDistr(G1,"degreeplot","Undirected Graph - in-degree Distribution")
 
 def buildDirected():
+    print "Building directed graph from",inputfile
     G1 = snap.LoadEdgeList(snap.PNGraph, inputfile, 0, 1)
+    print "Done."
     return G1
 
 def buildUndirected():
+    print "Building undirected graph from",inputfile
     G1 = snap.LoadEdgeList(snap.PUNGraph, inputfile, 0, 1)
+    print "Done."
     return G1
 
 def printEdges():
