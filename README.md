@@ -40,11 +40,11 @@ wd:Q457 ps:P1376 wd:Q1726747
 3. Use the graph .txt file from the previous step with python snap. This gets all Entities with OutDegree of 0.
 
  ```python
- 	import snap
- 	G1 = snap.LoadEdgeList(snap.PNGraph, "inputfile.txt", 0, 1)
-    for NI in G1.Nodes():
-        if NI.GetOutDeg() == 0:
-            print NI.GetId()
+ import snap
+ G1 = snap.LoadEdgeList(snap.PNGraph, "inputfile.txt", 0, 1)
+ for NI in G1.Nodes():
+ 	if NI.GetOutDeg() == 0:
+ 		print NI.GetId()
 ```
 
 3. Run getlabelsforentities as decribed below
