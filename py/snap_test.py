@@ -1,14 +1,17 @@
 #!/usr/bin/env python
+from __future__ import division
 import numpy as np
 import csv
 from collections import defaultdict
 import snap
+from sys import stdout
 
-#inputfile = "../../WikiData/py/wikidata_objects.txt"
-inputfile = "../results/wikidata_supertypeGraph.txt"
+
+#inputfile = "wikidata_objects.txt"
+#inputfile = "../results/wikidata_supertypeGraph.txt"
 #inputfile = "../../WikiData/py/smallgraph4.txt"
 #inputfile = "smallgraph4.txt"                       #Server
-#inputfile = "../results/wikidata_objects.txt"       #Server
+inputfile = "../results/wikidata_objects.txt"       #Server
 directed = True
 
 def main():
@@ -20,21 +23,37 @@ def main():
     #print 'IsConnected?', snap.IsConnected(G1)
     #print 'Weakly connected?', snap.IsWeaklyConn(G1)
     #WeakConnectedCompDistribution()
+    #StrongConnectedCompDistribution()
     #getWeaklyConnectedComponents()
-    #getConnectedComponents()
+    #getStronglyConnectedComponents()
     #print snap.GetMxInDegNId(G1)
     #print snap.CntDegNodes(G1, 5138062)
     #Plot Shortest Path Distribution
     #Graph = snap.GenRndGnm(snap.PNGraph, 100, 1000)
     #snap.PlotShortPathDistr(Graph, "example", "Directed graph - shortest path")
 
+    Rnd = snap.TRnd(42)
+    Rnd.Randomize()
+    start = G1.GetRndNId(Rnd)
+    print "start:",start
+    print "Max Closeness Path:"
+    maxCCNode,maxCloseness = getMaxCloseness(1)
+    print "-----------"
+    print "Highest Closeness Centrality: Node %d, Value %f" %(maxCCNode, maxCloseness)
+
+
+    #for node in G1.Nodes():
+    #    getMaxCloseness(node.GetId())
+    #    print"---------"
+
     #Closeness
     #for NI in G1.Nodes():
-    #    print "node: %d, closeness %f" % (NI.GetId(), snap.GetClosenessCentr(G1, NI.GetId(), True, True))
+    #   print "node: %d, closeness %f" % (NI.GetId(), snap.GetClosenessCentr(G1, NI.GetId(), True, True))
 
-    for NI in G1.Nodes():
-        if NI.GetOutDeg() == 0:
-            print NI.GetId()
+    #Print Those with OutDegree = 0
+    #for NI in G1.Nodes():
+    #    if NI.GetOutDeg() == 0:
+    #        print NI.GetId()
         
     #Triads
     #NumTriads = snap.GetTriads(G1, 50000)       #returns 66395
@@ -64,6 +83,57 @@ def buildUndirected():
     print "Done."
     return G1
 
+def getNeighbors(nodeId):
+    neighbors = snap.TIntV()
+    node = G1.GetNI(nodeId)
+    deg = node.GetInDeg()
+    for i in range(0, deg):
+        neighbors.Add(node.GetNbrNId(i))
+    return deg, neighbors
+
+def getMaxCloseness(startNodeId,verbose = True,isDir=True):
+    checked = defaultdict(int);
+    current = startNodeId
+    checked[current] = 1
+    currentCC = snap.GetClosenessCentr(G1, current, True, isDir)
+    found = False
+    while not found:
+        deg,neighbors = getNeighbors(current)
+        if verbose:
+            print "Current Node: %d, Closeness: %f, Neighbors: %d" %(current,currentCC,deg)
+        maxncc = 0
+        maxneighbor = 0
+        progress = 0
+        for neighbor in neighbors:
+            if verbose:
+                progress += 1
+                perc = (progress/deg)*100
+                stdout.write("\r%f" % perc + "% ")
+                stdout.flush()
+            if checked[neighbor] == 0:
+                checked[neighbor] = 1
+                ncc = snap.GetClosenessCentr(G1, neighbor, True, isDir)
+                if ncc > maxncc:
+                    maxncc = ncc
+                    maxneighbor = neighbor
+        if verbose:
+            print
+        if maxncc <= currentCC:
+            found = True
+            return current, currentCC
+        currentCC = maxncc
+        current = maxneighbor
+
+
+
+    for NI in G1.Nodes():
+        n = getNeighbors(NI)
+        for i in n:
+            print G1.GetNI(i).GetId(),
+        print
+
+
+
 def printEdges():
     for NI in G1.Nodes():
         for Id in NI.GetOutEdges():
@@ -84,6 +154,9 @@ def getStronglyConnectedComponents():
         else:
             nodes.append(CnCom[0])
         print "Component %d: Size: %d Member:" % (i+1,CnCom.Len()),nodes
+
+
+
 
 def getWeaklyConnectedComponents():
     Components = snap.TCnComV()
