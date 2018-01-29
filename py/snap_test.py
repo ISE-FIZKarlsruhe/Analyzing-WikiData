@@ -5,18 +5,22 @@ from collections import defaultdict
 import snap
 
 inputfile = "../../WikiData/py/wikidata_objects.txt"
+inputfile = "../results/wikidata_typesubclass.txt"
 #inputfile = "../../WikiData/py/smallgraph4.txt"
-rebuild = True
+#inputfile = "smallgraph4.txt"                       #Server
+#inputfile = "../results/wikidata_objects.txt"       #Server
+directed = True
 
 def main():
     print
+    #snap.PrintInfo(G1, "QA Stats", "qa-info.txt", False)
     #printEdges()
     #printDegrees()
     #print snap.GetBfsFullDiam(G1, 1000, True)
     #print 'IsConnected?', snap.IsConnected(G1)
-    #print 'Weakly?', snap.IsWeaklyConn(G1)
+    #print 'Weakly connected?', snap.IsWeaklyConn(G1)
     #WeakConnectedCompDistribution()
-    getWeaklyConnectedComponents()
+    #getWeaklyConnectedComponents()
     #getConnectedComponents()
     #print snap.GetMxInDegNId(G1)
     #print snap.CntDegNodes(G1, 5138062)
@@ -28,14 +32,32 @@ def main():
     #for NI in G1.Nodes():
     #    print "node: %d, closeness %f" % (NI.GetId(), snap.GetClosenessCentr(G1, NI.GetId(), True, True))
 
-    #S1 = snap.GetRndSubGraph(G1, 20)
-    #for NI in S1.Nodes():
-    #    print "node: %d, out-degree %d, in-degree %d" % ( NI.GetId(), NI.GetOutDeg(), NI.GetInDeg())
+    for NI in G1.Nodes():
+        if NI.GetOutDeg() == 0:
+            print NI.GetId()
         
+    #Triads
+    #NumTriads = snap.GetTriads(G1, 50000)       #returns 66395
+    #print 'Number of triads : %d' % NumTriads
 
+    #Cluster coefficients
+    #for NI in G1.Nodes():
+    #    print "node: %d, - cluster coefficient %f" % ( NI.GetId(), snap.GetNodeClustCf(G1, NI.GetId()))
+    #print
+    
+    #negative clustercoefficients:
+    # node: 1321, - cluster coefficient -0.000094
+    # node: 1860, - cluster coefficient -0.001671
+
+    #Plot Degree Distribution
+    #snap.PlotInDegDistr(G1,"degreeplot","Undirected Graph - in-degree Distribution")
 
 def buildDirected():
     G1 = snap.LoadEdgeList(snap.PNGraph, inputfile, 0, 1)
+    return G1
+
+def buildUndirected():
+    G1 = snap.LoadEdgeList(snap.PUNGraph, inputfile, 0, 1)
     return G1
 
 def printEdges():
@@ -83,6 +105,8 @@ def WeakConnectedCompDistribution():
     for comp in ComponentDist:
         print "ComponentSize: %d - Number of such Components: %d" % (comp.GetVal1(), comp.GetVal2())
 
-if rebuild:
+if directed:
     G1 = buildDirected()
+else:
+    G1 = buildUndirected()
 main()
