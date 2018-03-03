@@ -20,7 +20,7 @@ The folder "statistics" contains some preliminary analysis results.
 
 (The last commands removes the predicates from the "wikidata_numbers-only"-file. To retrieve the predicates for a given path, follow the instructions on insertpredicatestopath.awk)  
 
-####**--Find all "Supertypes"**
+#### Find all "Supertypes"
 1. Input is the prefixed WikiData file:
 wd:Q457 ps:P1376 wd:Q1726747
 
@@ -45,7 +45,7 @@ Alternatively use pandas with .csv (not tested)
 ```
 
 
-4. Run getlabelsforentities as decribed below
+4. Run getlabelsforentities.awk as decribed below
 
 
 ### python-script Explanations
@@ -104,7 +104,7 @@ In the current version it requires approximately 8GB of free RAM and robustly fi
 
 To execute a awk script type
 ```sh
-$ awk -f program-file input-file
+$ awk -f program-file inputfile1 [inputfile2]
 ```
 
 #####**--compressing.awk**
@@ -113,11 +113,11 @@ The main compressing script uses the full (unzipped) turtle dump file as found o
 https://dumps.wikimedia.org/wikidatawiki/entities/   (i.e. latest-all.ttl)  
 
 -Input-  
-wds:Q457-9EEE3BB9-E8C4-495F-A4F8-9C338DABE5F8 a wikibase:Statement, 
-wikibase:BestRank ; 
-wikibase:rank wikibase:NormalRank ; 
-ps:P1376 wd:Q1726747 ; 
-prov:wasDerivedFrom wdref:cb1bf156a6906c27e02d4e4e7585aabcddd0e094 .  
+wds:Q457-9EEE3BB9-E8C4-495F-A4F8-9C338DABE5F8 a  wikibase:Statement,  
+wikibase:BestRank ;  
+wikibase:rank wikibase:NormalRank ;  
+ps:P1376 wd:Q1726747 ;  
+prov:wasDerivedFrom wdref:cb1bf156a6906c24e4e7585aabcddd0e094 .  
 
 -Output-   
 wd:Q457 ps:P1376 wd:Q1726747  
@@ -125,7 +125,7 @@ wd:Q457 ps:P1376 wd:Q1726747
 #####**--compressing_wdt.awk** 
 
 Works similar to the previous script but only considers statement of rdf:type wikibase:BestRank.
-It also ignores qualifiers.  
+It therefore also ignores qualifiers.  
 
 #####**--cutprefixes.awk** 
 
@@ -143,13 +143,13 @@ wd:Q457 wdt:P1376 wd:Q1726747
 
 #####**--getobjects.awk** 
 
-This script asks the User for the number of a specific entity and prints all of its predicates and objects. 
+Asks the User for the number of a specific entity and prints all of its predicates and objects. 
 It is intendet to be used on the maximally compressed wikidata file (the one containing only numbers).  
 
 #####**--getlabels.awk** 
 
 This Script uses the unzipped main file [latest-all.ttl] to extract all available labels for every entity.
-In oder to only get the english labels use
+In oder to only get the english labels use on the first output
 
 ```sh
 $ grep "@en" input-file
@@ -161,18 +161,12 @@ The file labels_english has been stripped down to the maximum.
 Name variations within the english labels of an entity can be found with the getduplicatelabels.awk script.  
 
 #####**--getobjectcount.awk, getobjectcount2.awk** 
+!Deprecated. Better visualized by the degreeplot!
 
 These have been used to get some idea about the number of objects an entity links to. 
 The first script counts the links each individual entity has.
 The second script uses the results of the first one to aggregate the results in a way showing how many entities there are for a given number of links.
 
-I.e. the lines
-
->1 7944479  
->2 8342598  
->3 5060407  
-
-indicate that there are 7944479 entities which are connected to exactly one other entity, 8342598 entities that link to exactly 2 other entities and so on.  
 
 #####**--getlabelforpath.awk** 
 
@@ -191,12 +185,11 @@ The script takes a path between two entites as generated as output from the pyth
 4 Death  
 ...  
 
-To properly execute the script, the output needs to be sorted afterwards. To do it in one step type the following:
+To get a proper output, it needs to be sorted afterwards. To do it in one step type the following:
 
 ```sh
 $ awk -f insertprefixestopath.awk inputfile1 inputfile2 | sort -V
 ```
-
 
 -Example output-  
 Step 0: Q78 Basel  
@@ -206,7 +199,7 @@ Step 3: Q567 Angela Merkel
 
 #####**--getlabelsforentities.awk** 
 
-The script takes a list of entities inputfile1, and the wikidata label file as iputfile2.
+The script takes a list of entities inputfile1, and the wikidata label file form getlabels.awk as iputfile2. 
 
 -Example inputfile1-  
 1  
@@ -223,7 +216,9 @@ The script takes a list of entities inputfile1, and the wikidata label file as i
 ...  
 
 To properly execute the script, all files must be sorted. 
-
+```sh
+$ awk -f getlabelsforentities.awk inputfile1 inputfile2
+```
 
 #####**--insertpredicatestopath.awk** 
 
@@ -243,10 +238,10 @@ wd:Q2 pq:P248 wd:Q23859820
 wd:Q2 pq:P248 wd:Q24206672  
 ...  
 
-To properly execute the script, the output needs to be sorted afterwards. To do it in one step type the following:
+To get a proper output, it needs to be sorted afterwards. To do it in one step type the following:
 
 ```sh
-$ awk -f insertprefixestopath.awk inputfile1 inputfile2 | sort -V
+$ awk -f insertpredicatestopath.awk inputfile1 inputfile2 | sort -V
 ```
 
 -Example output-  
