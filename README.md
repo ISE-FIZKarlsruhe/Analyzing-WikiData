@@ -1,35 +1,24 @@
 # Analyzing-WikiData
 
 This repository hosts various scripts for compression and analyzing WikiData.
-Currently all scripts are .awk-scripts. The output location must be added manually for the moment.
+Currently scripts are .awk-scripts an .py scripts.
+The output location must sometimes be added manually.
 
 Files that were created with the provided scripts can be found on:
 https://drive.google.com/drive/folders/0B1VsD7AFoAMVb01BaGhMWXpscVU 
-
 The folder "statistics" contains some preliminary analysis results.
 
 
-### python-script Explanations
+### General Explanations
 
-**--pathfinding.py**
+#### Compress WikiData
 
-This script has various pathfinding capabilities. 
-Details regarding its parameters can be found in comments next to the code itself.  
-
-The scrips uses a further reduced "numbers-only"-file, that only contains the entity and its objects (no predicates).
-The input file is created as follows:
-1. Get the "latest-all.ttl" file from https://dumps.wikimedia.org/wikidatawiki/entities/ and unzip
+1. Get the "latest-all.ttl" file from https://dumps.wikimedia.org/wikidatawiki/entities/ and unzip (bzip2 -d filename.bz2)
 2. Run "compressing.awk"
 3. Run "cutprefixes.awk"
 4. Run "awk '{print $1";",$3}' inputfile" > outputfilename.csv"   
 
-(The last commands removes the predicates from the "wikidata_numbers-only"-file, as they are not processed by the python script. To retrieve the predicates for a given path, follow the instructions on insertpredicatestopath.awk)  
-
-The Script privides multiple options that are explained with comments within the code.  
-
-In the current version it requires approximately 8GB of free RAM and robustly finds all shortest paths from a given entity to all other entities for an unlimited (testing in progress) pathlength.   
-
-### General Explanations
+(The last commands removes the predicates from the "wikidata_numbers-only"-file. To retrieve the predicates for a given path, follow the instructions on insertpredicatestopath.awk)  
 
 ####**--Find all "Supertypes"**
 1. Input is the prefixed WikiData file:
@@ -47,7 +36,69 @@ wd:Q457 ps:P1376 wd:Q1726747
  		print NI.GetId()
 ```
 
-3. Run getlabelsforentities as decribed below
+Alternatively use pandas with .csv (not tested)
+ ```python
+ import pandas as pd
+ df = pd.read_csv(inputfile.csv, sep=";",names = ["0","1"])
+	df = df.loc[~df['1'].isin(df['0'])]
+	print(df.to_string(index=False, index_names=False))
+```
+
+
+4. Run getlabelsforentities as decribed below
+
+
+### python-script Explanations
+
+Some scripts can be called directly from console via
+ ```sh
+$ python -u scriptname.py -h
+```
+(-u = unbuffered python output
+-h = help, specifies the options)
+
+
+####**--remZeroDeg.py** [callable]
+
+This script iteratively removes all nodes that have either InDegree=0 or Outdegree=0. Until every node has at least InDegree+Outdegree>1.
+
+Input and Output is a two column .csv file. (For now used for the supertypesgraph to further process it with johnson.py)
+
+
+Can be called directly from console via
+ ```sh
+$ python -u remZeroDeg.py [inputfile]
+```
+(-u = unbuffered python output)
+
+
+####**--johnson.py** [callable]
+
+A fast implementation to find simple circuits. Only works with files that do not contain 0-degree nodes. Therefore run "remZeroDeg.py" first. 
+Found on https://gist.github.com/qpwo/44b48595c2946bb8f823e2d72f687cd8 
+
+Input is a two column .csv file 
+Output is a n-column dataframe containing a full elementary circle in each line. 
+
+-Output-   
+130050; 623365; 130050
+130050; 623377; 130050
+56658; 623365; 56658
+
+
+####**--pathfinding.py**
+
+This script has various pathfinding capabilities. 
+Details regarding its parameters can be found in comments next to the code itself.  
+
+The scrips uses a further reduced "numbers-only"-file, that only contains the entity and its objects (no predicates).
+The input file is created as follows:
+
+The Script privides multiple options that are explained with comments within the code.  
+
+In the current version it requires approximately 8GB of free RAM and robustly finds all shortest paths from a given entity to all other entities for an unlimited (testing in progress) pathlength.   
+
+
 
 ### AWK-script Explanations
 
