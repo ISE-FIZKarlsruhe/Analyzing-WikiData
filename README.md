@@ -58,20 +58,19 @@ $ python -u scriptname.py -h
 
 ###**--johnson2.py** [callable] 
 
-Combines remZeroDeg.py and johnson.py to fine elementary circuits from the supertypegraph.csv file
+Combines remZeroDeg.py and johnson.py to fine elementary circuits from the supertypegraph.csv file  
 
--Output-
-1678301
-1678301
---
-28128195
-2537428
-28128195
---
-378681
-26695607
-378681
---
+-Output-  
+1678301  
+1678301  
+  
+28128195  
+2537428  
+28128195  
+  
+378681  
+26695607  
+378681  
 
 
 
