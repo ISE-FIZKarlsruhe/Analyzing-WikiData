@@ -56,7 +56,7 @@ $ python -u scriptname.py -h
 (-u = unbuffered python output
 -h = help, specifies the options)
 
-###**--johnson2.py** [callable] 
+### johnson2.py [callable] 
 
 Combines remZeroDeg.py and johnson.py to fine elementary circuits from the supertypegraph.csv file  
 
@@ -74,7 +74,7 @@ Combines remZeroDeg.py and johnson.py to fine elementary circuits from the super
 
 
 
-###**--remZeroDeg.py** [callable] [deprecated]
+### remZeroDeg.py [callable] [deprecated]
 
 This script iteratively removes all nodes that have either InDegree=0 or Outdegree=0. Until every node has at least InDegree+Outdegree>1.
 
@@ -88,7 +88,7 @@ $ python -u remZeroDeg.py [inputfile]
 (-u = unbuffered python output)
 
 
-###**--johnson.py** [callable] [deprecated]
+### johnson.py [callable] [deprecated]
 
 A fast implementation to find simple circuits. Only works with files that do not contain 0-degree nodes. Therefore run "remZeroDeg.py" first. 
 Found on https://gist.github.com/qpwo/44b48595c2946bb8f823e2d72f687cd8 
@@ -102,7 +102,7 @@ Output is a n-column dataframe containing a full elementary circle in each line.
 56658; 623365; 56658
 
 
-###**--pathfinding.py**
+### pathfinding.py
 
 This script has various pathfinding capabilities. 
 Details regarding its parameters can be found in comments next to the code itself.  
@@ -123,7 +123,7 @@ To execute a awk script type
 $ awk -f program-file inputfile1 [inputfile2]
 ```
 
-###**--compressing.awk**
+### compressing.awk
 
 The main compressing script uses the full (unzipped) turtle dump file as found on:
 https://dumps.wikimedia.org/wikidatawiki/entities/   (i.e. latest-all.ttl)  
@@ -138,12 +138,12 @@ prov:wasDerivedFrom wdref:cb1bf156a6906c24e4e7585aabcddd0e094 .
 -Output-   
 wd:Q457 ps:P1376 wd:Q1726747  
 
-###**--compressing_wdt.awk** 
+### compressing_wdt.awk 
 
 Works similar to the previous script but only considers statement of rdf:type wikibase:BestRank.
 It therefore also ignores qualifiers.  
 
-###**--cutprefixes.awk** 
+### cutprefixes.awk 
 
 This script cuts the prefixes and only leaves the actual numeric values for entites and properties.
 As input file, the output of the first compressing script is used.
@@ -158,7 +158,7 @@ wd:Q457 wdt:P1376 wd:Q1726747
 457 1376 1726747  
 
 
-###**--rdftype-subclass_graph.awk** 
+### rdftype-subclass_graph.awk 
 
 Retireves a graph of all edges the go through either P31 (RDF:Type) or P297 (subClassOf)
 
@@ -171,12 +171,12 @@ Input is the compressed wikidata file containing the predicates and prefixes.
 2 3504248
 3 937228
 
-###**--getobjects.awk** 
+### getobjects.awk
 
 Asks the User for the number of a specific entity and prints all of its predicates and objects. 
 It is intendet to be used on the maximally compressed wikidata file (the one containing only numbers).  
 
-###**--getlabels.awk** 
+### getlabels.awk
 
 This Script uses the unzipped main file [latest-all.ttl] to extract all available labels for every entity.
 In oder to only get the english labels use on the first output
@@ -190,14 +190,14 @@ The file labels_english has been stripped down to the maximum.
 
 Name variations within the english labels of an entity can be found with the getduplicatelabels.awk script.  
 
-###**--getobjectcount.awk, getobjectcount2.awk** 
+### getobjectcount.awk, getobjectcount2.awk
 !Deprecated. Better visualized by the degreeplot!
 
 These have been used to get some idea about the number of objects an entity links to. 
 The first script counts the links each individual entity has.
 The second script uses the results of the first one to aggregate the results in a way showing how many entities there are for a given number of links.
 
-###**--getlabelsforlist.awk**
+### getlabelsforlist.awk
 
 Adds the labels to a list of entities. The list does not have to ordered.
 
@@ -216,7 +216,7 @@ $ awk -f getlabelsforlist.awk labelfile numberlist
 78
 ...
 
-###**--getlabelforpath.awk** [better use getlabelforlist.awk]  
+### getlabelforpath.awk** [better use getlabelforlist.awk]  
 
 The script takes a path between two entites as generated as output from the python pathfinding script as inputfile1, and the wikidata label file as iputfile2. The output will be the path (without predicates) with labels for each entity.
 
@@ -245,7 +245,7 @@ Step 1: Q39 Switzerland
 Step 2: Q183 Germany
 Step 3: Q567 Angela Merkel
 
-###**--getlabelsforentities.awk** 
+### getlabelsforentities.awk
 
 The script takes a list of entities inputfile1, and the wikidata label file form getlabels.awk as iputfile2. 
 
@@ -268,7 +268,7 @@ To properly execute the script, all files must be sorted.
 $ awk -f getlabelsforentities.awk inputfile1 inputfile2
 ```
 
-###**--insertpredicatestopath.awk** 
+### insertpredicatestopath.awk
 
 The script takes a path between two entites as generated as output from the python pathfinding script as inputfile1, and the compressed wikidata including prefixes as iputfile2. The output will be the full path containing also the possible predicates for each step.
 
