@@ -18,7 +18,8 @@ parser.add_argument("--verbose", "-v", help="increase output verbosity",
                     action="store_true")
 args = parser.parse_args()
 inputfile = args.file
-print("Inputfile:",inputfile)
+if args.verbose:
+    print("Inputfile:",inputfile)
 
 
 def simple_cycles(G):
