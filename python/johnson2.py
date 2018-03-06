@@ -13,7 +13,7 @@ import argparse
 #----------------------------------------------------------------
 inputfile = "../results/wikidata_supertypeGraph.csv"
 parser = argparse.ArgumentParser()
-parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile", default=inputfile, action="store")
+parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity",
                     action="store_true")
 args = parser.parse_args()
@@ -127,7 +127,7 @@ def removeZeroDeg(dataframe):
     while removed == True:
         i += 1
         if args.verbose:
-            print(i, "interation:")
+            print(i, "iteration:")
         size_bef = dataframe.shape[0]
         dataframe = dataframe.loc[dataframe['0'].isin(dataframe['1'])]
         dataframe = dataframe.loc[dataframe['1'].isin(dataframe['0'])]
@@ -142,7 +142,8 @@ def buildDirected(dataframe):
     dictionary = defaultdict(list);
     for index, row in dataframe.iterrows():
         dictionary[int(row["0"])].append(int(row["1"]))
-    print("\nDictionary built successfully!\n")
+    if args.verbose:
+        print("\nDictionary built successfully!\n")
     return dictionary
 
 ##example:
