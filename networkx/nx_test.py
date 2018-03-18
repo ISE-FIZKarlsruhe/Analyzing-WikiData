@@ -30,7 +30,7 @@ def main():
     #    print("partition at level", level, "is", community.partition_at_level(dendo, level))
         # drawing(community.partition_at_level(dendo, level))
 
-        
+
 
 def buildGraph():
     print("Building graph from %s..." % (inputfile))
@@ -50,18 +50,18 @@ def invertdict(dict):
     print("Done.")
     return inv_dict
 
-def drawing(partition):
-    size = float(len(set(partition.values())))
-    pos = nx.spring_layout(G)
-    count = 0.
-    for com in set(partition.values()) :
-        count = count + 1.
-        list_nodes = [nodes for nodes in partition.keys()
-                                    if partition[nodes] == com]
-        nx.draw_networkx_nodes(G, pos, list_nodes, node_size = 20,
-                                    node_color = str(count / size))
-    nx.draw_networkx_edges(G, pos, alpha=0.5)
-    plt.show()
+# def drawing(partition):
+#     size = float(len(set(partition.values())))
+#     pos = nx.spring_layout(G)
+#     count = 0.
+#     for com in set(partition.values()) :
+#         count = count + 1.
+#         list_nodes = [nodes for nodes in partition.keys()
+#                                     if partition[nodes] == com]
+#         nx.draw_networkx_nodes(G, pos, list_nodes, node_size = 20,
+#                                     node_color = str(count / size))
+#     nx.draw_networkx_edges(G, pos, alpha=0.5)
+#     plt.show()
 
 G = buildGraph()
 main()
