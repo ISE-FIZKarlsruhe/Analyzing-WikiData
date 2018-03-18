@@ -5,9 +5,13 @@ import csv
 from collections import defaultdict
 import sys
 inputfile = "../py/wikidata_objects.txt"
-inputfile = "../py/wikidata_objects.csv"
+inputfile = "../py/wikidata_objects.lgl"
+#inputfile = "../py/wikidata_objects.csv"
 #inputfile = "../py/smallgraph4.txt"
-#inputfile = "smallgraph4.ncol"
+inputfile = "smallgraph4.csv"
+#inputfile = "smallgraph4.lgl"
+##server
+inputfile = "../results/wikidata_objects.txt"
 
 class Unbuffered(object):
    def __init__(self, stream):
@@ -20,13 +24,14 @@ class Unbuffered(object):
        self.stream.flush()
    def __getattr__(self, attr):
        return getattr(self.stream, attr)
-sys.stdout = Unbuffered(sys.stdout)
+#sys.stdout = Unbuffered(sys.stdout)
 
 def main():
     #getAllShortestPaths("3")
-    levels = g.community_multilevel(weights=None, return_levels=True)
-    for l in levels:
-        print(l)
+    print(g)
+    #levels = g.community_multilevel(weights=None, return_levels=True)
+    #for l in levels:
+    #    print(l)
     #getCloseness()
     #getAllShortestPaths(1)
 
@@ -65,7 +70,9 @@ def buildList(inputfile):
 
 mainlist = buildList(inputfile)
 print("Building Graph...")
-g = ig.Graph.DictList(vertices=None, edges=({"source": subject, "target": object} for subject, object in mainlist))
+#g = ig.Graph.Read_Edgelist(inputfile, directed=False)
+g = ig.Graph.DictList(vertices=None, edges=({"source": str(subject), "target": str(object)} for subject, object in mainlist))
+#g = ig.Graph.Read_Lgl(inputfile, names=True, weights="if_present", directed=False)
 #g = ig.Graph.Read_Ncol(inputfile, names=True, weights=False, directed=False)
-print(" Done.")
+print("Done.")
 main()
