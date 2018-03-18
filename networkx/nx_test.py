@@ -5,7 +5,7 @@ from collections import defaultdict
 import sys
 import community
 import networkx as nx
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import argparse
 
 ####File parameter
