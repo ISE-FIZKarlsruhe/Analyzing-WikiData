@@ -11,7 +11,7 @@ import argparse
 ####File parameter
 #----------------------------------------------------------------
 inputfile = "../py/smallgraph4.csv"
-inputfile = "../py/wikidata_objects.csv"
+#inputfile = "../py/wikidata_objects.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 args = parser.parse_args()
@@ -21,9 +21,10 @@ inputfile = args.file
 def main():
     print("Searching partitions...")
     partition = community.best_partition(G)
+    print("Done.")
     inv_p = invertdict(partition)
     for p in inv_p.items():
-        print('Partition %d: Size: %d Items:' % (p[0],len(p[1])),p[1])
+        print('Partition %d: Size: %d' % (p[0],len(p[1])))
 
     #dendo = community.generate_dendrogram(G)
     #for level in range(len(dendo) - 1):
