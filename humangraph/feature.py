@@ -21,7 +21,6 @@ if args.verbose:
     print("Inputfile:",inputfile)
 
 def main():
-    print ""
     humans = getNeighbors(5)
     length = len(humans)
     i = 0;
@@ -35,6 +34,7 @@ def main():
             if comnNbr > 1:
                 print person,nextperson,comnNbr-1
             j += 1
+    print "Finished successfully"
 
 def getNeighbors(nodeId):
     if args.verbose:
