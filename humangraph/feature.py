@@ -32,7 +32,8 @@ def main():
         while j < length:
             nextperson = humans[j]
             comnNbr = snap.GetCmnNbrs(G1,person,nextperson)
-            print person,nextperson,comnNbr-1
+            if comnNbr > 1:
+                print person,nextperson,comnNbr-1
             j += 1
 
 def getNeighbors(nodeId):
