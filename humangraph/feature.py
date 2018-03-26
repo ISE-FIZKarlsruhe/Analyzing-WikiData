@@ -6,11 +6,12 @@ from collections import defaultdict
 import snap
 from sys import stdout
 import argparse
+import itertools as it
 
 ####File parameter
 #----------------------------------------------------------------
-inputfile = "../results/humangraph"
-#inputfile = "../py/smallgraph4"
+inputfile = "../results/humangraph.csv"
+#inputfile = "../py/smallgraph5.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity",
@@ -21,6 +22,13 @@ if args.verbose:
     print("Inputfile:",inputfile)
 
 def main():
+    for topic, persons in G1.items():
+        for x,y in it.combinations(persons, 2):
+            print "%d %d"%(x,y)
+    print "Finished successfully"
+
+
+def intuitive():
     humans = getNeighbors(5)
     length = len(humans)
     i = 0;
@@ -30,9 +38,14 @@ def main():
         j = i
         while j < length:
             nextperson = humans[j]
-            comnNbr = snap.GetCmnNbrs(G1,person,nextperson)
-            if comnNbr > 1:
-                print person,nextperson,comnNbr-1
+            Nbrs = snap.TIntV()
+            comnNbr = snap.GetCmnNbrs(G1,person,nextperson, Nbrs)
+            if comnNbr > 2:
+                print person,nextperson,comnNbr-1,"Shared Neighbors:",
+                for NId in Nbrs:
+                    if NId != 5 and NId != 6581097:
+                        print "%d" % NId,
+                print ""
             j += 1
     print "Finished successfully"
 
@@ -57,5 +70,18 @@ def buildUndirected():
         print "Done."
     return G1
 
+def buildReverse():
+    reverse = defaultdict(list);
+    with open(inputfile) as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+        if args.verbose:
+            print "Buildung up the reverse dictionary",
+        for key, value in reader:
+            reverse[int(value)].append(int(key))
+        if args.verbose:
+            print "\nDictionary built successfully!\n"
+        return reverse
+
 G1 =  buildUndirected()
+G1 =  buildReverse()
 main()
