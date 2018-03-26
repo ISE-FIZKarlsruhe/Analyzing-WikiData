@@ -7,6 +7,7 @@ import snap
 from sys import stdout
 import argparse
 import itertools as it
+import time
 
 ####File parameter
 #----------------------------------------------------------------
@@ -22,16 +23,56 @@ if args.verbose:
     print("Inputfile:",inputfile)
 
 def main():
-    improved()
-    print "Finished successfully"
+    G1 = buildReverse()
+    third(G1)
 
-def improved():
-    for topic, persons in G1.items():
+    #for topic, persons in G1.items():
+    #    print "%d %d"%(topic, len(persons))
+    #print "Finished successfully"
+
+def secondsToStr(t):
+    return "%d:%02d:%02d.%03d" % \
+        reduce(lambda ll,b : divmod(ll[0],b) + ll[1:],
+            [(t*1000,),1000,60,60])
+
+def second(graph):
+    excluded = [5, 6581097, 6581072]
+    for topic, persons in graph.items():
+        c = 0
+        start_time = time.clock()
+        if not topic in excluded:
+            for x,y in it.combinations(persons, 2):
+                #print "%d %d"%(x,y)
+                c += 1
+            print "T %d, count %d, time %s"%(topic, c, secondsToStr(time.clock() - start_time))
+
+def third(graph):
+    edgelist = defaultdict(int);
+    excluded = [5, 6581097, 6581072]        #removing "human", "male", "female"
+    threshold = 3                           #min common neighbors to be counted "connected" in the end
+    topiccounter = 0
+    for e in excluded:
+        try:
+            del graph[e]
+        except:
+            print("Excluded value not in graph.")   #to be able to test on smallgraph5.csv
+    print "Bulildung Edge-Dictionary..."
+    for topic, persons in graph.items():
+        topiccounter = topiccounter+1
+        print "Count: %d, Name: %d"%(topiccounter, topic)
         for x,y in it.combinations(persons, 2):
-            print "%d %d"%(x,y)
+            if y != None:
+                edgelist[frozenset((x,y))] +=1
+    print "Done."
+    print "Printing the Edgelist"
+    for edge in edgelist.items():
+        if edgelist[edge[0]]>=threshold:
+            for p in edge[0]:
+                print p,
+            print edge[1]
 
-def intuitive():
-    humans = getNeighbors(5)
+def first(graph):
+    humans = getNeighbors(graph,5)
     length = len(humans)
     i = 0;
     for person in humans:
@@ -41,7 +82,7 @@ def intuitive():
         while j < length:
             nextperson = humans[j]
             Nbrs = snap.TIntV()
-            comnNbr = snap.GetCmnNbrs(G1,person,nextperson, Nbrs)
+            comnNbr = snap.GetCmnNbrs(graph,person,nextperson, Nbrs)
             if comnNbr > 2:
                 print person,nextperson,comnNbr-1,"Shared Neighbors:",
                 for NId in Nbrs:
@@ -50,11 +91,11 @@ def intuitive():
                 print ""
             j += 1
 
-def getNeighbors(nodeId):
+def getNeighbors(graph,nodeId):
     if args.verbose:
         print "Get list of humans..."
     neighborlist = []
-    node = G1.GetNI(nodeId)
+    node = graph.GetNI(nodeId)
     deg = node.GetInDeg()
     for i in range(0, deg):
         neighborlist.append(node.GetNbrNId(i))
@@ -82,7 +123,4 @@ def buildReverse():
         if args.verbose:
             print "\nDictionary built successfully!\n"
         return reverse
-
-#G1 =  buildUndirected()
-G1 =  buildReverse()
 main()
