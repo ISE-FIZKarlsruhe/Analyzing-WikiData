@@ -11,7 +11,7 @@ import itertools as it
 ####File parameter
 #----------------------------------------------------------------
 inputfile = "../results/humangraph.csv"
-#inputfile = "../py/smallgraph5.csv"
+inputfile = "../py/smallgraph5.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity",
@@ -22,11 +22,13 @@ if args.verbose:
     print("Inputfile:",inputfile)
 
 def main():
+    improved()
+    print "Finished successfully"
+
+def improved():
     for topic, persons in G1.items():
         for x,y in it.combinations(persons, 2):
             print "%d %d"%(x,y)
-    print "Finished successfully"
-
 
 def intuitive():
     humans = getNeighbors(5)
@@ -47,7 +49,6 @@ def intuitive():
                         print "%d" % NId,
                 print ""
             j += 1
-    print "Finished successfully"
 
 def getNeighbors(nodeId):
     if args.verbose:
@@ -82,6 +83,6 @@ def buildReverse():
             print "\nDictionary built successfully!\n"
         return reverse
 
-G1 =  buildUndirected()
+#G1 =  buildUndirected()
 G1 =  buildReverse()
 main()
