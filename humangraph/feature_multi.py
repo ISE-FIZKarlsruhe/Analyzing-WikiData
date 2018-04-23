@@ -2,16 +2,9 @@
 from __future__ import division
 import numpy as np
 import csv
-import sys
 from collections import defaultdict
-from collections import OrderedDict
-import snap
-from sys import stdout
 import argparse
-import itertools as it
-import time
 import pandas as pd
-import bisect
 from multiprocessing import Pool, Value, Lock
 import functools
 
@@ -27,7 +20,7 @@ parser.add_argument("--verbose", "-v", help="increase output verbosity",
 args = parser.parse_args()
 inputfile = args.file
 if args.verbose:
-    print("Inputfile:",inputfile)
+    print "Inputfile:",inputfile
 
 
 def main():
