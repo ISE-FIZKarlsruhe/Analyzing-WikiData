@@ -38,7 +38,8 @@ def main():
     #     n += 1
     #     print "\n======= Person", n
     #     getConnectedPersons(person, threshold)
-    # print "Finished successfully"
+
+    print "Finished successfully"
 
 
 def getConnectedPersons(person, auxdict, edgelist, threshold):
