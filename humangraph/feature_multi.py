@@ -12,23 +12,26 @@ import functools
 #----------------------------------------------------------------
 inputfile = "../results/humangraph.csv"
 inputfile = "../results/humangraph_germans_nt3.csv"
-#inputfile = "../py/smallgraph5.csv"
+inputfile = "../py/smallgraph5.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
+parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal overlap for two persons to get an edge", default=2, action="store")
+parser.add_argument("--poolsize","-p", type=int, nargs='?', help="number of threads to run the program", default=4, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity",
                     action="store_true")
 args = parser.parse_args()
 inputfile = args.file
 if args.verbose:
     print "Inputfile:",inputfile
+threshold = args.threshold
+poolsize = args.poolsize
 
-
-def main():
+def main(threshold,poolsize):
     G1, auxdict = buildDictionaries(inputfile)
     edgelist = pd.read_csv(inputfile, sep=";", header=None)
-    threshold = 10
+    threshold = threshold
 
-    pool = Pool(16)
+    pool = Pool(poolsize)
     pool.map(functools.partial(getConnectedPersons, auxdict=auxdict, edgelist=edgelist, threshold=threshold), G1.items())
     pool.close()
     pool.join()
@@ -107,7 +110,7 @@ class Counter(object):
             return self.val.value
 
 if __name__ == '__main__':
-    main()
+    main(threshold, poolsize)
 
 
 
