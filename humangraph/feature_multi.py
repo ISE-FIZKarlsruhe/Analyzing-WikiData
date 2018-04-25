@@ -11,7 +11,7 @@ import functools
 ####File parameter
 #----------------------------------------------------------------
 inputfile = "../results/humangraph.csv"
-inputfile = "../results/humangraph10_notrivial.csv"
+inputfile = "../results/humangraph_germans_nt3.csv"
 #inputfile = "../py/smallgraph5.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
@@ -26,9 +26,9 @@ if args.verbose:
 def main():
     G1, auxdict = buildDictionaries(inputfile)
     edgelist = pd.read_csv(inputfile, sep=";", header=None)
-    threshold = 2
+    threshold = 10
 
-    pool = Pool(16)
+    pool = Pool(4)
     pool.map(functools.partial(getConnectedPersons, auxdict=auxdict, edgelist=edgelist, threshold=threshold), G1.items())
     pool.close()
     pool.join()
@@ -70,7 +70,7 @@ def getConnectedPersons(person, auxdict, edgelist, threshold):
                 if nbrP[j] != current:
                     i = j + 1
                     break
-    print output,
+    print output
 
 
 def buildDictionaries(inputfile):
