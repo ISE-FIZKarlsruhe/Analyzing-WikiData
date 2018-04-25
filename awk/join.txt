@@ -1,0 +1,1 @@
+join -o 1.1,1.2 <(LC_ALL=C sort -k1 wikidata_undirected) <(LC_ALL=C sort wikidata_humans) 
