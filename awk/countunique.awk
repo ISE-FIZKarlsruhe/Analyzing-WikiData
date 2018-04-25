@@ -1,4 +1,4 @@
-BEGIN{d = 0, c= 0}
+BEGIN{d = 0; c= 0}
 {if($1 != d){
 	c++;
 	d = $1
