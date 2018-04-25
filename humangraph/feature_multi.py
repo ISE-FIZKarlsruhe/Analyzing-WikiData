@@ -28,7 +28,7 @@ def main():
     edgelist = pd.read_csv(inputfile, sep=";", header=None)
     threshold = 10
 
-    pool = Pool(4)
+    pool = Pool(16)
     pool.map(functools.partial(getConnectedPersons, auxdict=auxdict, edgelist=edgelist, threshold=threshold), G1.items())
     pool.close()
     pool.join()
