@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+#running on python 3.5
+
 import csv
 from collections import defaultdict
 import sys
@@ -14,9 +16,10 @@ inputfile = "../py/smallgraph4.csv"
 #inputfile = "../py/wikidata_objects.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
+parser.add_argument("--levels","-l", help="prints results for all levels", action="store_true")
+parser.add_argument("--members","-m", help="shows the members within each cluster instead of the cluster's size", action="store_true")
 args = parser.parse_args()
 inputfile = args.file
-
 
 def main():
     print("Searching partitions...")
@@ -24,12 +27,17 @@ def main():
     print("Done.")
     inv_p = invertdict(partition)
     for p in inv_p.items():
-        print('Partition %d: Size: %d' % (p[0],len(p[1])))
+        if args.members:
+            print('Partition %d: Members: %s' % (p[0], p[1]))
+        else:
+            print('Partition %d: Size: %d' % (p[0],len(p[1])))
 
-    #dendo = community.generate_dendrogram(G)
-    #for level in range(len(dendo) - 1):
-    #    print("partition at level", level, "is", community.partition_at_level(dendo, level))
-        # drawing(community.partition_at_level(dendo, level))
+    if args.levels:
+        print("\nPrinting all Levels...")
+        dendo = community.generate_dendrogram(G)
+        for level in range(len(dendo)):
+            print("partition at level", level, "is", community.partition_at_level(dendo, level))
+            # drawing(community.partition_at_level(dendo, level))
 
 
 
@@ -42,6 +50,14 @@ def buildGraph():
     # for e in list(G.edges): print(e)
     # nx.draw(G)
     # plt.show()
+
+def buildWeightedGraph():
+    print("Building weighted graph from %s..." % (inputfile))
+    fh = open(inputfile, 'rb')
+    G = nx.read_weighted_edgelist(fh, delimiter=";")
+    print("Done.")
+    return G
+
 
 def invertdict(dict):
     inv_dict = {}
