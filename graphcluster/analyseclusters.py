@@ -14,7 +14,7 @@ import operator
 #----------------------------------------------------------------
 inputfile_clusters = "../py/smallclusters.csv"
 inputfile_edgelist = "../results/humangraph.csv"
-inputfile_labels = "../results/labels_english.csv"
+inputfile_labels = "../results/labels_english"
 parser = argparse.ArgumentParser()
 parser.add_argument('cluster_file', type=str, nargs='?', help="specifies the cluster inputfile. Must be .csv with a list of clustermembers in each row.", default=inputfile_clusters, action="store")
 parser.add_argument('edgelist_file', type=str, nargs='?', help="specifies the edgelist inputfile. Must be a two column .csv containing specific entities on the left and their 'objects' on the right.", default=inputfile_edgelist, action="store")
@@ -31,8 +31,21 @@ if args.verbose:
 labelfile_delimiter = "EcmLIJ6vTW6 "
 
 def main():
+    print("Loading edgelist...")
     edgelist = pd.read_csv(inputfile_edgelist, sep=";", header=None)
-    labels = pd.read_csv(inputfile_labels, sep=labelfile_delimiter, header=None, engine='python')
+    print("Building labelgraph...")
+    labeldict = defaultdict()
+    with open(inputfile_labels, encoding="utf8") as labelfile:
+        for line in labelfile:
+            number, text = line.split(' ', maxsplit=1)
+            text = text[:-1]
+            labeldict[number] = text
+        #labeldict = dict([line.split(' ', maxsplit=1) for line in labelfile])
+
+
+    #labels = pd.DataFrame.from_records(data, columns=['Integer', 'String'])
+    #labels = pd.read_csv(inputfile_labels, sep=labelfile_delimiter, header=None, engine='python')
+
 
     with open(inputfile_clusters) as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
@@ -47,17 +60,32 @@ def main():
 
             sorted_attcount = sorted(attcount.items(), key=operator.itemgetter(1), reverse=True)
 
-            print("\nCluster %d: Attributes:"%(linenumber),end=" ")
-            freq_attribute = []
-            freq_attribute_numbers = []
-            for attribute, count in sorted_attcount[:5]:
-                freq_attribute.append(attribute)
-                freq_attribute_numbers.append(tuple((attribute, str("%.2f" % round(count / len(cluster)*100,2)+"%"))))
-            print(freq_attribute_numbers)
+            #old approach
+            # print("\nCluster %d: Attributes:"%(linenumber),end=" ")
+            # freq_attribute = []
+            # freq_attribute_numbers = []
+            # for attribute, count in sorted_attcount[:5]:
+            #     freq_attribute.append(attribute)
+            #     freq_attribute_numbers.append(tuple((attribute, str("%.2f" % round(count / len(cluster)*100,2)+"%"))))
+            # print(freq_attribute_numbers)
+            # names = labels.loc[labels[0].isin(freq_attribute)][1].tolist()
+            # print("Cluster %d: Attributes:" % (linenumber), end=" ")
+            # print(names)
+            # if len(names) < len(freq_attribute):
+            #     print(len(freq_attribute)-len(names)," label(s) not found!")
 
-            names = labels.loc[labels[0].isin(freq_attribute)][1].tolist()
-            print("Cluster %d: Attributes:" % (linenumber), end=" ")
-            print(names)
-            if len(names) < len(freq_attribute):
-                print(len(freq_attribute)-len(names)," label(s) not found!")
+            print("\nCluster %d:"%(linenumber))
+            freq_attribute = []
+            for attribute, count in sorted_attcount[:10]:
+                #label = labeldict[str(attribute)] if str(attribute) in labeldict else "no label"
+                label = labeldict.get(str(attribute))
+                freq_attribute.append([attribute, label, str("%.2f" % round(count / len(cluster)*100,2)+"%")])
+            for f in freq_attribute:
+                print(f)
+
+
+
+
+
+
 main()
