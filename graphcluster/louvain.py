@@ -28,7 +28,7 @@ def main():
     inv_p = invertdict(partition)
     for p in inv_p.items():
         if args.members:
-            print('Partition %d: Size: %d Members: %s' % (p[0], len(p[1]), p[1]))
+            print('Partition %d: Size: \'%d\' Members: %s' % (p[0], len(p[1]), p[1]))
         else:
             print('Partition %d: Size: %d' % (p[0], len(p[1])))
 
