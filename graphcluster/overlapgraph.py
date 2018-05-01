@@ -90,7 +90,6 @@ def buildDictionaries(inputfile):
         print("Buildung up the main dictionary",end="")
         for key, value in reader:
             directed[key].append(value)
-
             if key != prevkey:
                 auxdict[prevkey] = line
             prevkey = key
@@ -98,19 +97,6 @@ def buildDictionaries(inputfile):
         auxdict[key] = line
         print("\nDone.")
         return directed, auxdict
-
-class Counter(object):
-    def __init__(self, initval=0):
-        self.val = Value('i', initval)
-        self.lock = Lock()
-
-    def increment(self):
-        with self.lock:
-            self.val.value += 1
-
-    def value(self):
-        with self.lock:
-            return self.val.value
 
 if __name__ == '__main__':
     main(threshold, poolsize)
