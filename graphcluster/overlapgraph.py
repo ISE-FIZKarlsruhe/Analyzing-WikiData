@@ -17,6 +17,7 @@ import functools
 inputfile = "../results/humangraph.csv"
 inputfile = "../results/humangraph_germans_nt3.csv"
 inputfile = "../py/smallgraph5.csv"
+inputfile = "../../shell/smallgraph7_who.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal overlap for two persons to get an edge", default=2, action="store")
