@@ -30,7 +30,7 @@ if args.verbose:
     print("Inputfile:",inputfile)
 threshold = args.threshold
 poolsize = args.poolsize
-
+args.weights = True
 
 def main(threshold,poolsize):
     G1, auxdict = buildDictionaries(inputfile)
@@ -116,10 +116,13 @@ def buildDictionaries(inputfile):
     auxdict = defaultdict(int)
     prevkey = 0
     line = 0
+    key = 0
 
     with open(inputfile) as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
         print("Buildung up the main dictionary",end="")
+
+
         for key, value in reader:
             directed[key].append(value)
             if key != prevkey:
