@@ -1,12 +1,12 @@
 awkscripts="$1"
 humanwhoscript="$awkscripts""humangraphwho2.awk"
-wikidata="$2smallgraph7_undirected.txt"
+wikidata="$2wikidata_undirected"
 pythonscripts="$3"
 overlapgraphscript="$pythonscripts""overlapgraph.py"
 
 criterion=30
 
-threshold=4
+threshold=2
 poolsize=16
 
 #echo $wikidata
