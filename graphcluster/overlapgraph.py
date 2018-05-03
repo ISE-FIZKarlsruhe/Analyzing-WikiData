@@ -21,6 +21,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal overlap for two persons to get an edge", default=2, action="store")
 parser.add_argument("--poolsize","-p", type=int, nargs='?', help="number of threads to run the program", default=4, action="store")
+parser.add_argument("--weights", "-w", help="return a weight for each edge instead of just a binary decision", action="store_true")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
 args = parser.parse_args()
 inputfile = args.file
@@ -29,13 +30,18 @@ if args.verbose:
 threshold = args.threshold
 poolsize = args.poolsize
 
+
 def main(threshold,poolsize):
     G1, auxdict = buildDictionaries(inputfile)
     edgelist = pd.read_csv(inputfile, sep=";", header=None)
     threshold = threshold
 
     pool = Pool(poolsize)
-    pool.map(functools.partial(getConnectedPersons, auxdict=auxdict, edgelist=edgelist, threshold=threshold), G1.items())
+    if args.weights:
+        pool.map(functools.partial(getConnectedPersonsWeighted, auxdict=auxdict, edgelist=edgelist, threshold=threshold), G1.items())
+    else:
+        pool.map(functools.partial(getConnectedPersons, auxdict=auxdict, edgelist=edgelist, threshold=threshold),
+                 G1.items())
     pool.close()
     pool.join()
 
@@ -56,6 +62,7 @@ def getConnectedPersons(person, auxdict, edgelist, threshold):
     nbrP = np.array(pEdgelist.loc[pEdgelist[1].isin(person[1])][0].values)
     #print nbrP
 
+    ##method 1 - with threshold but no edge weight
     #outputstring
     output = ""
     # zuletzt ausgegebene Zahl
@@ -76,6 +83,30 @@ def getConnectedPersons(person, auxdict, edgelist, threshold):
                 if nbrP[j] != current:
                     i = j + 1
                     break
+    print(output)
+
+def getConnectedPersonsWeighted(person, auxdict, edgelist, threshold):
+    # print "--------------- Q%s\n" %(person[0]),
+    # print auxdict[person[0]]
+    pEdgelist = edgelist[auxdict[person[0]]:]
+    # print pEdgelist
+    nbrP = np.array(pEdgelist.loc[pEdgelist[1].isin(person[1])][0].values)
+    # print nbrP
+
+    ##Method 2 - full nested loop. But with edgelweights
+    output = ""
+    d = 0
+    c = 0
+    for e in nbrP:
+        if e == d:
+            c = c + 1
+        else:
+            if c >= threshold:
+                output += '%s;%s;%s\n' % (person[0], d, c)
+            d = e
+            c = 1
+    if c >= threshold:
+        output += '%s;%s;%s\n' % (person[0], d, c)
     print(output)
 
 

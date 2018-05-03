@@ -11,15 +11,15 @@ import argparse
 ####File parameter
 # ----------------------------------------------------------------
 inputfile = "../py/smallgraph7_relational.csv"
+inputfile = "../project_germans/weighted_overlaptestgraph.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv",
                     default=inputfile, action="store")
 parser.add_argument("--levels", "-l", help="prints results for all levels", action="store_true")
-parser.add_argument("--members", "-m", help="shows the members within each cluster instead of the cluster's size",
-                    action="store_true")
+parser.add_argument("--sizeonly", "-s", help="shows the members within each cluster instead of the cluster's size",  action="store_true")
+parser.add_argument("--weighted", "-w", help="specified if the graph is weighted or not",  action="store_true")
 args = parser.parse_args()
 inputfile = args.file
-
 
 def main():
     print("Searching partitions...")
@@ -27,10 +27,10 @@ def main():
     print("Done.")
     inv_p = invertdict(partition)
     for p in inv_p.items():
-        if args.members:
-            print('Partition %d: Size: \'%d\' Members: %s' % (p[0], len(p[1]), p[1]))
-        else:
+        if args.sizeonly:
             print('Partition %d: Size: %d' % (p[0], len(p[1])))
+        else:
+            print('Partition %d: Size: \'%d\' Members: %s' % (p[0], len(p[1]), p[1]))
 
     if args.levels:
         print("\nPrinting all Levels...")
@@ -81,5 +81,8 @@ def invertdict(dict):
 #     nx.draw_networkx_edges(G, pos, alpha=0.5)
 #     plt.show()
 
-G = buildGraph()
+if args.weighted:
+    G = buildWeightedGraph()
+else:
+    G = buildGraph()
 main()
