@@ -9,7 +9,7 @@ criterion=30
 threshold=2
 poolsize=16
 
-#echo $wikidata
+#echo $wikidatavvv
 #echo $humanwhoscript
 #echo $criterion
 
