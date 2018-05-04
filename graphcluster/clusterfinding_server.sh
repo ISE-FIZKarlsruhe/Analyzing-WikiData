@@ -6,7 +6,7 @@ overlapgraphscript="$pythonscripts""overlapgraph.py"
 
 criterion=30
 
-threshold=4
+threshold=3
 poolsize=16
 
 #echo $wikidatavvv
