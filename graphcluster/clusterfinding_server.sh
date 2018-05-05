@@ -4,9 +4,9 @@ wikidata="$2wikidata_undirected"
 pythonscripts="$3"
 overlapgraphscript="$pythonscripts""overlapgraph.py"
 
-criterion=30
+criterion=142
 
-threshold=3
+threshold=4
 poolsize=16
 
 #echo $wikidatavvv
