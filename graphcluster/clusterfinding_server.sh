@@ -4,8 +4,8 @@ wikidata="$2wikidata_undirected"
 pythonscripts="$3"
 overlapgraphscript="$pythonscripts""overlapgraph.py"
 criterion="$4"
+threshold="$5"
 
-threshold=4
 poolsize=16
 
 removetrivial='BEGIN{FS=";"}{if($2!=5&&$2!=6581097&&$2!=6581072&&$2!='$criterion')print$0}'
