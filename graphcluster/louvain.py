@@ -21,6 +21,8 @@ parser.add_argument("--weighted", "-w", help="specified if the graph is weighted
 args = parser.parse_args()
 inputfile = args.file
 
+args.weighted = True
+
 def main():
     print("Searching partitions...")
     partition = community.best_partition(G)
