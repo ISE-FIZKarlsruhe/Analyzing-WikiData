@@ -11,7 +11,7 @@ import argparse
 ####File parameter
 # ----------------------------------------------------------------
 inputfile = "../py/smallgraph7_relational.csv"
-inputfile = "../project_germans/weighted_overlaptestgraph.csv"
+#inputfile = "../project_germans/weighted_overlaptestgraph.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv",
                     default=inputfile, action="store")
@@ -21,7 +21,7 @@ parser.add_argument("--weighted", "-w", help="specified if the graph is weighted
 args = parser.parse_args()
 inputfile = args.file
 
-args.weighted = True
+#args.weighted = True
 
 def main():
     print("Searching partitions...")
@@ -33,6 +33,13 @@ def main():
             print('Partition %d: Size: %d' % (p[0], len(p[1])))
         else:
             print('Partition %d: Size: \'%d\' Members: %s' % (p[0], len(p[1]), p[1]))
+
+    #induced = community.induced_graph(partition, G)
+
+    #for n in induced:
+    #    print(n)
+
+
 
     if args.levels:
         print("\nPrinting all Levels...")
