@@ -21,7 +21,7 @@ inputfile = "../../shell/smallgraph7_who.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
 #parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal overlap for two persons to get an edge", default=4, action="store")
-parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal avg percentage overlap between two persons to get an edge", default=0.1, action="store")
+parser.add_argument("--threshold","-t", type=float, nargs='?', help="threshold defining the minimal avg percentage overlap between two persons to get an edge", default=0.1, action="store")
 parser.add_argument("--poolsize","-p", type=int, nargs='?', help="number of threads to run the program", default=4, action="store")
 parser.add_argument("--weights", "-w", help="return a weight for each edge instead of just a binary decision", action="store_true")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
