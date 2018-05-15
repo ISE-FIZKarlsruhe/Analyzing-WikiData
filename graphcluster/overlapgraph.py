@@ -20,7 +20,8 @@ inputfile = "../py/smallgraph5.csv"
 inputfile = "../../shell/smallgraph7_who.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument('file', type=str, nargs='?', help="specifies the inputfile. Must be a two column .csv", default=inputfile, action="store")
-parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal overlap for two persons to get an edge", default=2, action="store")
+#parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal overlap for two persons to get an edge", default=4, action="store")
+parser.add_argument("--threshold","-t", type=int, nargs='?', help="threshold defining the minimal avg percentage overlap between two persons to get an edge", default=0.1, action="store")
 parser.add_argument("--poolsize","-p", type=int, nargs='?', help="number of threads to run the program", default=4, action="store")
 parser.add_argument("--weights", "-w", help="return a weight for each edge instead of just a binary decision", action="store_true")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
@@ -36,10 +37,9 @@ def main(threshold,poolsize):
     G1, auxdict = buildDictionaries(inputfile)
     edgelist = pd.read_csv(inputfile, sep=";", header=None)
     threshold = threshold
-
     pool = Pool(poolsize)
     if args.weights:
-        pool.map(functools.partial(getConnectedPersonsWeighted, auxdict=auxdict, edgelist=edgelist, threshold=threshold), G1.items())
+        pool.map(functools.partial(getConnectedPersonsWeighted, auxdict=auxdict, edgelist=edgelist, threshold=threshold, adjacency = G1), G1.items())
     else:
         pool.map(functools.partial(getConnectedPersons, auxdict=auxdict, edgelist=edgelist, threshold=threshold),
                  G1.items())
@@ -55,7 +55,7 @@ def main(threshold,poolsize):
     print("Finished successfully")
 
 
-def getConnectedPersons(person, auxdict, edgelist, threshold):
+def getConnectedPersons(person, auxdict, edgelist, threshold, adjacency):
     #print "--------------- Q%s\n" %(person[0]),
     #print auxdict[person[0]]
     pEdgelist = edgelist[auxdict[person[0]]:]
@@ -86,7 +86,7 @@ def getConnectedPersons(person, auxdict, edgelist, threshold):
                     break
     print(output)
 
-def getConnectedPersonsWeighted(person, auxdict, edgelist, threshold):
+def getConnectedPersonsWeighted(person, auxdict, edgelist, threshold, adjacency):
     # print "--------------- Q%s\n" %(person[0]),
     # print auxdict[person[0]]
     pEdgelist = edgelist[auxdict[person[0]]:]
@@ -102,12 +102,20 @@ def getConnectedPersonsWeighted(person, auxdict, edgelist, threshold):
         if e == d:
             c = c + 1
         else:
-            if c >= threshold:
-                output += '%s;%s;%s\n' % (person[0], d, c)
+            score = round((c / len(adjacency[str(d)]) + c / len(person[1])) / 2, 4) if d != 0 else 0
+            if score >= threshold:
+                output += '%s;%s;%s\n' % (person[0], d, score)
+
+            ## old threshold
+            # if c >= threshold:
+            #     score = round((c / len(adjacency[str(d)]) + c / len(person[1])) / 2, 4)
+            #     output += '%s;%s;%s\n' % (person[0], d, score)
+
             d = e
             c = 1
-    if c >= threshold:
-        output += '%s;%s;%s\n' % (person[0], d, c)
+    score = round((c / len(adjacency[str(d)]) + c / len(person[1])) / 2, 4) if d != 0 else 0
+    if score >= threshold:
+        output += '%s;%s;%s\n' % (person[0], d, score)
     print(output)
 
 
