@@ -1,6 +1,6 @@
 awkscripts="$1"
 humanwhoscript="$awkscripts""humangraphwho3.awk"
-wikidata="$2wikidata_undirected"
+wikidata="$2"
 pythonscripts="$3"
 overlapgraphscript="$pythonscripts""overlapgraph.py"
 criterion="$4"
