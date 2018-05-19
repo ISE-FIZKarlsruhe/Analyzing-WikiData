@@ -1,5 +1,5 @@
 awkscripts="$1"
-humanwhoscript="$awkscripts""humangraphwho2.awk"
+humanwhoscript="$awkscripts""humangraphwho3.awk"
 wikidata="$2wikidata_undirected"
 pythonscripts="$3"
 overlapgraphscript="$pythonscripts""overlapgraph.py"
