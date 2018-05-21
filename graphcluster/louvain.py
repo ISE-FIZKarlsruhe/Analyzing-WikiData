@@ -49,9 +49,9 @@ def main():
             inv_p = invertdict(partition)
             for p in inv_p.items():
                 if args.sizeonly:
-                    print('Partition %d: Size: %d' % (p[0]+1, len(p[1])))
+                    print('Level %d - Partition %d: Size: %d' % (level, p[0]+1, len(p[1])))
                 else:
-                    print('Partition %d: Size: \'%d\' Members: %s' % (p[0]+1, len(p[1]), p[1]))
+                    print('Level %d - Partition %d: Size: \'%d\' Members: %s' % (level, p[0]+1, len(p[1]), p[1]))
 
             #print("partition at level", level, "is", community.partition_at_level(dendo, level))
             # drawing(community.partition_at_level(dendo, level))
