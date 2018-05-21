@@ -13,7 +13,7 @@ if($1+0 == prev && printing==1){
 
 #save value to memory
 if(printing==0){
-    memory[i] = $1";"$2}
+    memory[i] = $1";"$3}
 
 #set criterionfound values to 'true' if they are met
 if($3+0 == criterion+0) criterionfound = 1;
