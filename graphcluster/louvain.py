@@ -22,6 +22,7 @@ args = parser.parse_args()
 inputfile = args.file
 
 #args.weighted = True
+args.levels = True
 
 def main():
     print("Searching partitions...")
@@ -30,22 +31,29 @@ def main():
     inv_p = invertdict(partition)
     for p in inv_p.items():
         if args.sizeonly:
-            print('Partition %d: Size: %d' % (p[0], len(p[1])))
+            print('Partition %d: Size: %d' % (p[0]+1, len(p[1])))
         else:
-            print('Partition %d: Size: \'%d\' Members: %s' % (p[0], len(p[1]), p[1]))
+            print('Partition %d: Size: \'%d\' Members: %s' % (p[0]+1, len(p[1]), p[1]))
 
     #induced = community.induced_graph(partition, G)
 
     #for n in induced:
     #    print(n)
 
-
-
     if args.levels:
         print("\nPrinting all Levels...")
         dendo = community.generate_dendrogram(G)
         for level in range(len(dendo)):
-            print("partition at level", level, "is", community.partition_at_level(dendo, level))
+            print("Partitioning at Level %d:" % (level))
+            partition =  community.partition_at_level(dendo, level)
+            inv_p = invertdict(partition)
+            for p in inv_p.items():
+                if args.sizeonly:
+                    print('Partition %d: Size: %d' % (p[0]+1, len(p[1])))
+                else:
+                    print('Partition %d: Size: \'%d\' Members: %s' % (p[0]+1, len(p[1]), p[1]))
+
+            #print("partition at level", level, "is", community.partition_at_level(dendo, level))
             # drawing(community.partition_at_level(dendo, level))
 
 
