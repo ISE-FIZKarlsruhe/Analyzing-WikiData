@@ -6,7 +6,7 @@ analyseclustersscript="$pythonscripts""analyseclusters.py"
 labels="$4"
 
 #
-awk -f $cleanclustering $louvainoutput | 
-sort -r -V -t ";" -k 1  > louvain_clean
+awk -f $cleanclustering2 $louvainoutput | 
+sort -r -V -t ";" -k 2  > louvain_clean
 python -u $analyseclustersscript louvain_clean criteriongraph.csv $labels
  

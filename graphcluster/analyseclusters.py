@@ -33,7 +33,7 @@ labelfile_delimiter = "EcmLIJ6vTW6 "
 def main():
     print("Loading edgelist...")
     edgelist = pd.read_csv(inputfile_edgelist, sep=";", header=None)
-    print("Building labelgraph...")
+    print("Building label dictionary...")
     labeldict = defaultdict()
     with open(inputfile_labels, encoding="utf8") as labelfile:
         for line in labelfile:
@@ -47,19 +47,20 @@ def main():
         for line in reader:
             linenumber += 1
             attcount = defaultdict(int)
-            size = line[0]
-            cluster = np.array(line[1:])
-            all_attributes = np.array(edgelist.loc[edgelist[0].isin(cluster)][1].values)
+            cluster_id = int(line[0])
+            cluster_size = line[1]
+            cluster_members = np.array(line[2:])
+            all_attributes = np.array(edgelist.loc[edgelist[0].isin(cluster_members)][1].values)
             for e in all_attributes:
                 attcount[e] += 1
             sorted_attcount = sorted(attcount.items(), key=operator.itemgetter(1), reverse=True)
 
-            print("\nCluster No. %d: Size %d"%(linenumber,int(size)))
+            print("\nCluster No. %d: Size %d"%(cluster_id,int(cluster_size)))
             freq_attribute = []
             for attribute, count in sorted_attcount[:15]:
                 #label = labeldict[str(attribute)] if str(attribute) in labeldict else "no label"
                 label = labeldict.get(str(attribute))
-                freq_attribute.append([label, attribute, str("%.2f" % round(count / len(cluster)*100,2)+"%")])
+                freq_attribute.append([label, attribute, str("%.2f" % round(count / len(cluster_members)*100,2)+"%")])
             for f in freq_attribute:
                 print(f)
 
