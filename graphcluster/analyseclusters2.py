@@ -35,13 +35,13 @@ def main():
     print("Loading edgelist...")
     edgelist = pd.read_csv(inputfile_edgelist, sep=";", header=None)
 
-    # print("Building label dictionary...")
-    # labeldict = defaultdict()
-    # with open(inputfile_labels, encoding="utf8") as labelfile:
-    #     for line in labelfile:
-    #         number, text = line.split(' ', maxsplit=1)
-    #         text = text[:-1]
-    #         labeldict[number] = text
+    print("Building label dictionary...")
+    labeldict = defaultdict()
+    with open(inputfile_labels, encoding="utf8") as labelfile:
+        for line in labelfile:
+            number, text = line.split(' ', maxsplit=1)
+            text = text[:-1]
+            labeldict[number] = text
 
     with open(inputfile_clusters) as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
@@ -95,8 +95,8 @@ def main():
         for this_cluster in candidates.items():
             for candidate in this_cluster[1]:
                 unique = 1 if attributes_aggregated[int(candidate[0])]-candidate[1]==0 else 0
-                #description[this_cluster[0]].append((candidate[0], labeldict.get(str(candidate[0])), candidate[1], round(candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),2),unique))
-                description[this_cluster[0]].append((candidate[0], candidate[1], round(candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),2),unique))
+                description[this_cluster[0]].append((candidate[0], labeldict.get(str(candidate[0])), candidate[1], round(candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),2),unique))
+                #description[this_cluster[0]].append((candidate[0], candidate[1], round(candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),2),unique)) #nolabel
 
             description[this_cluster[0]].sort(key=lambda tup: tup[3], reverse=True)
 
