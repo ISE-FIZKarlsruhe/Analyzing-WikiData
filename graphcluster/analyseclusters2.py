@@ -19,6 +19,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('cluster_file', type=str, nargs='?', help="specifies the cluster inputfile. Must be .csv with a list of clustermembers in each row.", default=inputfile_clusters, action="store")
 parser.add_argument('edgelist_file', type=str, nargs='?', help="specifies the edgelist inputfile. Must be a two column .csv containing specific entities on the left and their 'objects' on the right.", default=inputfile_edgelist, action="store")
 parser.add_argument('labels_file', type=str, nargs='?', help="specifies the label inputfile. Must be a two column .txt. Label ist seperated from reference number by space.", default=inputfile_labels, action="store")
+parser.add_argument('threshold', type=int, nargs='?', help="specifies the threshold of cluster sizes. Only clusters with at least t members will be interpreted.", default=500, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
 args = parser.parse_args()
 inputfile_clusters = args.cluster_file
@@ -45,10 +46,12 @@ def main():
     with open(inputfile_clusters) as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
         linenumber = 0
-        clustering = defaultdict(list)
-        description = defaultdict(list)
-        cluster_threshold = 100
+        cluster_threshold = args.threshold
         attributes_aggregated = defaultdict(float)
+
+        clustering = defaultdict(list)
+        sizes = defaultdict(int)
+        description = defaultdict(list)
 
         #Iterate over each line containg one Cluster.
         #Genereate a candidate attributeset for every Cluster/Line
@@ -56,8 +59,9 @@ def main():
             linenumber += 1
             attcount = defaultdict(int)
             cluster_id = int(line[0])
-            cluster_size = line[1]
+            cluster_size = int(line[1])
             cluster_members = np.array(line[2:])
+            sizes[cluster_id] = cluster_size
 
             if int(cluster_size) > cluster_threshold:
                 all_attributes = np.array(edgelist.loc[edgelist[0].isin(cluster_members)][1].values)
@@ -81,7 +85,7 @@ def main():
             description[this_cluster[0]].sort(key=lambda tup: tup[3], reverse=True)
 
         for cluster in description.items():
-            print("\n Cluster No. ",cluster[0])
+            print("\nCluster No.",cluster[0], " Members:", sizes[cluster[0]])
             for attribute in cluster[1]:
                 print(attribute)
 
