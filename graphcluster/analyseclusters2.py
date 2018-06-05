@@ -85,8 +85,8 @@ def main():
                     intersect_with_frequent=np.intersect1d(thismembers_attributes,sorted_attcount)
                     if not intersect_with_frequent.any():
                         nonparticipating += 1
-                nonparticipatings[cluster_id] = round(nonparticipating/cluster_size,5)
-
+                #nonparticipatings[cluster_id] = round(nonparticipating/cluster_size,5)
+                nonparticipatings[cluster_id] = nonparticipating
 
         #get the number of clusters with a number of members above the threshold
         n = len(candidates.keys())   #how many clusters are there
