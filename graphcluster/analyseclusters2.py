@@ -61,9 +61,9 @@ def main():
             cluster_id = int(line[0])
             cluster_size = int(line[1])
             cluster_members = np.array(line[2:])
-            sizes[cluster_id] = cluster_size
-
+            
             if int(cluster_size) > cluster_threshold:
+                sizes[cluster_id] = cluster_size
                 all_attributes = np.array(edgelist.loc[edgelist[0].isin(cluster_members)][1].values)
                 for e in all_attributes:
                     attcount[e] += 1
@@ -84,10 +84,18 @@ def main():
                 description[this_cluster[0]].append((candidate[0], labeldict.get(str(candidate[0])), candidate[1], candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),unique))
             description[this_cluster[0]].sort(key=lambda tup: tup[3], reverse=True)
 
-        for cluster in description.items():
-            print("\nCluster No.",cluster[0], " Members:", sizes[cluster[0]])
-            for attribute in cluster[1]:
+
+        sorted_sizes = sorted(sizes.items(), key=operator.itemgetter(1),reverse=True)
+
+        for id,size in sorted_sizes:
+            print("\nCluster No.", id, " Members:", size)
+            for attribute in description[id]:
                 print(attribute)
+
+        # for cluster in description.items():
+        #     print("\nCluster No.",cluster[0], " Members:", sizes[cluster[0]])
+        #     for attribute in cluster[1]:
+        #         print(attribute)
 
 
 
