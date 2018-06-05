@@ -1,6 +1,6 @@
 louvainoutput="$1"
 awkscripts="$2"
-cleanclustering="$awkscripts""cleanclustering.awk"
+cleanclustering="$awkscripts""cleanclustering2.awk"
 pythonscripts="$3"
 analyseclustersscript="$pythonscripts""analyseclusters2.py"
 labels="$4"
