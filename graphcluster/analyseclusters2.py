@@ -53,6 +53,10 @@ def main():
         sizes = defaultdict(int)
         description = defaultdict(list)
         nonparticipatings = defaultdict(float)
+        coverages = defaultdict()
+        max_coverage_members = defaultdict(float)
+
+
 
         #Iterate over each line containg one Cluster.
         #Genereate a candidate attributeset for every Cluster/Line
@@ -80,13 +84,25 @@ def main():
 
                 #Calculate percentage of Members of this cluster who do not link to any of the top 25 'attributes'
                 nonparticipating = 0
+                coverage = 0
+                max_coverage = 0
+                max_covering_entitites = []
                 for member in cluster_members:
                     thismembers_attributes = np.array(edgelist.loc[edgelist[0]==int(member)][1].values)
                     intersect_with_frequent=np.intersect1d(thismembers_attributes,sorted_attcount)
+                    covers = len(intersect_with_frequent)
                     if not intersect_with_frequent.any():
                         nonparticipating += 1
+                    coverage += covers
+                    if covers == max_coverage:
+                        max_covering_entitites.append(member)
+                    if covers > max_coverage:
+                        max_covering_entitites = [member]
+                        max_coverage = covers
                 #nonparticipatings[cluster_id] = round(nonparticipating/cluster_size,5)
-                nonparticipatings[cluster_id] = nonparticipating
+                coverages[cluster_id] = (coverage/cluster_size, max_coverage)
+                nonparticipatings[cluster_id] = int(nonparticipating)
+                max_coverage_members[cluster_id] = max_covering_entitites
 
         #get the number of clusters with a number of members above the threshold
         n = len(candidates.keys())   #how many clusters are there
@@ -94,6 +110,7 @@ def main():
         #Generate the calculated information for each candidate attribute and sord the candidate attributes by their score value
         for this_cluster in candidates.items():
             for candidate in this_cluster[1]:
+                #set the uniquesness marker to '1' if the currently viewed cluster has all occurences of the viewed attribute
                 unique = 1 if attributes_aggregated[int(candidate[0])]-candidate[1]==0 else 0
                 description[this_cluster[0]].append((candidate[0], labeldict.get(str(candidate[0])), candidate[1], round(candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),2),unique))
                 #description[this_cluster[0]].append((candidate[0], candidate[1], round(candidate[1] - ((attributes_aggregated[int(candidate[0])]-candidate[1])/(n-1)),2),unique)) #nolabel
@@ -112,10 +129,15 @@ def main():
         print("size std %f" % (int(sizes_df.std())))
         print("size variance %f" %(int(sizes_df.var())))
         print("avg nonpart %f" % (np.array(list(nonparticipatings.values())).sum()/sizes_df.count()))
+        avg_cluster_coverage = 0
+        for c in coverages.values():
+            avg_cluster_coverage += c[0]
+        print("avg coverage %f" % (avg_cluster_coverage / sizes_df.count()))
 
         print("\n_____________________\nSpecific Cluster ordered by size:")
         for id,size in sorted_sizes:
-            print("\nCluster No. %d Members: %d Nonparticipating: %f" %(id, size, nonparticipatings[id]))
+            print("\nCluster No. %d Members: %d Nonparticipating: %d Avg_Coverage: %f, Max_Coverage: %d" %(id, size, nonparticipatings[id],coverages[id][0],coverages[id][1]))
+            print("Max Coverage Members:",max_coverage_members[id])
             for attribute in description[id]:
                 print(attribute)
 
