@@ -22,23 +22,24 @@ args = parser.parse_args()
 inputfile = args.file
 
 #args.weighted = True
-args.levels = True
+#args.levels = True
 
 def main():
-    print("Searching partitions...")
-    partition = community.best_partition(G)
-    print("Done.")
-    inv_p = invertdict(partition)
-    for p in inv_p.items():
-        if args.sizeonly:
-            print('Partition %d: Size: %d' % (p[0]+1, len(p[1])))
-        else:
-            print('Partition %d: Size: \'%d\' Members: %s' % (p[0]+1, len(p[1]), p[1]))
+    if not args.levels:
+        print("Searching best partition...")
+        partition = community.best_partition(G)
+        print("Done.")
+        inv_p = invertdict(partition)
+        for p in inv_p.items():
+            if args.sizeonly:
+                print('Partition %d: Size: %d' % (p[0]+1, len(p[1])))
+            else:
+                print('Partition %d: Size: \'%d\' Members: %s' % (p[0]+1, len(p[1]), p[1]))
 
-    #induced = community.induced_graph(partition, G)
+        #induced = community.induced_graph(partition, G)
 
-    #for n in induced:
-    #    print(n)
+        #for n in induced:
+        #    print(n)
 
     if args.levels:
         print("\nPrinting all Levels...")
