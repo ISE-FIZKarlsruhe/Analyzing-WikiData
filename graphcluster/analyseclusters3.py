@@ -22,16 +22,19 @@ parser = argparse.ArgumentParser()
 parser.add_argument('cluster_file', type=str, nargs='?', help="specifies the cluster inputfile. Must be .csv with a list of clustermembers in each row.", default=inputfile_clusters, action="store")
 parser.add_argument('edgelist_file', type=str, nargs='?', help="specifies the edgelist inputfile. Must be a two column .csv containing specific entities on the left and their 'objects' on the right.", default=inputfile_edgelist, action="store")
 parser.add_argument('labels_file', type=str, nargs='?', help="specifies the label inputfile. Must be a two column .txt. Label ist seperated from reference number by space.", default=inputfile_labels, action="store")
+parser.add_argument('overlapgraph_file', type=str, nargs='?', help="specifies the overlapgraph inputfile", default=inputfile_labels, action="store")
 parser.add_argument('threshold', type=int, nargs='?', help="specifies the threshold of cluster sizes. Only clusters with at least t members will be interpreted.", default=500, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
 args = parser.parse_args()
 inputfile_clusters = args.cluster_file
 inputfile_edgelist = args.edgelist_file
 inputfile_labels = args.labels_file
+inputfile_overlapgraph = args.overlapgraph_file
 if args.verbose:
     print("Inputfile_cluster:",inputfile_clusters)
     print("Inputfile_edgelist:", inputfile_edgelist)
     print("Inputfile_labels:", inputfile_labels)
+    print("Inputfile_overlapgraph:", inputfile_overlapgraph)
 
 
 def main():
