@@ -35,7 +35,7 @@ args.weights = True
 
 def main(threshold,poolsize):
     G1, auxdict = buildDictionaries(inputfile)
-    edgelist = pd.read_csv(inputfile, sep=";", header=None)
+    edgelist = pd.read_csv(inputfile, sep=";", header=None).drop(columns=[1]).rename(columns={0: 0, 2: 1})
     threshold = threshold
     pool = Pool(poolsize)
     if args.weights:
@@ -131,7 +131,7 @@ def buildDictionaries(inputfile):
         print("Buildung up the main dictionary",end="")
 
 
-        for key, value in reader:
+        for key, predicate, value in reader:
             directed[key].append(value)
             if key != prevkey:
                 auxdict[prevkey] = line
