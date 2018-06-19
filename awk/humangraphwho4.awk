@@ -9,11 +9,11 @@ if($1+0 != prev){
 
 #Keep printing if currently viewed node has already passed all criteria (below)
 if($1+0 == prev && printing==1){
-    print $1";"$3} 
+    print $1";"$2";"$3} 
 
 #save value to memory
 if(printing==0){
-    memory[i] = $1";"$3}
+    memory[i] = $1";"$2";"$3}
 
 #set criterionfound values to 'true' if they are met
 if($3+0 == criterion+0) criterionfound = 1;
