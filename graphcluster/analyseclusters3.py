@@ -38,15 +38,18 @@ if args.verbose:
 
 
 def main():
-    print("Loading edgelist...")
+    if args.verbose:
+        print("Loading edgelist...")
     edgelist = pd.read_csv(inputfile_edgelist, sep=";", header=None)
     total_criterions = edgelist[0].nunique()
 
-    print("Loading overlapgraph...")
+    if args.verbose:
+        print("Loading overlapgraph...")
     overlapgraph = nx.read_edgelist(inputfile_overlapgraph, nodetype=int, delimiter=";", data=(('weight',float),))
     total_overlapgraph = len(overlapgraph.nodes())
 
-    print("Building label dictionary...")
+    if args.verbose:
+        print("Building label dictionary...")
     labeldict = defaultdict()
     with open(inputfile_labels, encoding="utf8") as labelfile:
         for line in labelfile:
@@ -85,7 +88,8 @@ def main():
             cluster_members = np.array(line[2:])
 
             if int(cluster_size) > cluster_threshold:
-                print("\rAnalyzing Cluster", cluster_id, end=" ")
+                if args.verbose:
+                    print("\rAnalyzing Cluster", cluster_id)
                 total_incluster += list(map(int, cluster_members))
 
                 ##PageRank
