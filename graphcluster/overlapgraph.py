@@ -102,7 +102,9 @@ def getConnectedPersonsWeighted(person, auxdict, edgelist, threshold, adjacency)
         if e == d:
             c = c + 1
         else:
-            score = round((c / len(adjacency[str(d)]) + c / len(person[1])) / 2, 4) if d != 0 else 0
+            score = 0 #unless the if statement below is true
+            if d != 0 and c > 1: #if its not the first round and if the overlap is at least 2
+                score = round((c / len(adjacency[str(d)]) + c / len(person[1])) / 2, 4)
             if score >= threshold:
                 output += '%s;%s;%s\n' % (person[0], d, score)
 
