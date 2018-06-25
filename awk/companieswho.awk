@@ -1,4 +1,4 @@
-BEGIN{prev = 0; count = 0; printing=0; i=0; threshold=4}
+BEGIN{FS=";"; prev = 0; count = 0; printing=0; i=0; threshold=4}
 {
 #Reset if value differs from previously viewed
 if($1+0 != prev){ 
