@@ -29,9 +29,10 @@ start = args.concept
 i = 0
 
 def main():
+    #printAllLevels(start,0)
     printLowestLevel(start)
-    #print("------")
-    #print(i)
+    print("------")
+    print(i)
 
 def printLowestLevel(node):
     global i
