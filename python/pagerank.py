@@ -14,7 +14,7 @@ parser.add_argument('wikidata_file', type=str, nargs='?', help="specifies the fu
 args = parser.parse_args()
 inputfile_wikidata = args.wikidata_file
 
-print("Loading overlapgraph...")
+print("Loading graph...")
 wikidatagraph = nx.read_edgelist(inputfile_wikidata, nodetype=int, delimiter=";")
 pr = nx.pagerank(wikidatagraph, alpha=0.85)
 for key, value in pr.items():
