@@ -25,6 +25,7 @@ parser.add_argument('labels_file', type=str, nargs='?', help="specifies the labe
 parser.add_argument('overlapgraph_file', type=str, nargs='?', help="specifies the overlapgraph inputfile", default=inputfile_overlapgraph, action="store")
 parser.add_argument('threshold', type=int, nargs='?', help="specifies the threshold of cluster sizes. Only clusters with at least t members will be interpreted.", default=500, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
+parser.add_argument("--humanreadable", "-h", help="makes output readable for humans", action="store_true")
 args = parser.parse_args()
 inputfile_clusters = args.cluster_file
 inputfile_edgelist = args.edgelist_file
@@ -87,7 +88,7 @@ def main():
             cluster_size = int(line[1])
             cluster_members = np.array(line[2:])
 
-            if int(cluster_size) > cluster_threshold:
+            if int(cluster_size) >= cluster_threshold:
                 if args.verbose:
                     print("\rAnalyzing Cluster", cluster_id)
                 total_incluster += list(map(int, cluster_members))
@@ -170,31 +171,29 @@ def main():
         sorted_sizes = sorted(sizes.items(), key=operator.itemgetter(1),reverse=True)
 
 ###PRINTING RESULTS
-        print("\n_____________________\nClustering Metainformation:")
-        print("No. of Persons with criterion: %d" % (total_criterions))
-        print("No. of Persons in overlapgraph: %d" % (total_overlapgraph))
-        print("No. of Persons in clustering: %d" % (len(set(total_incluster))))
+		if args.humanreadable:
+	        print("\n_____________________\nClustering Metainformation:")
+	        print("No. of Persons with criterion: %d" % (total_criterions))
+	        print("No. of Persons in overlapgraph: %d" % (total_overlapgraph))
+	        print("No. of Persons in clustering: %d" % (len(set(total_incluster))))
 
-        print("Cluster count %f" % (int(sizes_df.count())))
-        print("Avg cluster size %f" % (int(sizes_df.mean())))
-        print("Cluster size std %f" % (int(sizes_df.std())))
-        print("Cluster size variance %f" %(int(sizes_df.var())))
-        print("Avg nonparticipating %f" % (np.array(list(nonparticipatings.values())).sum()/sizes_df.count()))
-        avg_cluster_coverage = 0
-        for c in coverages.values():
-            avg_cluster_coverage += c[0]
-        print("avg coverage %f" % (avg_cluster_coverage / sizes_df.count()))
+	        print("Cluster count %d" % (int(sizes_df.count())))
+	        print("Avg cluster size %d" % (int(sizes_df.mean())))
+	        print("Cluster size std %d" % (int(sizes_df.std())))
+	        print("Cluster size variance %d" %(int(sizes_df.var())))
+	        print("Avg nonparticipating %d" % (int(np.array(list(nonparticipatings.values())).sum()/sizes_df.count())))
+	        avg_cluster_coverage = 0
+	        for c in coverages.values():
+	            avg_cluster_coverage += c[0]
+	        print("avg coverage %f" % (avg_cluster_coverage / sizes_df.count()))
 
-        print("\n_____________________\nSpecific clusters ordered by size:")
-        for id,size in sorted_sizes:
-            print("\nCluster No. %d Members: %d Nonparticipating: %d Avg_Coverage: %f, Max_Coverage: %d" %(id, size, nonparticipatings[id],coverages[id][0],coverages[id][1]))
-            print("Max Coverage Members:",max_coverage_members[id])
-            print("Top 5 PageRank Members:", top_pageranked[id])
-            for attribute in attribute_descriptions[id]:
-                print(attribute)
-
-
-
+	        print("\n_____________________\nSpecific clusters ordered by size:")
+	        for id,size in sorted_sizes:
+	            print("\nCluster No. %d Members: %d Nonparticipating: %d Avg_Coverage: %f, Max_Coverage: %d" %(id, size, nonparticipatings[id],coverages[id][0],coverages[id][1]))
+	            print("Max Coverage Members:",max_coverage_members[id])
+	            print("Top 5 PageRank Members:", top_pageranked[id])
+	            for attribute in attribute_descriptions[id]:
+	                print(attribute)
 
 
 main()
