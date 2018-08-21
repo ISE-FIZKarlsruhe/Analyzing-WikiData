@@ -23,7 +23,7 @@ parser.add_argument('cluster_file', type=str, nargs='?', help="specifies the clu
 parser.add_argument('edgelist_file', type=str, nargs='?', help="specifies the edgelist inputfile. Must be a two column .csv containing specific entities on the left and their 'objects' on the right.", default=inputfile_edgelist, action="store")
 parser.add_argument('labels_file', type=str, nargs='?', help="specifies the label inputfile. Must be a two column .txt. Label ist seperated from reference number by space.", default=inputfile_labels, action="store")
 parser.add_argument('overlapgraph_file', type=str, nargs='?', help="specifies the overlapgraph inputfile", default=inputfile_overlapgraph, action="store")
-parser.add_argument('threshold', type=int, nargs='?', help="specifies the threshold of cluster sizes. Only clusters with at least t members will be interpreted.", default=500, action="store")
+parser.add_argument('threshold', type=int, nargs='?', help="specifies the threshold of cluster sizes. Only clusters with at least t members will be interpreted.", default=100, action="store")
 parser.add_argument("--verbose", "-v", help="increase output verbosity", action="store_true")
 args = parser.parse_args()
 inputfile_clusters = args.cluster_file
@@ -87,7 +87,7 @@ def main():
             cluster_size = int(line[1])
             cluster_members = np.array(line[2:])
 
-            if int(cluster_size) > cluster_threshold:
+            if int(cluster_size) >= cluster_threshold:
                 if args.verbose:
                     print("\rAnalyzing Cluster", cluster_id)
                 total_incluster += list(map(int, cluster_members))
@@ -175,11 +175,11 @@ def main():
         print("No. of Persons in overlapgraph: %d" % (total_overlapgraph))
         print("No. of Persons in clustering: %d" % (len(set(total_incluster))))
 
-        print("Cluster count %f" % (int(sizes_df.count())))
-        print("Avg cluster size %f" % (int(sizes_df.mean())))
-        print("Cluster size std %f" % (int(sizes_df.std())))
-        print("Cluster size variance %f" %(int(sizes_df.var())))
-        print("Avg nonparticipating %f" % (np.array(list(nonparticipatings.values())).sum()/sizes_df.count()))
+        print("Cluster count %d" % (int(sizes_df.count())))
+        print("Avg cluster size %d" % (int(sizes_df.mean())))
+        print("Cluster size std %d" % (int(sizes_df.std())))
+        print("Cluster size variance %d" %(int(sizes_df.var())))
+        print("Avg nonparticipating %d" % (int(np.array(list(nonparticipatings.values())).sum()/sizes_df.count())))
         avg_cluster_coverage = 0
         for c in coverages.values():
             avg_cluster_coverage += c[0]
@@ -192,9 +192,6 @@ def main():
             print("Top 5 PageRank Members:", top_pageranked[id])
             for attribute in attribute_descriptions[id]:
                 print(attribute)
-
-
-
 
 
 main()
